@@ -9,7 +9,7 @@ keepers =
     * require \./handlers/trace.ls
     ...
 
-regexp = /([0-9]{4}-[0-9]{2}-[0-9]{2}) ([0-9]{2}:[0-9]{2}:[0-9]{2}) UTC (IO Worker|Verifier|Monitor) \#[0-9] (TRACE|DEBUG|INFO) (.+)/
+regexp = /([0-9]{4}-[0-9]{2}-[0-9]{2}) ([0-9]{2}:[0-9]{2}:[0-9]{2}) UTC (IO Worker|Verifier|Monitor) \#[0-9] ([A-Z]+) (.+)/
 
 module.exports = (ws)-> (line)->
     result = line.match regexp
