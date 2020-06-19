@@ -1,4 +1,11 @@
-# Velas Monitoring
+# Velas God
+
+This is client/server solution which obtain information from the velas node and sends it server.
+
+Use cases
+
+* Server collects all information and provide for AI/Admins
+* TODO: Server decides which node should process the incoming transaction
 
 
 ### Deps 
