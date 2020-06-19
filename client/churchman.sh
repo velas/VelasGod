@@ -1,0 +1,1 @@
+lsc ./client.ls --name fake
