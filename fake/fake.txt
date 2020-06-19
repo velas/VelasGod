@@ -1,0 +1,313 @@
+2020-06-18 04:04:32 UTC IO Worker #3 TRACE txqueue  [0x47c819cda6b6313aa0efbb53bc8617fa1aa1f17f119ee720e2d470df301ed316] Rejecting recently rejected: Old
+2020-06-18 04:04:32 UTC IO Worker #3 TRACE txqueue  [0x211b1332d8a641771d3735c95da73109999bacc4c3bfce5cdc753d321523be85] Rejecting recently rejected: Old
+2020-06-18 04:04:32 UTC IO Worker #3 TRACE txqueue  [0x6d3d23b4b7202b0e15fcbd26d0004ed5d8fa0d7139fc2472a44bb8e5bdcf2724] Rejecting recently rejected: Old
+2020-06-18 04:04:32 UTC IO Worker #3 TRACE txqueue  [0x7f74a8f0b49243d5f9d35591da3d7760511bb4728e5a1433c43792b9f7cad3ba] Rejecting recently rejected: Old
+2020-06-18 04:04:32 UTC IO Worker #3 TRACE txqueue  [0x97aef586bd580e753b5f528590d92428ba547795b1f5d7b2e66390943af5b985] Rejecting recently rejected: Old
+2020-06-18 04:04:32 UTC IO Worker #3 TRACE txqueue  [0x455aa6d4cb2f785e0ac6ff6eda150e069f379056a86bb3bc6c875711df56d632] Rejecting recently rejected: Old
+2020-06-18 04:04:32 UTC IO Worker #3 TRACE txqueue  [0x4b24a60dba96b7498b42f0abe4306847084be0dc8355c7540ff7405eacdb942f] Rejecting recently rejected: Old
+2020-06-18 04:04:32 UTC IO Worker #3 TRACE txqueue  [0x022f77f9b30556ef119532f6a291989a5ae89974f453ed6e929e8e93ee838a7b] Rejecting recently rejected: Old
+2020-06-18 04:04:32 UTC IO Worker #3 TRACE txqueue  [0x23796f6738ee70510074dfaabf7e1c960c89b51437fc4a4a410c00b106009a5d] Rejecting recently rejected: Old
+2020-06-18 04:04:32 UTC IO Worker #3 TRACE txqueue  [0x323bdd00ee6026f3dd2e7b2af2d9a7350b8669962d75a6845f9f7dcc374ac269] Rejecting recently rejected: Old
+2020-06-18 04:04:32 UTC IO Worker #3 TRACE txqueue  [0xfca3d7a24a0c3efb707497df23b9970df5a0859f09e9377aca9d617ad656db97] Rejecting recently rejected: Old
+2020-06-18 04:04:32 UTC IO Worker #3 TRACE txqueue  [0x756fd441535a36f4878be621075e36116d0434c1339705ec37371652c0332b2f] Rejecting recently rejected: Old
+2020-06-18 04:04:32 UTC IO Worker #3 TRACE txqueue  [0x66fe8f1b19c5d35f457c1bafe6c5b575c8e9e455b3585e48077933b9398609c1] Rejecting recently rejected: Old
+2020-06-18 04:04:32 UTC IO Worker #0 TRACE txqueue  [0xc4627a1613653ddf4710546a88776eeca696f06c6be9f74b62dc3ab00f82e5f3] Rejecting recently rejected: NotAllowed
+2020-06-18 04:04:33 UTC IO Worker #1 INFO import    11/25 peers      8 MiB chain  119 KiB db  0 bytes queue   19 KiB sync  RPC:  1 conn,    9 req/s,  172 µs
+2020-06-18 04:04:34 UTC IO Worker #0 TRACE txqueue  [0xc4627a1613653ddf4710546a88776eeca696f06c6be9f74b62dc3ab00f82e5f3] Rejecting recently rejected: NotAllowed
+2020-06-18 04:04:34 UTC IO Worker #3 TRACE txqueue  [0x8de5b81180aabbc408719b1032040a800dd63bf3f02cb75ea62aea5df140d467] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:34 UTC IO Worker #3 TRACE txqueue  [0x05b413d1f0e2b8f557dbeda484a66e64f7c994b147d498da58b1c5d50ed8776f] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:34 UTC IO Worker #3 TRACE txqueue  [0xcbb87a099445004a4df159308f6ec5d8a0d1f55b7eb33b10131881360598a407] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:34 UTC IO Worker #3 TRACE txqueue  [0x4f3f4ecc5ee6cad9566b6037e22d60dd58919158aee9efe2433d2531a9cde9fd] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:34 UTC IO Worker #3 TRACE txqueue  [0xda0cd4148da7eda0066cfb28356160fc9d12a6301805202bbe27bbb9fcecb648] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:34 UTC IO Worker #3 TRACE txqueue  [0x1f0f71e79792ba598dd04c896c99f5f9b72e8189b802dfaa0bad9de2e3454a52] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:34 UTC IO Worker #3 TRACE txqueue  [0x5f86ed5574c3ab77cda6e69196be1fe691c08fa61c57fe8d8ba2ae1e460bc9df] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 83619289206153 }
+2020-06-18 04:04:34 UTC IO Worker #3 TRACE txqueue  [0xf4b3c762dc6cbb4d7e700f224810263aa5f05a07bd18359bd82a3fbf2f8ca9cd] Rejecting recently rejected: AlreadyImported
+2020-06-18 04:04:34 UTC IO Worker #3 TRACE txqueue  [0x47c819cda6b6313aa0efbb53bc8617fa1aa1f17f119ee720e2d470df301ed316] Rejecting recently rejected: Old
+2020-06-18 04:04:34 UTC IO Worker #3 TRACE txqueue  [0x211b1332d8a641771d3735c95da73109999bacc4c3bfce5cdc753d321523be85] Rejecting recently rejected: Old
+2020-06-18 04:04:34 UTC IO Worker #3 TRACE txqueue  [0x6d3d23b4b7202b0e15fcbd26d0004ed5d8fa0d7139fc2472a44bb8e5bdcf2724] Rejecting recently rejected: Old
+2020-06-18 04:04:34 UTC IO Worker #3 TRACE txqueue  [0x7f74a8f0b49243d5f9d35591da3d7760511bb4728e5a1433c43792b9f7cad3ba] Rejecting recently rejected: Old
+2020-06-18 04:04:34 UTC IO Worker #3 TRACE txqueue  [0x97aef586bd580e753b5f528590d92428ba547795b1f5d7b2e66390943af5b985] Rejecting recently rejected: Old
+2020-06-18 04:04:34 UTC IO Worker #3 TRACE txqueue  [0x455aa6d4cb2f785e0ac6ff6eda150e069f379056a86bb3bc6c875711df56d632] Rejecting recently rejected: Old
+2020-06-18 04:04:34 UTC IO Worker #3 TRACE txqueue  [0x4b24a60dba96b7498b42f0abe4306847084be0dc8355c7540ff7405eacdb942f] Rejecting recently rejected: Old
+2020-06-18 04:04:34 UTC IO Worker #3 TRACE txqueue  [0x022f77f9b30556ef119532f6a291989a5ae89974f453ed6e929e8e93ee838a7b] Rejecting recently rejected: Old
+2020-06-18 04:04:34 UTC IO Worker #3 TRACE txqueue  [0x23796f6738ee70510074dfaabf7e1c960c89b51437fc4a4a410c00b106009a5d] Rejecting recently rejected: Old
+2020-06-18 04:04:34 UTC IO Worker #3 TRACE txqueue  [0x323bdd00ee6026f3dd2e7b2af2d9a7350b8669962d75a6845f9f7dcc374ac269] Rejecting recently rejected: Old
+2020-06-18 04:04:34 UTC IO Worker #3 TRACE txqueue  [0xfca3d7a24a0c3efb707497df23b9970df5a0859f09e9377aca9d617ad656db97] Rejecting recently rejected: Old
+2020-06-18 04:04:34 UTC IO Worker #3 TRACE txqueue  [0x756fd441535a36f4878be621075e36116d0434c1339705ec37371652c0332b2f] Rejecting recently rejected: Old
+2020-06-18 04:04:34 UTC IO Worker #3 TRACE txqueue  [0x66fe8f1b19c5d35f457c1bafe6c5b575c8e9e455b3585e48077933b9398609c1] Rejecting recently rejected: Old
+2020-06-18 04:04:35 UTC Verifier #4 TRACE engine  Setting gas limit to 105000000 for block 1325672.
+2020-06-18 04:04:35 UTC Verifier #4 TRACE engine  Multi ValidatorSet retrieved for block 0.
+2020-06-18 04:04:35 UTC Verifier #4 DEBUG engine  Expected topics for header 0x3ea8…8d17: [0x55252fa6eee4741b4e24a74a70e9c11fd2c2281df8d6ea13126ff845f7825c89, 0x76e124c29a7603b7f912ae8191303599e66533d95e5978bb661ab05a75414568]
+2020-06-18 04:04:35 UTC Verifier #4 TRACE engine  Multi ValidatorSet retrieved for block 0.
+2020-06-18 04:04:35 UTC Verifier #4 TRACE txqueue  Refreshing certified addresses cache
+2020-06-18 04:04:35 UTC IO Worker #1 DEBUG txqueue  Removed 0 stalled transactions. Pool: 0/8192 (0 senders; 0/4096 kB) [minGasPrice: 0 Mwei, maxGas: 105000000]
+2020-06-18 04:04:35 UTC Verifier #4 INFO import  Imported #1325672 0x3ea8…8d17 (0 txs, 0.00 Mgas, 14 ms, 0.55 KiB)
+2020-06-18 04:04:35 UTC IO Worker #1 DEBUG txqueue  Re-computing pending set for block: 1325672
+2020-06-18 04:04:35 UTC IO Worker #0 DEBUG txqueue  [0x8de5b81180aabbc408719b1032040a800dd63bf3f02cb75ea62aea5df140d467] Rejected tx with not enough balance: 13747414079067 < 52118941864653
+2020-06-18 04:04:35 UTC IO Worker #2 DEBUG txqueue  [0xc4627a1613653ddf4710546a88776eeca696f06c6be9f74b62dc3ab00f82e5f3] Rejected tx NotAllowed
+2020-06-18 04:04:35 UTC IO Worker #0 DEBUG txqueue  [0x05b413d1f0e2b8f557dbeda484a66e64f7c994b147d498da58b1c5d50ed8776f] Rejected tx with not enough balance: 13747414079067 < 52118941864653
+2020-06-18 04:04:35 UTC IO Worker #0 DEBUG txqueue  [0xcbb87a099445004a4df159308f6ec5d8a0d1f55b7eb33b10131881360598a407] Rejected tx with not enough balance: 13747414079067 < 52118941864653
+2020-06-18 04:04:35 UTC IO Worker #0 DEBUG txqueue  [0x4f3f4ecc5ee6cad9566b6037e22d60dd58919158aee9efe2433d2531a9cde9fd] Rejected tx with not enough balance: 13747414079067 < 52118941864653
+2020-06-18 04:04:35 UTC IO Worker #0 DEBUG txqueue  [0xda0cd4148da7eda0066cfb28356160fc9d12a6301805202bbe27bbb9fcecb648] Rejected tx with not enough balance: 13747414079067 < 52118941864653
+2020-06-18 04:04:35 UTC IO Worker #0 DEBUG txqueue  [0x1f0f71e79792ba598dd04c896c99f5f9b72e8189b802dfaa0bad9de2e3454a52] Rejected tx with not enough balance: 13747414079067 < 52118941864653
+2020-06-18 04:04:35 UTC IO Worker #0 DEBUG txqueue  [0x5f86ed5574c3ab77cda6e69196be1fe691c08fa61c57fe8d8ba2ae1e460bc9df] Rejected tx with not enough balance: 13747414079067 < 83619289206153
+2020-06-18 04:04:35 UTC IO Worker #0 TRACE txqueue  [0xf4b3c762dc6cbb4d7e700f224810263aa5f05a07bd18359bd82a3fbf2f8ca9cd] Rejected tx already in the blockchain
+2020-06-18 04:04:35 UTC IO Worker #0 DEBUG txqueue  [0x47c819cda6b6313aa0efbb53bc8617fa1aa1f17f119ee720e2d470df301ed316] Rejected tx with old nonce (7256 < 7402)
+2020-06-18 04:04:35 UTC IO Worker #0 DEBUG txqueue  [0x211b1332d8a641771d3735c95da73109999bacc4c3bfce5cdc753d321523be85] Rejected tx with old nonce (7257 < 7402)
+2020-06-18 04:04:35 UTC IO Worker #0 DEBUG txqueue  [0x6d3d23b4b7202b0e15fcbd26d0004ed5d8fa0d7139fc2472a44bb8e5bdcf2724] Rejected tx with old nonce (7258 < 7402)
+2020-06-18 04:04:35 UTC IO Worker #0 DEBUG txqueue  [0x7f74a8f0b49243d5f9d35591da3d7760511bb4728e5a1433c43792b9f7cad3ba] Rejected tx with old nonce (7259 < 7402)
+2020-06-18 04:04:35 UTC IO Worker #0 DEBUG txqueue  [0x97aef586bd580e753b5f528590d92428ba547795b1f5d7b2e66390943af5b985] Rejected tx with old nonce (7260 < 7402)
+2020-06-18 04:04:35 UTC IO Worker #0 DEBUG txqueue  [0x455aa6d4cb2f785e0ac6ff6eda150e069f379056a86bb3bc6c875711df56d632] Rejected tx with old nonce (7261 < 7402)
+2020-06-18 04:04:35 UTC IO Worker #0 DEBUG txqueue  [0x4b24a60dba96b7498b42f0abe4306847084be0dc8355c7540ff7405eacdb942f] Rejected tx with old nonce (7262 < 7402)
+2020-06-18 04:04:35 UTC IO Worker #0 DEBUG txqueue  [0x022f77f9b30556ef119532f6a291989a5ae89974f453ed6e929e8e93ee838a7b] Rejected tx with old nonce (7263 < 7402)
+2020-06-18 04:04:35 UTC IO Worker #0 DEBUG txqueue  [0x23796f6738ee70510074dfaabf7e1c960c89b51437fc4a4a410c00b106009a5d] Rejected tx with old nonce (7264 < 7402)
+2020-06-18 04:04:35 UTC IO Worker #0 DEBUG txqueue  [0x323bdd00ee6026f3dd2e7b2af2d9a7350b8669962d75a6845f9f7dcc374ac269] Rejected tx with old nonce (7265 < 7402)
+2020-06-18 04:04:35 UTC http.worker450 DEBUG txqueue  Re-computing pending set for block: 1325672
+2020-06-18 04:04:35 UTC IO Worker #0 DEBUG txqueue  [0xfca3d7a24a0c3efb707497df23b9970df5a0859f09e9377aca9d617ad656db97] Rejected tx with old nonce (7266 < 7402)
+2020-06-18 04:04:35 UTC IO Worker #0 DEBUG txqueue  [0x756fd441535a36f4878be621075e36116d0434c1339705ec37371652c0332b2f] Rejected tx with old nonce (7267 < 7402)
+2020-06-18 04:04:35 UTC IO Worker #0 DEBUG txqueue  [0x66fe8f1b19c5d35f457c1bafe6c5b575c8e9e455b3585e48077933b9398609c1] Rejected tx with old nonce (7268 < 7402)
+2020-06-18 04:04:36 UTC IO Worker #1 TRACE txqueue  [0xc4627a1613653ddf4710546a88776eeca696f06c6be9f74b62dc3ab00f82e5f3] Rejecting recently rejected: NotAllowed
+2020-06-18 04:04:36 UTC IO Worker #3 TRACE txqueue  [0x8de5b81180aabbc408719b1032040a800dd63bf3f02cb75ea62aea5df140d467] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:36 UTC IO Worker #3 TRACE txqueue  [0x05b413d1f0e2b8f557dbeda484a66e64f7c994b147d498da58b1c5d50ed8776f] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:36 UTC IO Worker #3 TRACE txqueue  [0xcbb87a099445004a4df159308f6ec5d8a0d1f55b7eb33b10131881360598a407] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:36 UTC IO Worker #3 TRACE txqueue  [0x4f3f4ecc5ee6cad9566b6037e22d60dd58919158aee9efe2433d2531a9cde9fd] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:36 UTC IO Worker #3 TRACE txqueue  [0xda0cd4148da7eda0066cfb28356160fc9d12a6301805202bbe27bbb9fcecb648] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:36 UTC IO Worker #3 TRACE txqueue  [0x1f0f71e79792ba598dd04c896c99f5f9b72e8189b802dfaa0bad9de2e3454a52] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:36 UTC IO Worker #3 TRACE txqueue  [0x5f86ed5574c3ab77cda6e69196be1fe691c08fa61c57fe8d8ba2ae1e460bc9df] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 83619289206153 }
+2020-06-18 04:04:36 UTC IO Worker #3 TRACE txqueue  [0xf4b3c762dc6cbb4d7e700f224810263aa5f05a07bd18359bd82a3fbf2f8ca9cd] Rejecting recently rejected: AlreadyImported
+2020-06-18 04:04:36 UTC IO Worker #3 TRACE txqueue  [0x47c819cda6b6313aa0efbb53bc8617fa1aa1f17f119ee720e2d470df301ed316] Rejecting recently rejected: Old
+2020-06-18 04:04:36 UTC IO Worker #3 TRACE txqueue  [0x211b1332d8a641771d3735c95da73109999bacc4c3bfce5cdc753d321523be85] Rejecting recently rejected: Old
+2020-06-18 04:04:36 UTC IO Worker #3 TRACE txqueue  [0x6d3d23b4b7202b0e15fcbd26d0004ed5d8fa0d7139fc2472a44bb8e5bdcf2724] Rejecting recently rejected: Old
+2020-06-18 04:04:36 UTC IO Worker #3 TRACE txqueue  [0x7f74a8f0b49243d5f9d35591da3d7760511bb4728e5a1433c43792b9f7cad3ba] Rejecting recently rejected: Old
+2020-06-18 04:04:36 UTC IO Worker #3 TRACE txqueue  [0x97aef586bd580e753b5f528590d92428ba547795b1f5d7b2e66390943af5b985] Rejecting recently rejected: Old
+2020-06-18 04:04:36 UTC IO Worker #3 TRACE txqueue  [0x455aa6d4cb2f785e0ac6ff6eda150e069f379056a86bb3bc6c875711df56d632] Rejecting recently rejected: Old
+2020-06-18 04:04:36 UTC IO Worker #3 TRACE txqueue  [0x4b24a60dba96b7498b42f0abe4306847084be0dc8355c7540ff7405eacdb942f] Rejecting recently rejected: Old
+2020-06-18 04:04:36 UTC IO Worker #3 TRACE txqueue  [0x022f77f9b30556ef119532f6a291989a5ae89974f453ed6e929e8e93ee838a7b] Rejecting recently rejected: Old
+2020-06-18 04:04:36 UTC IO Worker #3 TRACE txqueue  [0x23796f6738ee70510074dfaabf7e1c960c89b51437fc4a4a410c00b106009a5d] Rejecting recently rejected: Old
+2020-06-18 04:04:36 UTC IO Worker #3 TRACE txqueue  [0x323bdd00ee6026f3dd2e7b2af2d9a7350b8669962d75a6845f9f7dcc374ac269] Rejecting recently rejected: Old
+2020-06-18 04:04:36 UTC IO Worker #3 TRACE txqueue  [0xfca3d7a24a0c3efb707497df23b9970df5a0859f09e9377aca9d617ad656db97] Rejecting recently rejected: Old
+2020-06-18 04:04:36 UTC IO Worker #3 TRACE txqueue  [0x756fd441535a36f4878be621075e36116d0434c1339705ec37371652c0332b2f] Rejecting recently rejected: Old
+2020-06-18 04:04:36 UTC IO Worker #3 TRACE txqueue  [0x66fe8f1b19c5d35f457c1bafe6c5b575c8e9e455b3585e48077933b9398609c1] Rejecting recently rejected: Old
+2020-06-18 04:04:38 UTC IO Worker #3 TRACE txqueue  [0xc4627a1613653ddf4710546a88776eeca696f06c6be9f74b62dc3ab00f82e5f3] Rejecting recently rejected: NotAllowed
+2020-06-18 04:04:38 UTC IO Worker #0 TRACE txqueue  [0x8de5b81180aabbc408719b1032040a800dd63bf3f02cb75ea62aea5df140d467] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:38 UTC IO Worker #0 TRACE txqueue  [0x05b413d1f0e2b8f557dbeda484a66e64f7c994b147d498da58b1c5d50ed8776f] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:38 UTC IO Worker #0 TRACE txqueue  [0xcbb87a099445004a4df159308f6ec5d8a0d1f55b7eb33b10131881360598a407] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:38 UTC IO Worker #0 TRACE txqueue  [0x4f3f4ecc5ee6cad9566b6037e22d60dd58919158aee9efe2433d2531a9cde9fd] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:38 UTC IO Worker #0 TRACE txqueue  [0xda0cd4148da7eda0066cfb28356160fc9d12a6301805202bbe27bbb9fcecb648] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:38 UTC IO Worker #0 TRACE txqueue  [0x1f0f71e79792ba598dd04c896c99f5f9b72e8189b802dfaa0bad9de2e3454a52] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:38 UTC IO Worker #0 TRACE txqueue  [0x5f86ed5574c3ab77cda6e69196be1fe691c08fa61c57fe8d8ba2ae1e460bc9df] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 83619289206153 }
+2020-06-18 04:04:38 UTC IO Worker #0 TRACE txqueue  [0xf4b3c762dc6cbb4d7e700f224810263aa5f05a07bd18359bd82a3fbf2f8ca9cd] Rejecting recently rejected: AlreadyImported
+2020-06-18 04:04:38 UTC IO Worker #0 TRACE txqueue  [0x47c819cda6b6313aa0efbb53bc8617fa1aa1f17f119ee720e2d470df301ed316] Rejecting recently rejected: Old
+2020-06-18 04:04:38 UTC IO Worker #0 TRACE txqueue  [0x211b1332d8a641771d3735c95da73109999bacc4c3bfce5cdc753d321523be85] Rejecting recently rejected: Old
+2020-06-18 04:04:38 UTC IO Worker #0 TRACE txqueue  [0x6d3d23b4b7202b0e15fcbd26d0004ed5d8fa0d7139fc2472a44bb8e5bdcf2724] Rejecting recently rejected: Old
+2020-06-18 04:04:38 UTC IO Worker #0 TRACE txqueue  [0x7f74a8f0b49243d5f9d35591da3d7760511bb4728e5a1433c43792b9f7cad3ba] Rejecting recently rejected: Old
+2020-06-18 04:04:38 UTC IO Worker #0 TRACE txqueue  [0x97aef586bd580e753b5f528590d92428ba547795b1f5d7b2e66390943af5b985] Rejecting recently rejected: Old
+2020-06-18 04:04:38 UTC IO Worker #0 TRACE txqueue  [0x455aa6d4cb2f785e0ac6ff6eda150e069f379056a86bb3bc6c875711df56d632] Rejecting recently rejected: Old
+2020-06-18 04:04:38 UTC IO Worker #0 TRACE txqueue  [0x4b24a60dba96b7498b42f0abe4306847084be0dc8355c7540ff7405eacdb942f] Rejecting recently rejected: Old
+2020-06-18 04:04:38 UTC IO Worker #0 TRACE txqueue  [0x022f77f9b30556ef119532f6a291989a5ae89974f453ed6e929e8e93ee838a7b] Rejecting recently rejected: Old
+2020-06-18 04:04:38 UTC IO Worker #0 TRACE txqueue  [0x23796f6738ee70510074dfaabf7e1c960c89b51437fc4a4a410c00b106009a5d] Rejecting recently rejected: Old
+2020-06-18 04:04:38 UTC IO Worker #0 TRACE txqueue  [0x323bdd00ee6026f3dd2e7b2af2d9a7350b8669962d75a6845f9f7dcc374ac269] Rejecting recently rejected: Old
+2020-06-18 04:04:38 UTC IO Worker #0 TRACE txqueue  [0xfca3d7a24a0c3efb707497df23b9970df5a0859f09e9377aca9d617ad656db97] Rejecting recently rejected: Old
+2020-06-18 04:04:38 UTC IO Worker #0 TRACE txqueue  [0x756fd441535a36f4878be621075e36116d0434c1339705ec37371652c0332b2f] Rejecting recently rejected: Old
+2020-06-18 04:04:38 UTC IO Worker #0 TRACE txqueue  [0x66fe8f1b19c5d35f457c1bafe6c5b575c8e9e455b3585e48077933b9398609c1] Rejecting recently rejected: Old
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0x88746b99feb1cb83e8f3a93acf10e9fd7dcda40bff45d23bf1d64135b78dc1aa] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0x09bbaf76994bf3d4b5e296ef28f34507188d10fd7e956e1eeb2c3851340da933] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0x8188d09faa24907f6e39d17013c482b4b683fdd8adb475bf9bd911a78a986c4f] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0x3464b22587508468b05e1a9270251d02d5380c179dc6d4ddc6edde5a7659ef29] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0x8147eb8089728200c44706c43d17c3df3dd390191267d22b1873bced20f990d1] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0x27b70f4c47ae151824d55d229b8624234c1a4592a48d3c835118b0ece93c4418] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0x71b23885eefb56c37a1b82b466443a0eb3c08bb3e78c9adc3d34b583d9f600ec] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0x5b65c3b92847f5c757ad746690a338e8f7016c1fbb71c2958020dc89e60cdd16] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0x7280f3a92a8333e12c57bbdd182611e21e660f0d494760a416d67f6df0d0b176] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0xf7b71a060b8367e8f6599fe085c6f428966dc2e9551c2b1d51411f353954695f] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0x52cb697dd669c81f4c23eb925952a8c610ab79d706f323738c8398c9cbbd42c0] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0xfd0a3f661c187e69721d8ab8e48ac302cd759af9cf91433e466e92bacd17e74d] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0x9a69edeaf9741a7b390fe0c7660732e90603d5c1c7b73eb37c938d164c109249] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0x67ad690c75e0cd30b9c52b52d0807714b420b08600ecbfeec65d9ffe618e2c65] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0xa41a1cee0947e2cdd22c58ccf4597ed199606721f4e704142352b788fc3dc805] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0xf547526467511e205590628abf86955d75d9942b0d3dd5f0822adfbe3c7265c5] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0x0fd8b78bdab03bbe29bd5c0aee3d69914a162a2131afc5e87b33779b0091c121] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0x56577435993606e47423ae194d13d90a16b902f0949c95b3285c75b0c88d00f2] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0xe14bdd3652c74deb9e68c782cd8c2e45a78fc2a78fed9b0cb6e13b7b3f14d07e] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0xc7602c0e1dff6c36e08b55851a8843abe2a5646a58a018957d094db609d0dc43] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0x6d5389a003ef61e88660b63f309f01554bc96e8a43ad8103e187999e0c87a727] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0x8736ae44e12f811192f68aa0ec5d8742b8ee92d6d1e434da30e3cd4729119271] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0x0cc9bedcf9dc92b64b3f55647a1c30f3e958bfe761f77afd0d3b2d3f2e8528d2] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0x44fbf09362ab7ef43885eb859ba654f1282989758e7da330938afbff2bb9c96f] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0x1b3a24154ecebbba7947c7683d2a33166b47bddf0600fb81c6a9695f9e20f668] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0xf8ac9fe8df7f3f581cd21c5ca0b2f808bc1c8bf1ab749d0b90a794a2a250959c] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0xd8b936c53b9b5f608cab11e07a2bb69dee68d212618c029e3229e0ab3fb8c26d] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0x1e633b2ec0fd518ac9e29a9b747dc66e44437f9f129a85ded0aaf58cf42141c8] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0x6310e3c701e47d17f3d7c01eac2081ff3cf03f3e29b96d0fbbc8956e071b6d60] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0x23a07b622e3b6ade71bf43dc45429970aa63ef5c1edcf679787f4a25df79210f] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0xa287914a6f1873266a3e8a09f409c7ca3153ec33027a1309d7a706e7665f419a] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0xd466b426e25bd2a7f1d94063e151d548f8637528cf2f18db51c866cc9e9eef1d] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0x8f5c5e64c8a9f8bb16bf3ecdfbe5690682f441b356a55668a2a11f05bbe6b153] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0xced4f206fbecdb6f937935ef94eecbd5edbc2758561bbab03348dad8345e8d55] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0x31583254c89ba12b0353aec30e82c41284069c56b8c4de12bc2c13cb68c40eee] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0x0f899124d31213f2791ba0da5c8da73e4524f66d020c4622de0c58cfd425f306] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0xad5e66e14247c55576617df8541aee3a65f2785257c7bfc3e3317f02599a7a48] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0xf853ec39a496cb737c4918bb0e6fada219a67ade2730a417f659631bb9c52f22] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0x85857d97037ea6537bb78dcb0dfe2895eec40250b8390fde059981fdd707e316] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0xb827493e2ef9d51cee217cf33f45da903b84a86c71480f6f7a0ab6926595fa78] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0x9631b26149f6c9b339ab878855bb2bc0617b90466f291669baa7672a3238d508] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0xb8b3a0311db2804fb69c44dddece6c3478aeb028c71d0fe16040b5e82d34a6bb] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0x56ab96ece9d0843d637eb50eb536ed6da7f665c0e03a9517f2adc0eac387eb50] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0xbafca97cbb467052639474aa11e45bf7df376bd66ae7d8a244b8d0463a5280ea] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0x39da8ce673a4c7701c55004ef040ae64d0f195b9ce744a074ff534786cc7ea0e] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0x86046efc5d1b53e8d260657acb7a73b409abcac1a0837e5280df877c2fda3e5e] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0x21e5d4cb3714e4a37ceb04253e5e166961ccfe4b23a6c72fe76dee837a0c07fc] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0x2d41e318ae38e62445da308d10fc4a54ce117fade5f1ecaf5283864c0e890c65] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0x07bbbaa7553cfda9bac93385a18a2f2bb000834c5a1fa6b5323c30da0a2a79bb] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0x3da4250819a7af9270da00c7defeeb79521dd85750ecb377185061d28935eaa7] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0xa39212b9f75972693c07aa50b9683f63013221e1d83f41bbb999ce1534236683] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #3 DEBUG txqueue  [0x9457959d619fd56b98f002c9d43b4651689aae58703c25ec41d951b7c703ff0b] Rejected tx with not enough balance: 0 < 3689990000000000000000
+2020-06-18 04:04:39 UTC IO Worker #2 TRACE txqueue  [0xc4627a1613653ddf4710546a88776eeca696f06c6be9f74b62dc3ab00f82e5f3] Rejecting recently rejected: NotAllowed
+2020-06-18 04:04:39 UTC IO Worker #0 TRACE txqueue  [0x8de5b81180aabbc408719b1032040a800dd63bf3f02cb75ea62aea5df140d467] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:39 UTC IO Worker #0 TRACE txqueue  [0x05b413d1f0e2b8f557dbeda484a66e64f7c994b147d498da58b1c5d50ed8776f] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:39 UTC IO Worker #0 TRACE txqueue  [0xcbb87a099445004a4df159308f6ec5d8a0d1f55b7eb33b10131881360598a407] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:39 UTC IO Worker #0 TRACE txqueue  [0x4f3f4ecc5ee6cad9566b6037e22d60dd58919158aee9efe2433d2531a9cde9fd] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:39 UTC IO Worker #0 TRACE txqueue  [0xda0cd4148da7eda0066cfb28356160fc9d12a6301805202bbe27bbb9fcecb648] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:39 UTC IO Worker #0 TRACE txqueue  [0x1f0f71e79792ba598dd04c896c99f5f9b72e8189b802dfaa0bad9de2e3454a52] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:39 UTC IO Worker #0 TRACE txqueue  [0x5f86ed5574c3ab77cda6e69196be1fe691c08fa61c57fe8d8ba2ae1e460bc9df] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 83619289206153 }
+2020-06-18 04:04:39 UTC IO Worker #0 TRACE txqueue  [0xf4b3c762dc6cbb4d7e700f224810263aa5f05a07bd18359bd82a3fbf2f8ca9cd] Rejecting recently rejected: AlreadyImported
+2020-06-18 04:04:39 UTC IO Worker #0 TRACE txqueue  [0x47c819cda6b6313aa0efbb53bc8617fa1aa1f17f119ee720e2d470df301ed316] Rejecting recently rejected: Old
+2020-06-18 04:04:39 UTC IO Worker #0 TRACE txqueue  [0x211b1332d8a641771d3735c95da73109999bacc4c3bfce5cdc753d321523be85] Rejecting recently rejected: Old
+2020-06-18 04:04:39 UTC IO Worker #0 TRACE txqueue  [0x6d3d23b4b7202b0e15fcbd26d0004ed5d8fa0d7139fc2472a44bb8e5bdcf2724] Rejecting recently rejected: Old
+2020-06-18 04:04:39 UTC IO Worker #0 TRACE txqueue  [0x7f74a8f0b49243d5f9d35591da3d7760511bb4728e5a1433c43792b9f7cad3ba] Rejecting recently rejected: Old
+2020-06-18 04:04:39 UTC IO Worker #0 TRACE txqueue  [0x97aef586bd580e753b5f528590d92428ba547795b1f5d7b2e66390943af5b985] Rejecting recently rejected: Old
+2020-06-18 04:04:39 UTC IO Worker #0 TRACE txqueue  [0x455aa6d4cb2f785e0ac6ff6eda150e069f379056a86bb3bc6c875711df56d632] Rejecting recently rejected: Old
+2020-06-18 04:04:39 UTC IO Worker #0 TRACE txqueue  [0x4b24a60dba96b7498b42f0abe4306847084be0dc8355c7540ff7405eacdb942f] Rejecting recently rejected: Old
+2020-06-18 04:04:39 UTC IO Worker #0 TRACE txqueue  [0x022f77f9b30556ef119532f6a291989a5ae89974f453ed6e929e8e93ee838a7b] Rejecting recently rejected: Old
+2020-06-18 04:04:39 UTC IO Worker #0 TRACE txqueue  [0x23796f6738ee70510074dfaabf7e1c960c89b51437fc4a4a410c00b106009a5d] Rejecting recently rejected: Old
+2020-06-18 04:04:39 UTC IO Worker #0 TRACE txqueue  [0x323bdd00ee6026f3dd2e7b2af2d9a7350b8669962d75a6845f9f7dcc374ac269] Rejecting recently rejected: Old
+2020-06-18 04:04:39 UTC IO Worker #0 TRACE txqueue  [0xfca3d7a24a0c3efb707497df23b9970df5a0859f09e9377aca9d617ad656db97] Rejecting recently rejected: Old
+2020-06-18 04:04:39 UTC IO Worker #0 TRACE txqueue  [0x756fd441535a36f4878be621075e36116d0434c1339705ec37371652c0332b2f] Rejecting recently rejected: Old
+2020-06-18 04:04:39 UTC IO Worker #0 TRACE txqueue  [0x66fe8f1b19c5d35f457c1bafe6c5b575c8e9e455b3585e48077933b9398609c1] Rejecting recently rejected: Old
+2020-06-18 04:04:40 UTC Verifier #1 TRACE engine  Setting gas limit to 105000000 for block 1325673.
+2020-06-18 04:04:40 UTC Verifier #1 TRACE engine  Multi ValidatorSet retrieved for block 0.
+2020-06-18 04:04:40 UTC Verifier #1 DEBUG engine  Expected topics for header 0xb918…edfb: [0x55252fa6eee4741b4e24a74a70e9c11fd2c2281df8d6ea13126ff845f7825c89, 0x3ea845030920dcbc15f8b52725a8b8e10d7ff80d8565e0e6ef0fdd620c9e8d17]
+2020-06-18 04:04:40 UTC Verifier #1 TRACE engine  Multi ValidatorSet retrieved for block 0.
+2020-06-18 04:04:40 UTC Verifier #1 TRACE txqueue  Refreshing certified addresses cache
+2020-06-18 04:04:40 UTC IO Worker #1 DEBUG txqueue  Removed 0 stalled transactions. Pool: 0/8192 (0 senders; 0/4096 kB) [minGasPrice: 0 Mwei, maxGas: 105000000]
+2020-06-18 04:04:40 UTC Verifier #1 INFO import  Imported #1325673 0xb918…edfb (0 txs, 0.00 Mgas, 15 ms, 0.55 KiB)
+2020-06-18 04:04:40 UTC IO Worker #0 DEBUG txqueue  Re-computing pending set for block: 1325673
+2020-06-18 04:04:40 UTC IO Worker #3 DEBUG txqueue  [0x8de5b81180aabbc408719b1032040a800dd63bf3f02cb75ea62aea5df140d467] Rejected tx with not enough balance: 13747414079067 < 52118941864653
+2020-06-18 04:04:40 UTC IO Worker #2 DEBUG txqueue  [0xc4627a1613653ddf4710546a88776eeca696f06c6be9f74b62dc3ab00f82e5f3] Rejected tx NotAllowed
+2020-06-18 04:04:40 UTC IO Worker #3 DEBUG txqueue  [0x05b413d1f0e2b8f557dbeda484a66e64f7c994b147d498da58b1c5d50ed8776f] Rejected tx with not enough balance: 13747414079067 < 52118941864653
+2020-06-18 04:04:40 UTC IO Worker #3 DEBUG txqueue  [0xcbb87a099445004a4df159308f6ec5d8a0d1f55b7eb33b10131881360598a407] Rejected tx with not enough balance: 13747414079067 < 52118941864653
+2020-06-18 04:04:40 UTC IO Worker #3 DEBUG txqueue  [0x4f3f4ecc5ee6cad9566b6037e22d60dd58919158aee9efe2433d2531a9cde9fd] Rejected tx with not enough balance: 13747414079067 < 52118941864653
+2020-06-18 04:04:40 UTC IO Worker #3 DEBUG txqueue  [0xda0cd4148da7eda0066cfb28356160fc9d12a6301805202bbe27bbb9fcecb648] Rejected tx with not enough balance: 13747414079067 < 52118941864653
+2020-06-18 04:04:40 UTC IO Worker #3 DEBUG txqueue  [0x1f0f71e79792ba598dd04c896c99f5f9b72e8189b802dfaa0bad9de2e3454a52] Rejected tx with not enough balance: 13747414079067 < 52118941864653
+2020-06-18 04:04:40 UTC IO Worker #3 DEBUG txqueue  [0x5f86ed5574c3ab77cda6e69196be1fe691c08fa61c57fe8d8ba2ae1e460bc9df] Rejected tx with not enough balance: 13747414079067 < 83619289206153
+2020-06-18 04:04:40 UTC IO Worker #3 TRACE txqueue  [0xf4b3c762dc6cbb4d7e700f224810263aa5f05a07bd18359bd82a3fbf2f8ca9cd] Rejected tx already in the blockchain
+2020-06-18 04:04:40 UTC IO Worker #3 DEBUG txqueue  [0x47c819cda6b6313aa0efbb53bc8617fa1aa1f17f119ee720e2d470df301ed316] Rejected tx with old nonce (7256 < 7402)
+2020-06-18 04:04:40 UTC IO Worker #3 DEBUG txqueue  [0x211b1332d8a641771d3735c95da73109999bacc4c3bfce5cdc753d321523be85] Rejected tx with old nonce (7257 < 7402)
+2020-06-18 04:04:40 UTC IO Worker #3 DEBUG txqueue  [0x6d3d23b4b7202b0e15fcbd26d0004ed5d8fa0d7139fc2472a44bb8e5bdcf2724] Rejected tx with old nonce (7258 < 7402)
+2020-06-18 04:04:40 UTC IO Worker #3 DEBUG txqueue  [0x7f74a8f0b49243d5f9d35591da3d7760511bb4728e5a1433c43792b9f7cad3ba] Rejected tx with old nonce (7259 < 7402)
+2020-06-18 04:04:40 UTC IO Worker #3 DEBUG txqueue  [0x97aef586bd580e753b5f528590d92428ba547795b1f5d7b2e66390943af5b985] Rejected tx with old nonce (7260 < 7402)
+2020-06-18 04:04:40 UTC IO Worker #3 DEBUG txqueue  [0x455aa6d4cb2f785e0ac6ff6eda150e069f379056a86bb3bc6c875711df56d632] Rejected tx with old nonce (7261 < 7402)
+2020-06-18 04:04:40 UTC IO Worker #3 DEBUG txqueue  [0x4b24a60dba96b7498b42f0abe4306847084be0dc8355c7540ff7405eacdb942f] Rejected tx with old nonce (7262 < 7402)
+2020-06-18 04:04:40 UTC IO Worker #3 DEBUG txqueue  [0x022f77f9b30556ef119532f6a291989a5ae89974f453ed6e929e8e93ee838a7b] Rejected tx with old nonce (7263 < 7402)
+2020-06-18 04:04:40 UTC IO Worker #3 DEBUG txqueue  [0x23796f6738ee70510074dfaabf7e1c960c89b51437fc4a4a410c00b106009a5d] Rejected tx with old nonce (7264 < 7402)
+2020-06-18 04:04:40 UTC IO Worker #3 DEBUG txqueue  [0x323bdd00ee6026f3dd2e7b2af2d9a7350b8669962d75a6845f9f7dcc374ac269] Rejected tx with old nonce (7265 < 7402)
+2020-06-18 04:04:40 UTC IO Worker #3 DEBUG txqueue  [0xfca3d7a24a0c3efb707497df23b9970df5a0859f09e9377aca9d617ad656db97] Rejected tx with old nonce (7266 < 7402)
+2020-06-18 04:04:40 UTC IO Worker #3 DEBUG txqueue  [0x756fd441535a36f4878be621075e36116d0434c1339705ec37371652c0332b2f] Rejected tx with old nonce (7267 < 7402)
+2020-06-18 04:04:40 UTC IO Worker #3 DEBUG txqueue  [0x66fe8f1b19c5d35f457c1bafe6c5b575c8e9e455b3585e48077933b9398609c1] Rejected tx with old nonce (7268 < 7402)
+2020-06-18 04:04:40 UTC http.worker450 DEBUG txqueue  Re-computing pending set for block: 1325673
+2020-06-18 04:04:41 UTC IO Worker #0 TRACE txqueue  [0xc4627a1613653ddf4710546a88776eeca696f06c6be9f74b62dc3ab00f82e5f3] Rejecting recently rejected: NotAllowed
+2020-06-18 04:04:41 UTC IO Worker #1 TRACE txqueue  [0x8de5b81180aabbc408719b1032040a800dd63bf3f02cb75ea62aea5df140d467] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:41 UTC IO Worker #1 TRACE txqueue  [0x05b413d1f0e2b8f557dbeda484a66e64f7c994b147d498da58b1c5d50ed8776f] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:41 UTC IO Worker #1 TRACE txqueue  [0xcbb87a099445004a4df159308f6ec5d8a0d1f55b7eb33b10131881360598a407] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:41 UTC IO Worker #1 TRACE txqueue  [0x4f3f4ecc5ee6cad9566b6037e22d60dd58919158aee9efe2433d2531a9cde9fd] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:41 UTC IO Worker #1 TRACE txqueue  [0xda0cd4148da7eda0066cfb28356160fc9d12a6301805202bbe27bbb9fcecb648] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:41 UTC IO Worker #1 TRACE txqueue  [0x1f0f71e79792ba598dd04c896c99f5f9b72e8189b802dfaa0bad9de2e3454a52] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:41 UTC IO Worker #1 TRACE txqueue  [0x5f86ed5574c3ab77cda6e69196be1fe691c08fa61c57fe8d8ba2ae1e460bc9df] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 83619289206153 }
+2020-06-18 04:04:41 UTC IO Worker #1 TRACE txqueue  [0xf4b3c762dc6cbb4d7e700f224810263aa5f05a07bd18359bd82a3fbf2f8ca9cd] Rejecting recently rejected: AlreadyImported
+2020-06-18 04:04:41 UTC IO Worker #1 TRACE txqueue  [0x47c819cda6b6313aa0efbb53bc8617fa1aa1f17f119ee720e2d470df301ed316] Rejecting recently rejected: Old
+2020-06-18 04:04:41 UTC IO Worker #1 TRACE txqueue  [0x211b1332d8a641771d3735c95da73109999bacc4c3bfce5cdc753d321523be85] Rejecting recently rejected: Old
+2020-06-18 04:04:41 UTC IO Worker #1 TRACE txqueue  [0x6d3d23b4b7202b0e15fcbd26d0004ed5d8fa0d7139fc2472a44bb8e5bdcf2724] Rejecting recently rejected: Old
+2020-06-18 04:04:41 UTC IO Worker #1 TRACE txqueue  [0x7f74a8f0b49243d5f9d35591da3d7760511bb4728e5a1433c43792b9f7cad3ba] Rejecting recently rejected: Old
+2020-06-18 04:04:41 UTC IO Worker #1 TRACE txqueue  [0x97aef586bd580e753b5f528590d92428ba547795b1f5d7b2e66390943af5b985] Rejecting recently rejected: Old
+2020-06-18 04:04:41 UTC IO Worker #1 TRACE txqueue  [0x455aa6d4cb2f785e0ac6ff6eda150e069f379056a86bb3bc6c875711df56d632] Rejecting recently rejected: Old
+2020-06-18 04:04:41 UTC IO Worker #1 TRACE txqueue  [0x4b24a60dba96b7498b42f0abe4306847084be0dc8355c7540ff7405eacdb942f] Rejecting recently rejected: Old
+2020-06-18 04:04:41 UTC IO Worker #1 TRACE txqueue  [0x022f77f9b30556ef119532f6a291989a5ae89974f453ed6e929e8e93ee838a7b] Rejecting recently rejected: Old
+2020-06-18 04:04:41 UTC IO Worker #1 TRACE txqueue  [0x23796f6738ee70510074dfaabf7e1c960c89b51437fc4a4a410c00b106009a5d] Rejecting recently rejected: Old
+2020-06-18 04:04:41 UTC IO Worker #1 TRACE txqueue  [0x323bdd00ee6026f3dd2e7b2af2d9a7350b8669962d75a6845f9f7dcc374ac269] Rejecting recently rejected: Old
+2020-06-18 04:04:41 UTC IO Worker #1 TRACE txqueue  [0xfca3d7a24a0c3efb707497df23b9970df5a0859f09e9377aca9d617ad656db97] Rejecting recently rejected: Old
+2020-06-18 04:04:41 UTC IO Worker #1 TRACE txqueue  [0x756fd441535a36f4878be621075e36116d0434c1339705ec37371652c0332b2f] Rejecting recently rejected: Old
+2020-06-18 04:04:41 UTC IO Worker #1 TRACE txqueue  [0x66fe8f1b19c5d35f457c1bafe6c5b575c8e9e455b3585e48077933b9398609c1] Rejecting recently rejected: Old
+2020-06-18 04:04:43 UTC IO Worker #3 TRACE txqueue  [0xc4627a1613653ddf4710546a88776eeca696f06c6be9f74b62dc3ab00f82e5f3] Rejecting recently rejected: NotAllowed
+2020-06-18 04:04:43 UTC IO Worker #2 TRACE txqueue  [0x8de5b81180aabbc408719b1032040a800dd63bf3f02cb75ea62aea5df140d467] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:43 UTC IO Worker #2 TRACE txqueue  [0x05b413d1f0e2b8f557dbeda484a66e64f7c994b147d498da58b1c5d50ed8776f] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:43 UTC IO Worker #2 TRACE txqueue  [0xcbb87a099445004a4df159308f6ec5d8a0d1f55b7eb33b10131881360598a407] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:43 UTC IO Worker #2 TRACE txqueue  [0x4f3f4ecc5ee6cad9566b6037e22d60dd58919158aee9efe2433d2531a9cde9fd] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:43 UTC IO Worker #2 TRACE txqueue  [0xda0cd4148da7eda0066cfb28356160fc9d12a6301805202bbe27bbb9fcecb648] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:43 UTC IO Worker #2 TRACE txqueue  [0x1f0f71e79792ba598dd04c896c99f5f9b72e8189b802dfaa0bad9de2e3454a52] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:43 UTC IO Worker #2 TRACE txqueue  [0x5f86ed5574c3ab77cda6e69196be1fe691c08fa61c57fe8d8ba2ae1e460bc9df] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 83619289206153 }
+2020-06-18 04:04:43 UTC IO Worker #2 TRACE txqueue  [0xf4b3c762dc6cbb4d7e700f224810263aa5f05a07bd18359bd82a3fbf2f8ca9cd] Rejecting recently rejected: AlreadyImported
+2020-06-18 04:04:43 UTC IO Worker #2 TRACE txqueue  [0x47c819cda6b6313aa0efbb53bc8617fa1aa1f17f119ee720e2d470df301ed316] Rejecting recently rejected: Old
+2020-06-18 04:04:43 UTC IO Worker #2 TRACE txqueue  [0x211b1332d8a641771d3735c95da73109999bacc4c3bfce5cdc753d321523be85] Rejecting recently rejected: Old
+2020-06-18 04:04:43 UTC IO Worker #2 TRACE txqueue  [0x6d3d23b4b7202b0e15fcbd26d0004ed5d8fa0d7139fc2472a44bb8e5bdcf2724] Rejecting recently rejected: Old
+2020-06-18 04:04:43 UTC IO Worker #2 TRACE txqueue  [0x7f74a8f0b49243d5f9d35591da3d7760511bb4728e5a1433c43792b9f7cad3ba] Rejecting recently rejected: Old
+2020-06-18 04:04:43 UTC IO Worker #2 TRACE txqueue  [0x97aef586bd580e753b5f528590d92428ba547795b1f5d7b2e66390943af5b985] Rejecting recently rejected: Old
+2020-06-18 04:04:43 UTC IO Worker #2 TRACE txqueue  [0x455aa6d4cb2f785e0ac6ff6eda150e069f379056a86bb3bc6c875711df56d632] Rejecting recently rejected: Old
+2020-06-18 04:04:43 UTC IO Worker #2 TRACE txqueue  [0x4b24a60dba96b7498b42f0abe4306847084be0dc8355c7540ff7405eacdb942f] Rejecting recently rejected: Old
+2020-06-18 04:04:43 UTC IO Worker #2 TRACE txqueue  [0x022f77f9b30556ef119532f6a291989a5ae89974f453ed6e929e8e93ee838a7b] Rejecting recently rejected: Old
+2020-06-18 04:04:43 UTC IO Worker #2 TRACE txqueue  [0x23796f6738ee70510074dfaabf7e1c960c89b51437fc4a4a410c00b106009a5d] Rejecting recently rejected: Old
+2020-06-18 04:04:43 UTC IO Worker #2 TRACE txqueue  [0x323bdd00ee6026f3dd2e7b2af2d9a7350b8669962d75a6845f9f7dcc374ac269] Rejecting recently rejected: Old
+2020-06-18 04:04:43 UTC IO Worker #2 TRACE txqueue  [0xfca3d7a24a0c3efb707497df23b9970df5a0859f09e9377aca9d617ad656db97] Rejecting recently rejected: Old
+2020-06-18 04:04:43 UTC IO Worker #2 TRACE txqueue  [0x756fd441535a36f4878be621075e36116d0434c1339705ec37371652c0332b2f] Rejecting recently rejected: Old
+2020-06-18 04:04:43 UTC IO Worker #2 TRACE txqueue  [0x66fe8f1b19c5d35f457c1bafe6c5b575c8e9e455b3585e48077933b9398609c1] Rejecting recently rejected: Old
+2020-06-18 04:04:44 UTC IO Worker #2 TRACE txqueue  [0xc4627a1613653ddf4710546a88776eeca696f06c6be9f74b62dc3ab00f82e5f3] Rejecting recently rejected: NotAllowed
+2020-06-18 04:04:44 UTC IO Worker #0 TRACE txqueue  [0x8de5b81180aabbc408719b1032040a800dd63bf3f02cb75ea62aea5df140d467] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:44 UTC IO Worker #0 TRACE txqueue  [0x05b413d1f0e2b8f557dbeda484a66e64f7c994b147d498da58b1c5d50ed8776f] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:44 UTC IO Worker #0 TRACE txqueue  [0xcbb87a099445004a4df159308f6ec5d8a0d1f55b7eb33b10131881360598a407] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:44 UTC IO Worker #0 TRACE txqueue  [0x4f3f4ecc5ee6cad9566b6037e22d60dd58919158aee9efe2433d2531a9cde9fd] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:44 UTC IO Worker #0 TRACE txqueue  [0xda0cd4148da7eda0066cfb28356160fc9d12a6301805202bbe27bbb9fcecb648] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:44 UTC IO Worker #0 TRACE txqueue  [0x1f0f71e79792ba598dd04c896c99f5f9b72e8189b802dfaa0bad9de2e3454a52] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 52118941864653 }
+2020-06-18 04:04:44 UTC IO Worker #0 TRACE txqueue  [0x5f86ed5574c3ab77cda6e69196be1fe691c08fa61c57fe8d8ba2ae1e460bc9df] Rejecting recently rejected: InsufficientBalance { balance: 13747414079067, cost: 83619289206153 }
+2020-06-18 04:04:44 UTC IO Worker #0 TRACE txqueue  [0xf4b3c762dc6cbb4d7e700f224810263aa5f05a07bd18359bd82a3fbf2f8ca9cd] Rejecting recently rejected: AlreadyImported
+2020-06-18 04:04:44 UTC IO Worker #0 TRACE txqueue  [0x47c819cda6b6313aa0efbb53bc8617fa1aa1f17f119ee720e2d470df301ed316] Rejecting recently rejected: Old
+2020-06-18 04:04:44 UTC IO Worker #0 TRACE txqueue  [0x211b1332d8a641771d3735c95da73109999bacc4c3bfce5cdc753d321523be85] Rejecting recently rejected: Old
+2020-06-18 04:04:44 UTC IO Worker #0 TRACE txqueue  [0x6d3d23b4b7202b0e15fcbd26d0004ed5d8fa0d7139fc2472a44bb8e5bdcf2724] Rejecting recently rejected: Old
+2020-06-18 04:04:44 UTC IO Worker #0 TRACE txqueue  [0x7f74a8f0b49243d5f9d35591da3d7760511bb4728e5a1433c43792b9f7cad3ba] Rejecting recently rejected: Old
+2020-06-18 04:04:44 UTC IO Worker #0 TRACE txqueue  [0x97aef586bd580e753b5f528590d92428ba547795b1f5d7b2e66390943af5b985] Rejecting recently rejected: Old
+2020-06-18 04:04:44 UTC IO Worker #0 TRACE txqueue  [0x455aa6d4cb2f785e0ac6ff6eda150e069f379056a86bb3bc6c875711df56d632] Rejecting recently rejected: Old
+2020-06-18 04:04:44 UTC IO Worker #0 TRACE txqueue  [0x4b24a60dba96b7498b42f0abe4306847084be0dc8355c7540ff7405eacdb942f] Rejecting recently rejected: Old
+2020-06-18 04:04:44 UTC IO Worker #0 TRACE txqueue  [0x022f77f9b30556ef119532f6a291989a5ae89974f453ed6e929e8e93ee838a7b] Rejecting recently rejected: Old
+2020-06-18 04:04:44 UTC IO Worker #0 TRACE txqueue  [0x23796f6738ee70510074dfaabf7e1c960c89b51437fc4a4a410c00b106009a5d] Rejecting recently rejected: Old
+2020-06-18 04:04:44 UTC IO Worker #0 TRACE txqueue  [0x323bdd00ee6026f3dd2e7b2af2d9a7350b8669962d75a6845f9f7dcc374ac269] Rejecting recently rejected: Old
+2020-06-18 04:04:44 UTC IO Worker #0 TRACE txqueue  [0xfca3d7a24a0c3efb707497df23b9970df5a0859f09e9377aca9d617ad656db97] Rejecting recently rejected: Old
+2020-06-18 04:04:44 UTC IO Worker #0 TRACE txqueue  [0x756fd441535a36f4878be621075e36116d0434c1339705ec37371652c0332b2f] Rejecting recently rejected: Old
+2020-06-18 04:04:44 UTC IO Worker #0 TRACE txqueue  [0x66fe8f1b19c5d35f457c1bafe6c5b575c8e9e455b3585e48077933b9398609c1] Rejecting recently rejected: Old
+2020-06-18 04:04:45 UTC Verifier #7 TRACE engine  Setting gas limit to 105000000 for block 1325674.
+2020-06-18 04:04:45 UTC Verifier #7 TRACE engine  Multi ValidatorSet retrieved for block 0.
+2020-06-18 04:04:45 UTC Verifier #7 DEBUG engine  Expected topics for header 0xfb7a…757b: [0x55252fa6eee4741b4e24a74a70e9c11fd2c2281df8d6ea13126ff845f7825c89, 0xb918fc76193d261bfa4126df120b976b51277447917329a0e0ad0845dc32edfb]
+2020-06-18 04:04:45 UTC Verifier #7 TRACE engine  Multi ValidatorSet retrieved for block 0.
+2020-06-18 04:04:45 UTC Verifier #7 TRACE txqueue  Refreshing certified addresses cache
+2020-06-18 04:04:45 UTC IO Worker #3 DEBUG txqueue  Removed 0 stalled transactions. Pool: 0/8192 (0 senders; 0/4096 kB) [minGasPrice: 0 Mwei, maxGas: 105000000]
+2020-06-18 04:04:45 UTC Verifier #7 INFO import  Imported #1325674 0xfb7a…757b (0 txs, 0.00 Mgas, 14 ms, 0.55 KiB)
+2020-06-18 04:04:45 UTC IO Worker #1 DEBUG txqueue  [0x8de5b81180aabbc408719b1032040a800dd63bf3f02cb75ea62aea5df140d467] Rejected tx with not enough balance: 13747414079067 < 52118941864653
+2020-06-18 04:04:45 UTC IO Worker #1 DEBUG txqueue  [0x05b413d1f0e2b8f557dbeda484a66e64f7c994b147d498da58b1c5d50ed8776f] Rejected tx with not enough balance: 13747414079067 < 52118941864653
+2020-06-18 04:04:45 UTC IO Worker #1 DEBUG txqueue  [0xcbb87a099445004a4df159308f6ec5d8a0d1f55b7eb33b10131881360598a407] Rejected tx with not enough balance: 13747414079067 < 52118941864653
+2020-06-18 04:04:45 UTC IO Worker #1 DEBUG txqueue  [0x4f3f4ecc5ee6cad9566b6037e22d60dd58919158aee9efe2433d2531a9cde9fd] Rejected tx with not enough balance: 13747414079067 < 52118941864653
+2020-06-18 04:04:45 UTC IO Worker #1 DEBUG txqueue  [0xda0cd4148da7eda0066cfb28356160fc9d12a6301805202bbe27bbb9fcecb648] Rejected tx with not enough balance: 13747414079067 < 52118941864653
+2020-06-18 04:04:45 UTC IO Worker #1 DEBUG txqueue  [0x1f0f71e79792ba598dd04c896c99f5f9b72e8189b802dfaa0bad9de2e3454a52] Rejected tx with not enough balance: 13747414079067 < 52118941864653
+2020-06-18 04:04:45 UTC IO Worker #1 DEBUG txqueue  [0x5f86ed5574c3ab77cda6e69196be1fe691c08fa61c57fe8d8ba2ae1e460bc9df] Rejected tx with not enough balance: 13747414079067 < 83619289206153
+2020-06-18 04:04:45 UTC IO Worker #1 TRACE txqueue  [0xf4b3c762dc6cbb4d7e700f224810263aa5f05a07bd18359bd82a3fbf2f8ca9cd] Rejected tx already in the blockchain
+2020-06-18 04:04:45 UTC IO Worker #1 DEBUG txqueue  [0x47c819cda6b6313aa0efbb53bc8617fa1aa1f17f119ee720e2d470df301ed316] Rejected tx with old nonce (7256 < 7402)
+2020-06-18 04:04:45 UTC IO Worker #1 DEBUG txqueue  [0x211b1332d8a641771d3735c95da73109999bacc4c3bfce5cdc753d321523be85] Rejected tx with old nonce (7257 < 7402)
+2020-06-18 04:04:45 UTC IO Worker #1 DEBUG txqueue  [0x6d3d23b4b7202b0e15fcbd26d0004ed5d8fa0d7139fc2472a44bb8e5bdcf2724] Rejected tx with old nonce (7258 < 7402)
+2020-06-18 04:04:45 UTC IO Worker #1 DEBUG txqueue  [0x7f74a8f0b49243d5f9d35591da3d7760511bb4728e5a1433c43792b9f7cad3ba] Rejected tx with old nonce (7259 < 7402)
+2020-06-18 04:04:45 UTC IO Worker #1 DEBUG txqueue  [0x97aef586bd580e753b5f528590d92428ba547795b1f5d7b2e66390943af5b985] Rejected tx with old nonce (7260 < 7402)
+2020-06-18 04:04:45 UTC IO Worker #1 DEBUG txqueue  [0x455aa6d4cb2f785e0ac6ff6eda150e069f379056a86bb3bc6c875711df56d632] Rejected tx with old nonce (7261 < 7402)
+2020-06-18 04:04:45 UTC IO Worker #1 DEBUG txqueue  [0x4b24a60dba96b7498b42f0abe4306847084be0dc8355c7540ff7405eacdb942f] Rejected tx with old nonce (7262 < 7402)
+2020-06-18 04:04:45 UTC IO Worker #1 DEBUG txqueue  [0x022f77f9b30556ef119532f6a291989a5ae89974f453ed6e929e8e93ee838a7b] Rejected tx with old nonce (7263 < 7402)
+2020-06-18 04:04:45 UTC IO Worker #3 DEBUG txqueue  Re-computing pending set for block: 1325674
+2020-06-18 04:04:45 UTC IO Worker #1 DEBUG txqueue  [0x23796f6738ee70510074dfaabf7e1c960c89b51437fc4a4a410c00b106009a5d] Rejected tx with old nonce (7264 < 7402)
+2020-06-18 04:04:45 UTC IO Worker #1 DEBUG txqueue  [0x323bdd00ee6026f3dd2e7b2af2d9a7350b8669962d75a6845f9f7dcc374ac269] Rejected tx with old nonce (7265 < 7402)
+2020-06-18 04:04:45 UTC IO Worker #1 DEBUG txqueue  [0xfca3d7a24a0c3efb707497df23b9970df5a0859f09e9377aca9d617ad656db97] Rejected tx with old nonce (7266 < 7402)
+2020-06-18 04:04:45 UTC IO Worker #1 DEBUG txqueue  [0x756fd441535a36f4878be621075e36116d0434c1339705ec37371652c0332b2f] Rejected tx with old nonce (7267 < 7402)
+2020-06-18 04:04:45 UTC IO Worker #1 DEBUG txqueue  [0x66fe8f1b19c5d35f457c1bafe6c5b575c8e9e455b3585e48077933b9398609c1] Rejected tx with old nonce (7268 < 7402)
+2020-06-18 04:04:46 UTC IO Worker #2 DEBUG txqueue  [0xc4627a1613653ddf4710546a88776eeca696f06c6be9f74b62dc3ab00f82e5f3] Rejected tx NotAllowed

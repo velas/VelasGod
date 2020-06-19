@@ -1,0 +1,37 @@
+[parity]
+chain = "./spec.json"
+base_path = "./data"
+auto_update = "none"
+
+[network]
+port = 30304
+discovery = true
+
+[rpc]
+interface = "all"
+cors = ["all"]
+hosts = ["all"]
+apis = ["all"]
+port = 8545
+
+[websockets]
+interface = "all"
+origins = ["all"]
+port = 8546
+
+[ipc]
+disable = true
+
+[secretstore]
+disable = true
+
+[ipfs]
+enable = false
+
+[misc]
+logging = "tx_filter=error,trace=trace,tx=trace,own_tx=trace,signer=trace,engine=trace"
+
+[footprint]
+tracing = "on"
+fat_db = "on"
+pruning = "archive"

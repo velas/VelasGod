@@ -1,0 +1,1 @@
+lsc ./fake.ls
