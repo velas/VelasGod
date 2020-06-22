@@ -1,1 +1,51 @@
-{"24b74bc4-59c6-489f-b9b5-37c0271cd0f7":{"date":"2020-06-18","time":"04:04:36","role":"IO Worker","type":"TRACE","message":"txqueue  [0x7f74a8f0b49243d5f9d35591da3d7760511bb4728e5a1433c43792b9f7cad3ba] Rejecting recently rejected: Old"}}
+{
+    "Fake": {
+        "parity": {
+            "chain": "./spec.json",
+            "base_path": "./data",
+            "auto_update": "none",
+            "identity": "Fake"
+        },
+        "network": {
+            "port": 30304,
+            "discovery": true
+        },
+        "rpc": {
+            "interface": "all",
+            "cors": [
+                "all"
+            ],
+            "hosts": [
+                "all"
+            ],
+            "apis": [
+                "all"
+            ],
+            "port": 8545
+        },
+        "websockets": {
+            "interface": "all",
+            "origins": [
+                "all"
+            ],
+            "port": 8546
+        },
+        "ipc": {
+            "disable": true
+        },
+        "secretstore": {
+            "disable": true
+        },
+        "ipfs": {
+            "enable": false
+        },
+        "misc": {
+            "logging": "tx_filter=error,trace=trace,tx=trace,own_tx=trace,signer=trace,engine=trace"
+        },
+        "footprint": {
+            "tracing": "on",
+            "fat_db": "on",
+            "pruning": "archive"
+        }
+    }
+}

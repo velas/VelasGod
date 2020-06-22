@@ -3,9 +3,13 @@ require! {
     \./config.json
     \./handle-message.ls
     \./poll.ls
+    \tanos
+    \./bot/layout.ls
+    \./bot/build-app.ls
+    \./db.ls
 }
 
-wss = new WebSocket.Server config
+wss = new WebSocket.Server config.ws
 
 connections = []
 
@@ -30,3 +34,7 @@ wss.on \connection , (ws)->
   <- set-timeout _, 1000
   ws.send \config
 console.log "Started server on port", config.port
+
+app = build-app { wss, god-db: db }
+
+err, bot <- tanos { layout, app, ...config.bot }

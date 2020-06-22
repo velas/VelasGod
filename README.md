@@ -2,6 +2,7 @@
 
 This is client/server solution which obtain information from the velas node and sends it to server (god).
 
+
 Use cases
 
 * Server collects all information and provide for AI/Admins
@@ -9,7 +10,7 @@ Use cases
 * TODO: Server decides which node should process the incoming transaction
 
 
-### Deps 
+### Deps
 
 ```sh
 npm i pm2 livescript -g
@@ -23,7 +24,8 @@ Also it connects to GOD object of pm2 and trying to extract the running process 
 
 ```sh
 lsc client/client.ls --name fake
-# or pm2 start client/churchman.sh
+# or
+# cd client && pm2 start churchman.sh
 ```
 
 ### Start server
@@ -32,7 +34,8 @@ This is collector service. It receives information from all clients
 
 ```sh
 lsc server/server.ls
-# or pm2 start server/god.sh
+# or
+# cd server && pm2 start god.sh
 ```
 
 
@@ -43,5 +46,6 @@ lsc server/server.ls
 This is fake blockchain node to produce random logs. Just for testing
 
 ```sh 
-pm2 start fake/fake.sh
+cd fake
+pm2 start fake.sh
 ```

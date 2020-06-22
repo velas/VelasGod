@@ -7,6 +7,7 @@ require! {
     \fs : { exists }
     \external-ip : getIP
     \fs : { read-file }
+    \./send.ls
     
 }
 
@@ -45,16 +46,9 @@ module.exports = (ws, node)->
         "#{time} Monitor #0 #{type} #{message}"
     
     config = (cb)-> 
-        filename = "#{node.pm2_env.pm_cwd}/config.toml"
-        file-exists <- exists filename
-        return cb "cannot find config.toml" if not file-exists?
-        err, content <- read-file filename, 'utf8'
+        err, config <- get-config node
         return cb err if err?
-        try
-            config = toml.parse content
-            cb null, ["CONFIG", JSON.stringify(config)]
-        catch err 
-            cb err 
+        cb null, ["CONFIG", config]
     
 
     
@@ -62,11 +56,13 @@ module.exports = (ws, node)->
     
     
     ws.on \message , (data)->
-        console.log \message, data
         info = requests[data]
-        return if typeof! info isnt \Function
+        return query-handler ws, node, data if typeof! info isnt \Function
         err, data <- info 
-        return ws.send make-log "INFO", "ERROR for request #{data} #{err}" if err?
-        ws.send make-log data.0, data.1
+        message = 
+            | err? => make-log "INFO", "ERROR for request #{data} #{err}"
+            | _ => make-log(data.0, data.1)
+        err <- send ws, message
+        console.log "server is offline" if err?
 
     

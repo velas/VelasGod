@@ -9,7 +9,7 @@ fake-str =
     fake |> split "\n"
 
 produce-line = ->
-    <- set-timeout _, 1000
+    <- set-timeout _, 1
     command = 
         fake-str 
             |> sort-by -> Math.random!

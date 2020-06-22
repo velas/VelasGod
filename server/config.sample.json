@@ -18,7 +18,7 @@
         }
     },
     "bot": {
-        "telegramToken"  : "1275601847:AAFhhvQj-vIpgmPYsXxl-nq0URigVZO4wEU",  
+        "telegramToken"  : "...",  
         "serverAddress"  : "http://your-domain-for-telegram-passport",
         "serverPort"     : 80,
         "serverSslPort"  : 443,

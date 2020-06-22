@@ -6,43 +6,32 @@ require! {
     \fs : { exists }
     \ws-reconnect : WebSocket
     \./command-handler.ls
+    \./send.ls
 }
 
-start-later = (cb)->
-    console.log \wait-for-process
+start-later = (config, cb)->
+    console.log "waiting for the running #{config.name} process"
     <- set-timeout _, 10000
-    start cb
+    start config, cb
 
-url = \ws://explorer-staking.velas.com/monitor
-#debug
-url = \ws://localhost:1234
 
-ws = new WebSocket url
 
-ws.start!
-
-ws.on "reconnect", ->
-    console.log("reconnecting")
-
-ws.on \open, ->
-    console.log \connected-to-server
-
-process-line-builder = (node)-> (line)->
-    ws.send line
+process-line-builder = (ws, node)-> (line)->
+    err <- send ws, line
+    console.log err if err?
     
-start-monitoring = (node, cb)->
-    console.log \start-monitoring
+init-monitoring = (ws, node, cb)->
     path = node.pm2_env.pm_err_log_path
     command-handler ws, node
     return cb "expected log path" if typeof! path isnt \String
     tail = new Tail path, { persistent: yes }
-    process-line = process-line-builder node
+    process-line = process-line-builder ws, node
     tail.on \line , process-line
     #tail.on('close',  (line)-> process.stdout.write(line))
-    tail.watch!
-    cb null
+    cb null, tail
 
-start = (config, cb)->
+init = (ws, config, cb)->
+    return cb "cannot start because config is expected" if typeof! config isnt \Object
     err <- pm2.connect
     return cb err if err?
     err, list <- pm2.list
@@ -50,15 +39,30 @@ start = (config, cb)->
     node =
         list |> find (.name is config.name)
     return cb err if err?
-    return start-later cb if not node?
-    err <- start-monitoring node
+    return start-later config, cb if not node?
+    err, tail <- init-monitoring ws, node
     return cb err if err?
-    cb null
+    cb null, tail
+
 
 program
   .version('0.1.0')
   .option('-n, --name <type>', 'pm2 process name')
-  .parse(process.argv)
+  .parse process.argv
 
-err <- start program
+ws = new WebSocket \ws://localhost:1234
+
+err, tail <- init ws, program
+
+ws.start!
+
+ws.on \reconnect , ->
+    tail.close!
+    console.log 'trying to reconnect to the God...'
+
+ws.on \connect , ->
+    console.log 'connected to the God and start to pray'
+    tail.watch!
+
+
     

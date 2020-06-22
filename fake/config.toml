@@ -2,6 +2,7 @@
 chain = "./spec.json"
 base_path = "./data"
 auto_update = "none"
+identity = "Fake"
 
 [network]
 port = 30304
