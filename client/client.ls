@@ -7,6 +7,7 @@ require! {
     \ws-reconnect : WebSocket
     \./command-handler.ls
     \./send.ls
+    \./config.json : { server-url }
 }
 
 start-later = (config, cb)->
@@ -50,7 +51,7 @@ program
   .option('-n, --name <type>', 'pm2 process name')
   .parse process.argv
 
-ws = new WebSocket \ws://localhost:1234
+ws = new WebSocket server-url
 
 err, tail <- init ws, program
 
