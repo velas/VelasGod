@@ -8,6 +8,7 @@ require! {
     \external-ip : getIP
     \fs : { read-file }
     \./send.ls
+    \./get-config.ls
     
 }
 

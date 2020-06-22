@@ -1,1 +1,1 @@
-lsc ./client.ls --name fake
+lsc ./client.ls --name fake --server ws://159.89.236.42:1234
