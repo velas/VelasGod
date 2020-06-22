@@ -49,7 +49,7 @@ module.exports = (ws, node)->
     config = (cb)-> 
         err, config <- get-config node
         return cb err if err?
-        cb null, ["CONFIG", config]
+        cb null, ["CONFIG", JSON.stringify(config)]
     
 
     
@@ -61,7 +61,7 @@ module.exports = (ws, node)->
         return query-handler ws, node, data if typeof! info isnt \Function
         err, data <- info 
         message = 
-            | err? => make-log "INFO", "ERROR for request #{data} #{err}"
+            | err? => make-log \INFO , "ERROR for request #{data} #{err}"
             | _ => make-log(data.0, data.1)
         err <- send ws, message
         console.log "server is offline" if err?

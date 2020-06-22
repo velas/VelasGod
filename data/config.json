@@ -1,10 +1,10 @@
 {
-    "Fake": {
+    "Gateway": {
         "parity": {
             "chain": "./spec.json",
             "base_path": "./data",
             "auto_update": "none",
-            "identity": "Fake"
+            "identity": "Gateway"
         },
         "network": {
             "port": 30304,
