@@ -25,7 +25,15 @@ render-status = (db, $user, name, cb)->
                 |> as-table.configure { maxTotalWidth: COL_WIDTH, delimiter: ' | ' }
     $user[name] = "<pre>#{result}</pre>"
     cb null
-module.exports = ({ god-db, ws } )->  ({ db, bot, tanos })->
+module.exports = ({ ws } )->  ({ db, bot, tanos })->
     export update = (name, $user, cb)->
         render-status db, $user, name , cb
+    export updateStep = (bot-step, text, cb)->
+        err, step <- db.get "#{bot-step}:bot-step"
+        return cb err if err?
+        delete step.buttons
+        step.text = "#{step.text}\n\n#{text}"
+        err <- db.put "#{bot-step}:bot-step", step
+        return cb err if err?
+        cb null
     out$

@@ -1,7 +1,8 @@
 require! {
     \./handlers.ls
-    \prelude-ls : { each }
+    \prelude-ls : { each, take, map, join }
     \sha256
+    \simple-git
 }
 
 extract-chat_ids = (db, [username, ...usernames], cb)->
@@ -24,13 +25,20 @@ send-all-users = (bot, [chat_id, ...chat_ids], bot-step, cb)->
     <- set-immediate
     send-all-users bot, chat_ids, bot-step, cb
 
+create-button = (bot, config, bot-step, text)->
+        store: "({ $app, $user }, cb)-> $app.updateStep(\"#{bot-step}\", \"#{text}\" , cb)"
+        goto: bot-step
+
 perform-notification = (config, bot, message, cb)->
     return cb "expected array of admins" if typeof! config.admins isnt \Array
     err, chat_ids <- extract-chat_ids bot.db, config.admins
     return cb err if err?
     hash = sha256 message
     bot-step = "notification-#{hash}"
-    err <- bot.db.put "#{bot-step}:bot-step", { text: "‼️ #{message}" }
+    buttons =
+        "⚠️ Important"     : create-button bot, config, bot-step, "⚠️ Important"
+        "✅ Not Important" : create-button bot, config, bot-step, "✅ Not Important"
+    err <- bot.db.put "#{bot-step}:bot-step", { text: "❕ #{message}" , buttons}   
     return cb err if err?
     err <- send-all-users bot, chat_ids, bot-step
     return cb err if err?
@@ -69,7 +77,17 @@ setup-checkers = (config, bot)->
 wait-seconds = 20
 
 module.exports = (config, bot)->
-    #<- perform-notification config, bot, "📟 Server is started/restarted. It will run all checkers in #{wait-seconds} seconds to reduce inacurate data. All nodes should report all necessary info in that period otherwise they are too slow "
+    cb = ->
+    git = simple-git __dirname
+    err, log <- git.log
+    return cb err if err?
+    last10 =
+        log.all 
+            |> take 10
+            |> map -> it.message
+            |> join "\n"
+    version = log.latest.hash
+    <- perform-notification config, bot, "📟 <b>Server is started/restarted</b>\n\n<b>Version</b>\n #{version}.\n\n<b>Latest changes</b>\n#{last10}"
     ms = wait-seconds * 1000
     <- set-timeout _, ms
     setup-checkers config, bot
