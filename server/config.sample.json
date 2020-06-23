@@ -23,6 +23,7 @@
         "serverPort"     : 80,
         "serverSslPort"  : 443,
         "dbType" : "memory",
-        "botName" : "VelasGodBot"
+        "botName" : "VelasGodBot",
+        "admins": ["velas_cto"]
     }
 }
