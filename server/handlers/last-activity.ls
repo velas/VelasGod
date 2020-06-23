@@ -38,6 +38,6 @@ module.exports.check = (db, cb)->
             |> find -> time(it) is min
     min-diff = current - min
     max-diff = current - max
-    return cb "Last activity of #{min-item} was #{min-diff} seconds from now. (Also it compares dates between servers so it could be a problem as well)" if min-diff > 10
+    return cb "Last activity of `#{min-item}` was `#{min-diff}` seconds from now. (Also it compares dates between servers so it could be a problem as well)" if min-diff > 10
     #return cb "The difference between height is more than #{ALLOW_DIFFERENCE} blocks #{max} (#{max-item.0}) > #{min} (#{min-item.0})" if max > min + ALLOW_DIFFERENCE
     cb null
