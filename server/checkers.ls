@@ -66,7 +66,7 @@ setup-checkers = (config, bot)->
     <- set-timeout _, 2000
     setup-checkers config, bot
 
-wait-seconds = 10
+wait-seconds = 20
 
 module.exports = (config, bot)->
     #<- perform-notification config, bot, "📟 Server is started/restarted. It will run all checkers in #{wait-seconds} seconds to reduce inacurate data. All nodes should report all necessary info in that period otherwise they are too slow "
