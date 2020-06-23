@@ -2,6 +2,8 @@ require! {
     \prelude-ls : { obj-to-pairs, map, join }
     \cli-truncate
     \as-table
+    \./extract-chat_ids.ls
+    \./send-all-users.ls
 }
 
 min = (text, num)->
@@ -25,7 +27,9 @@ render-status = (db, $user, name, cb)->
                 |> as-table.configure { maxTotalWidth: COL_WIDTH, delimiter: ' | ' }
     $user[name] = "<pre>#{result}</pre>"
     cb null
-module.exports = ({ ws } )->  ({ db, bot, tanos })->
+    
+    
+module.exports = ({ ws, config } )->  ({ db, bot, send-user })->
     export update = (name, $user, cb)->
         render-status db, $user, name , cb
     export updateStep = (bot-step, text, cb)->
@@ -34,6 +38,10 @@ module.exports = ({ ws } )->  ({ db, bot, tanos })->
         delete step.buttons
         step.text = "#{step.text}\n\n#{text}"
         err <- db.put "#{bot-step}:bot-step", step
+        return cb err if err?
+        err, chat_ids <- extract-chat_ids db, config.admins
+        return cb err if err?
+        err <- send-all-users { send-user }, chat_ids, bot-step
         return cb err if err?
         cb null
     out$

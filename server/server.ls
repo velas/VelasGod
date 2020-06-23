@@ -13,9 +13,12 @@ require! {
 wss = new WebSocket.Server config.ws
 
 
-app = build-app { wss }
+app = build-app { wss, config: config.bot }
 
 err, bot <- tanos { layout, app, ...config.bot }
+
+# uncomment it to remove info about reorg
+#bot.db.put \reorg, {}, ->
 
 connections = []
 

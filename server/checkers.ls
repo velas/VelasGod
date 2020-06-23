@@ -3,31 +3,12 @@ require! {
     \prelude-ls : { each, take, map, join }
     \sha256
     \simple-git
+    \./bot/extract-chat_ids.ls
+    \./bot/send-all-users.ls
 }
-
-extract-chat_ids = (db, [username, ...usernames], cb)->
-    return cb null, [] if not username?
-    err, chat_id_guess <- db.get "#{username}:username"
-    chat_ids =
-        | err? => []
-        | _ => [chat_id_guess]
-    err, rest <- extract-chat_ids db, usernames
-    return cb err if err?
-    all = chat_ids ++ rest
-    cb null, all
-
-send-all-users = (bot, [chat_id, ...chat_ids], bot-step, cb)->
-    return cb null if not chat_id?
-    console.log chat_id
-    console.oo
-    err <- bot.send-user chat_id, bot-step
-    return cb err if err?
-    <- set-immediate
-    send-all-users bot, chat_ids, bot-step, cb
 
 create-button = (bot, config, bot-step, text)->
         store: "({ $app, $user }, cb)-> $app.updateStep(\"#{bot-step}\", \"#{text}\" , cb)"
-        goto: bot-step
 
 perform-notification = (config, bot, message, cb)->
     return cb "expected array of admins" if typeof! config.admins isnt \Array

@@ -1,5 +1,5 @@
 require! {
-    \prelude-ls : { obj-to-pairs, map }
+    \prelude-ls : { obj-to-pairs, map, join }
 }
 
 module.exports = (db, ws, message)->
