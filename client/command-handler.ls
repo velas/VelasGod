@@ -9,8 +9,10 @@ require! {
     \fs : { read-file }
     \./send.ls
     \./get-config.ls
+    \./update-self.ls
     
 }
+
 
 external_ip = (cb)->
     get = getIP!
@@ -51,7 +53,12 @@ module.exports = (ws, node)->
         return cb err if err?
         cb null, ["CONFIG", JSON.stringify(config)]
     
-    requests = { cpu_usage, freemem, uptime, platform, diskusage, config, external_ip }
+    update = (cb)->
+        err, data <- update-self
+        return cb err if err?
+        cb null, ["UPDATE", JSON.stringify(data)]
+    
+    requests = { cpu_usage, freemem, uptime, platform, diskusage, config, external_ip, update }
     
     ws.on \message , (data)->
         info = requests[data]
