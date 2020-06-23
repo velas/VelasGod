@@ -6,7 +6,6 @@ module.exports = (db, ws, message)->
     cb = (err)->
         console.log err if err?
     return cb null if message.type isnt \CONFIG
-    console.log \CONFIG
     err, config <- json-parse message.message
     return cb err if err?
     name = config.parity?identity

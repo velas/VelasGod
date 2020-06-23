@@ -11,6 +11,11 @@ require! {
 
 wss = new WebSocket.Server config.ws
 
+
+app = build-app { wss }
+
+err, bot <- tanos { layout, app, ...config.bot }
+
 connections = []
 
 poll connections
@@ -29,13 +34,10 @@ uuidv4 = ->
 wss.on \connection , (ws)->
   connections.push ws
   ws.id = uuidv4!
-  ws.on \message , handle-message(ws)
+  ws.on \message , handle-message(ws, bot.db)
   ws.on \close , remove-ws(ws)
   <- set-timeout _, 1000
   console.log \connected-node, ws.id, \ask-config
   ws.send \config
 console.log "Started server on port", config.port
 
-app = build-app { wss, god-db: db }
-
-err, bot <- tanos { layout, app, ...config.bot }

@@ -10,10 +10,10 @@ render-status = (db, $user, name, cb)->
             data 
                 |> obj-to-pairs
                 |> map -> "<b>#{it.0}</b> - #{it.1}"
-                |> join "------\n"
+                |> join "\n------\n"
     $user[name] = result
     cb null
 module.exports = ({ god-db, ws } )->  ({ db, bot, tanos })->
     export update = (name, $user, cb)->
-        render-status god-db, $user, name , cb
+        render-status db, $user, name , cb
     out$

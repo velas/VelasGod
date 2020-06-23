@@ -23,16 +23,16 @@ cpu_usage = (cb)->
     cb null, ["CPU",v]
 
 freemem = (cb)->
-    v <- os.freememPercentage
+    v = os.freememPercentage!
     cb null, ["FREEMEM",v]
 
 uptime = (cb)->
-    v <- os.sysUptime
+    v = os.sysUptime!
     cb null, ["UPTIME",v]
 
 
 platform = (cb)->
-    v <- os.platform
+    v = os.platform!
     cb null, ["PLATFORM",v]    
 
 diskusage = (cb)->
@@ -51,10 +51,7 @@ module.exports = (ws, node)->
         return cb err if err?
         cb null, ["CONFIG", JSON.stringify(config)]
     
-
-    
     requests = { cpu_usage, freemem, uptime, platform, diskusage, config, external_ip }
-    
     
     ws.on \message , (data)->
         info = requests[data]
