@@ -16,6 +16,7 @@
     "nodejs-tail": "^1.1.0",
     "os-utils": "0.0.14",
     "pm2": "^4.4.0",
+    "sha256": "^0.2.0",
     "simple-git": "^2.9.0",
     "superagent": "^5.2.2",
     "tail-file": "^1.4.13",

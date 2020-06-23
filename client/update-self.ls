@@ -1,5 +1,6 @@
 require! {
     \simple-git
+    #\npm-programmatic : npm
     \pm2
     \prelude-ls : { find }
 }

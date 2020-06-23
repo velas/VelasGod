@@ -7,6 +7,7 @@ require! {
     \./bot/layout.ls
     \./bot/build-app.ls
     \./db.ls
+    \./checkers.ls
 }
 
 wss = new WebSocket.Server config.ws
@@ -19,6 +20,7 @@ err, bot <- tanos { layout, app, ...config.bot }
 connections = []
 
 poll connections
+checkers config.bot, bot
 
 remove-ws = (ws)-> ->
   index = connections.index-of ws 
