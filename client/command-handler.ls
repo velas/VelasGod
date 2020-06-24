@@ -10,6 +10,7 @@ require! {
     \./send.ls
     \./get-config.ls
     \./update-self.ls
+    \./query-handler.ls
     
 }
 

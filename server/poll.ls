@@ -8,6 +8,7 @@ polls =
     * \uptime 
     * \platform
     * \diskusage
+    * JSON.stringify { method: \net_Peers }
 
 make-poll = (connections, current)->
     connections |> each (-> it.send current)
@@ -19,6 +20,7 @@ make-polls = (connections, all, [current, ...rest])->
         | rest.length is 0 => all
         | _ => rest
     make-polls connections, all, group
-    
+
+
 module.exports = (connections)->
     make-polls connections, polls, polls

@@ -1,7 +1,7 @@
 require! {
     \prelude-ls : { obj-to-pairs, map, unique, maximum, minimum, find }
 }
-
+#net_Peers
 module.exports = (db, ws, message)->
     cb = ->
     return cb null if message.message.index-of('Imported #') is -1
@@ -23,7 +23,7 @@ module.exports.check = (db, cb)->
         data 
             |> obj-to-pairs 
     heights =
-       items 
+       items
             |> map (.1)
     max = maximum heights
     min = minimum heights
@@ -31,8 +31,8 @@ module.exports.check = (db, cb)->
         items 
             |> find (.1 is max)
     min-item =
-        items 
+        items
             |> find (.1 is min)
-    return cb "The difference between height is more than #{ALLOW_DIFFERENCE} blocks #{max} (#{max-item.0}) > #{min} (#{min-item.0})" if max > min + ALLOW_DIFFERENCE
+    return cb "The difference between <b>#{max-item.0}</b> and <b>#{min-item.0}</b> height is (#{max} - #{min}) <b>#{max - min}</b> blocks" if max > min + ALLOW_DIFFERENCE
     cb null
     

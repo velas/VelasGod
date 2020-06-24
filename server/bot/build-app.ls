@@ -25,11 +25,14 @@ render-status = (db, $user, name, cb)->
                 |> obj-to-pairs
                 |> map -> [it.0, it.1]
                 |> as-table.configure { maxTotalWidth: COL_WIDTH, delimiter: ' | ' }
+    $user[name] = "no any info" if result.length is 0
+    return cb null if result.length is 0
     $user[name] = "<pre>#{result}</pre>"
     cb null
     
     
-module.exports = ({ ws, config } )->  ({ db, bot, send-user })->
+module.exports = ({ ws, config } )->  (tanos)->
+    { db } = tanos
     export update = (name, $user, cb)->
         render-status db, $user, name , cb
     export updateStep = (bot-step, text, cb)->
@@ -41,7 +44,7 @@ module.exports = ({ ws, config } )->  ({ db, bot, send-user })->
         return cb err if err?
         err, chat_ids <- extract-chat_ids db, config.admins
         return cb err if err?
-        err <- send-all-users { send-user }, chat_ids, bot-step
+        err <- send-all-users tanos, chat_ids, bot-step
         return cb err if err?
         cb null
     out$
