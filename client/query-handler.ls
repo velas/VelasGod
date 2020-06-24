@@ -13,7 +13,7 @@ make-query = (url, method, params=[], cb)->
     }
     err, data <- post url, query .end
     return cb "query err: #{err.message ? err}" if err?
-    err, data <- try-parse data
+    err, data <- json-parse data
     return cb err if err?
     return cb "expected object" if typeof! data.body isnt \Object
     return cb data.body.error if data.body?error?
