@@ -17,12 +17,12 @@ update = (cb)->
     return cb err if err?
     err, list <- pm2.list
     return cb err if err?
-    self =
+    process =
         list |> find (.name is \monitor)
-    console.log 'monitor process is not found' if not self?
-    return cb null, 'monitor process is not found' if not self?
+    console.log 'monitor process is not found' if not process?
+    return cb null, 'monitor process is not found' if not process?
     console.log 'trying to restart monitor'
-    err <- pm2.restart self
+    err <- pm2.restart process
     console.log 'restart err #{err}' if err?
     return cb err if err?
     cb null
