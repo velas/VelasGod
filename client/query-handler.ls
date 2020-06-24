@@ -13,9 +13,8 @@ make-query = (url, method, params=[], cb)->
     }
     err, data <- post url, query .end
     return cb "query err: #{err.message ? err}" if err?
-    return cb "expected response string, got #{typeof! data}" if typeof! data isnt \String
-    err, data <- json-parse data
-    return cb "#{err} in #{data}" if err?
+    return cb "expected response object, got #{typeof! data}" if typeof! data isnt \Object
+    #err, data <- json-parse data
     return cb "expected object" if typeof! data.body isnt \Object
     return cb data.body.error if data.body?error?
     cb null, data.body.result
