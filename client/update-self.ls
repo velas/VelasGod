@@ -23,7 +23,7 @@ update = (cb)->
     return cb null, 'monitor process is not found' if not process?
     console.log 'trying to restart monitor'
     err <- pm2.restart process
-    console.log 'restart err #{err}' if err?
+    console.log "restart err #{err}" if err?
     return cb err if err?
     cb null
     
