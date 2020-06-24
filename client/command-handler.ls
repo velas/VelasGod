@@ -62,6 +62,7 @@ module.exports = (ws, node)->
     requests = { cpu_usage, freemem, uptime, platform, diskusage, config, external_ip, update }
     
     ws.on \message , (data)->
+        console.log \message, data
         info = requests[data]
         return query-handler ws, node, data if typeof! info isnt \Function
         err, data <- info 

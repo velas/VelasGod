@@ -22,7 +22,7 @@ make-query = (url, method, params, cb)->
 
 module.exports = (ws, node, query)->
     cb = ->
-    console.log \query, query
+    #console.log \query, query
     err, model <- json-parse query
     return cb err if err?
     err, config <- get-config node
