@@ -6,7 +6,6 @@ require! {
     \tanos
     \./bot/layout.ls
     \./bot/build-app.ls
-    \./db.ls
     \./checkers.ls
 }
 
@@ -44,7 +43,7 @@ wss.on \connection , (ws)->
   <- set-timeout _, 1000
   console.log \connected-node, ws.id, \ask-config
   ws.send \config
-  #ws.send \update
-  ws.send JSON.stringify { method: \net_Peers }
+  ws.send \version
+  #ws.send JSON.stringify { method: \net_Peers }
 console.log "Started server on port", config.port
 
