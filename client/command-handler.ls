@@ -66,10 +66,10 @@ module.exports = (ws, node)->
     requests = { cpu_usage, freemem, uptime, platform, diskusage, config, external_ip, update, version }
     
     ws.on \message , (data)->
-        info = requests[data]
-        return query-handler ws, node, data if typeof! info isnt \Function
-        err, data <- info 
-        console.log err, data
+        rpc = (cb)->
+            query-handler ws, node, data, cb
+        get-info = requests[data] ? rpc
+        err, data <- get-info
         message =
             | err? => make-log \ERROR , "for request #{data} #{err}"
             | _ => make-log(data.0, data.1)

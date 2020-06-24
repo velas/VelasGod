@@ -20,8 +20,7 @@ make-query = (url, method, params=[], cb)->
     cb null, data.body.result
 
 
-module.exports = (ws, node, query)->
-    cb = ->
+module.exports = (ws, node, query, cb)->
     err, model <- json-parse query
     return cb err if err?
     err, config <- get-config node
