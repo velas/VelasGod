@@ -21,7 +21,7 @@ update = (cb)->
         list |> find (.name is \monitor)
     console.log 'monitor process is not found' if not process?
     return cb null, 'monitor process is not found' if not process?
-    console.log 'trying to restart monitor'
+    console.log 'trying to restart monitor...'
     err <- pm2.restart process
     console.log "restart err #{err}" if err?
     return cb err if err?
