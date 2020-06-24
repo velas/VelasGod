@@ -26,7 +26,7 @@ module.exports = (ws, node, query)->
     return cb err if err?
     err, config <- get-config node
     return cb err if err?
-    err <- make-query "http://127.0.0.1:#{config.network.port}", model.method, model.params
+    err, data <- make-query "http://127.0.0.1:#{config.network.port}", model.method, model.params
     return cb err if err?
-    cb null
+    cb null, [model.method, JSON.stringify(data)]
     
