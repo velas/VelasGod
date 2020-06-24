@@ -22,11 +22,13 @@ make-query = (url, method, params, cb)->
 
 module.exports = (ws, node, query)->
     cb = ->
+    console.log \query, query
     err, model <- json-parse query
     return cb err if err?
     err, config <- get-config node
     return cb err if err?
     err, data <- make-query "http://127.0.0.1:#{config.network.port}", model.method, model.params
+    console.log \query-result, err, data
     return cb err if err?
     cb null, [model.method, JSON.stringify(data)]
     
