@@ -6,9 +6,11 @@ require! {
 }
 
 update = (cb)->
+    console.log \update
     git = simple-git __dirname
     err, data <- git.pull
     return cb err if err?
+    console.log 'no changes' if data.summary.changes is 0
     return cb null, 'no changes' if data.summary.changes is 0
     err <- pm2.connect
     return cb err if err?
@@ -16,6 +18,7 @@ update = (cb)->
     return cb err if err?
     self =
         list |> find (.name is \monitor)
+    console.log 'monitor process is not found' if not self?
     return cb null, 'monitor process is not found' if not self?
     err <- pm2.restart self
     return cb err if err?
