@@ -4,7 +4,7 @@ require! {
     \../server/utils/json-parse.ls
 }
 
-make-query = (url, method, params, cb)->
+make-query = (url, method, params=[], cb)->
     query = {
         jsonrpc : \2.0
         id : 1
@@ -22,7 +22,6 @@ make-query = (url, method, params, cb)->
 
 module.exports = (ws, node, query)->
     cb = ->
-    #console.log \query, query
     err, model <- json-parse query
     return cb err if err?
     err, config <- get-config node
