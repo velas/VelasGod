@@ -8,7 +8,7 @@ polls =
     * \uptime 
     * \platform
     * \diskusage
-    * JSON.stringify { method: \net_Peers }
+    * JSON.stringify { method: \parity_netPeers }
 
 make-poll = (connections, current)->
     connections |> each (-> it.send current)

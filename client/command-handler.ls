@@ -69,8 +69,9 @@ module.exports = (ws, node)->
         info = requests[data]
         return query-handler ws, node, data if typeof! info isnt \Function
         err, data <- info 
+        console.log err, data
         message =
-            | err? => make-log \INFO , "ERROR for request #{data} #{err}"
+            | err? => make-log \ERROR , "for request #{data} #{err}"
             | _ => make-log(data.0, data.1)
         err <- send ws, message
         console.log "server is offline" if err?

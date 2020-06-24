@@ -4,6 +4,7 @@ require! {
 #net_Peers
 module.exports = (db, ws, message)->
     cb = ->
+    #consider also 2020-06-24 14:38:40 UTC http.worker140 DEBUG txqueue  Re-computing pending set for block: 1433734
     return cb null if message.message.index-of('Imported #') is -1
     err, name <- db.get "ws/#{ws.id}"
     return cb err if err?
