@@ -9,4 +9,5 @@ module.exports =
     * require \./handlers/height.ls
     * require \./handlers/reorg.ls
     * require \./handlers/trace.ls
+    * require \./handlers/net_Peers.ls
     ...

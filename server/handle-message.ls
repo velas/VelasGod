@@ -3,7 +3,7 @@ require! {
     \./handlers.ls
 }
 
-regexp = /([0-9]{4}-[0-9]{2}-[0-9]{2}) ([0-9]{2}:[0-9]{2}:[0-9]{2}) UTC ([a-zA-Z ]+ \#[0-9]+|http\.worker450) ([A-Z]+) (.+)/
+regexp = /([0-9]{4}-[0-9]{2}-[0-9]{2}) ([0-9]{2}:[0-9]{2}:[0-9]{2}) UTC ([a-zA-Z _]+ \#[0-9]+|http\.worker450) ([A-Z]+) (.+)/
 
 module.exports = (ws, db)-> (line)->
     result = line.match regexp
