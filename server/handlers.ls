@@ -12,4 +12,7 @@ module.exports =
     * require \./handlers/parity_netPeers.ls
     * require \./handlers/version.ls
     * require \./handlers/peers.ls
-    ...
+    * require \./handlers/parity_unsignedTransactionsCount.ls
+    * require \./handlers/parity_enode.ls
+    * require \./handlers/parity_mode.ls
+    * require \./handlers/parity_nodeKind.ls

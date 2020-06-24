@@ -12,7 +12,12 @@ module.exports =
             "🕑 Last Activity": "goto:node-last-activity"
             "🔀 Reorgs": "goto:reorgs"
             "📡 Peers": "goto:peers"
-            "📶 Resources" : "goto:resources"
+            "📶 Performance" : "goto:resources"
+            "📩 Unsigned txs" : "goto:unsigned-txs"
+            "📝 Soft" : "goto:soft"
+    "unsigned-txs:bot-step" :
+        on-enter: "({ $app, $user }, cb)-> $app.update('parity_unsignedTransactionsCount', $user, cb)"
+        text: "{{{$user.parity_unsignedTransactionsCount}}}"
     "resources:bot-step" : 
         text: "Get Information about <b>node hardware</b>"
         buttons:
@@ -21,6 +26,29 @@ module.exports =
             "🆓 FREEMEM": "goto:freemem"
             "⤵️ DISK": "goto:disk"
             "🆙 UPTIME": "goto:uptime"
+    "soft:bot-step" : 
+        text: "Get Information about <b>soft</b>"
+        buttons:
+            "🏳 Enode urls" : "goto:enodes"
+            "🏳 Node modes" : "goto:modes"
+            "🃏 Node kinds" : "goto:kinds"
+            "👁 Monitor Version": "goto:monitor-version"
+            "💻 Node Version": "goto:node-version"
+    "kinds:bot-step":
+        on-enter: "({ $app, $user }, cb)-> $app.update('parity_nodeKind', $user, cb)"
+        text: "{{{$user.parity_nodeKind}}}"
+    "enodes:bot-step":
+        on-enter: "({ $app, $user }, cb)-> $app.update('parity_enode', $user, cb)"
+        text: "{{{$user.parity_enode}}}"
+    "modes:bot-step":
+        on-enter: "({ $app, $user }, cb)-> $app.update('parity_mode', $user, cb)"
+        text: "{{{$user.parity_mode}}}"
+    "monitor-version:bot-step":
+        on-enter: "({ $app, $user }, cb)-> $app.update('version', $user, cb)"
+        text: "{{{$user.version}}}"
+    "node-version:bot-step":
+        on-enter: "({ $app, $user }, cb)-> $app.update('nodeversion', $user, cb)"
+        text: "{{{$user.nodeversion}}}"
     "platform:bot-step":
         on-enter: "({ $app, $user }, cb)-> $app.update('platform', $user, cb)"
         text: "{{{$user.platform}}}"

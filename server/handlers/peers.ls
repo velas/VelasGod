@@ -14,5 +14,4 @@ module.exports = (db, ws, message)->
     model[name] = "#{peers.connected} / (#{peers.max})"
     err <- db.put \peers , model
     return cb err if err?
-    
     cb null

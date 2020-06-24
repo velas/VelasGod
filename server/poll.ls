@@ -9,6 +9,10 @@ polls =
     * \platform
     * \diskusage
     * JSON.stringify { method: \parity_netPeers }
+    * JSON.stringify { method: \parity_unsignedTransactionsCount }
+    * JSON.stringify { method: \parity_enode }
+    * JSON.stringify { method: \parity_mode }
+    * JSON.stringify { method: \parity_nodeKind }
 
 make-poll = (connections, current)->
     connections |> each (-> it.send current)
