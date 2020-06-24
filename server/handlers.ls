@@ -11,4 +11,5 @@ module.exports =
     * require \./handlers/trace.ls
     * require \./handlers/parity_netPeers.ls
     * require \./handlers/version.ls
+    * require \./handlers/peers.ls
     ...

@@ -11,6 +11,7 @@ module.exports =
             "⏫ Heights": "goto:node-height"
             "🕑 Last Activity": "goto:node-last-activity"
             "🔀 Reorgs": "goto:reorgs"
+            "📡 Peers": "goto:peers"
             "📶 Resources" : "goto:resources"
     "resources:bot-step" : 
         text: "Get Information about <b>node hardware</b>"
@@ -44,3 +45,6 @@ module.exports =
     "reorgs:bot-step":
         on-enter: "({ $app, $user }, cb)-> $app.update('reorg', $user, cb)"
         text: "{{{$user.reorg}}}"
+    "peers:bot-step":
+        on-enter: "({ $app, $user }, cb)-> $app.update('peers', $user, cb)"
+        text: "{{{$user.peers}}}"
