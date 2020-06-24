@@ -11,6 +11,7 @@ require! {
     \./get-config.ls
     \./update-self.ls
     \./query-handler.ls
+    \./get-version.ls
     
 }
 
@@ -58,8 +59,11 @@ module.exports = (ws, node)->
         err, data <- update-self
         return cb err if err?
         cb null, ["UPDATE", JSON.stringify(data)]
-    
-    requests = { cpu_usage, freemem, uptime, platform, diskusage, config, external_ip, update }
+    version = (cb)->
+        err, data <- get-version
+        return cb err if err?
+        cb null, ["VERSION", JSON.stringify(data)]
+    requests = { cpu_usage, freemem, uptime, platform, diskusage, config, external_ip, update, version }
     
     ws.on \message , (data)->
         console.log \message, data
