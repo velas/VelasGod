@@ -5,7 +5,12 @@ module.exports = (db, ws, message)->
     return cb err if err?
     err, data <- db.get \disk
     model = if err? then {} else data
-    model[name] = message.message
+    try
+        model[name] = (Math.round(+message.message * 100) / 100) + ' GB'
+    catch 
+        model[name] = message.message
     err <- db.put \disk , model
     return cb err if err?
     cb null
+    
+module.exports.poll = \diskusage

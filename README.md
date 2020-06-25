@@ -23,7 +23,8 @@ This is client. Need to put it at the same folder as blockchain because it parse
 Also it connects to GOD object of pm2 and trying to extract the running process by 'name'
 
 ```sh
-lsc client/client.ls --name fake
+echo "lsc VelasGod/client/client.ls --name fake --server ws://123.123.123.123:1234" > monitor.sh
+pm2 start monitor.sh
 # or
 # cd client && pm2 start churchman.sh
 ```

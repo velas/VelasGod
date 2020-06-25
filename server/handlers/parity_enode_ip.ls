@@ -9,3 +9,4 @@ module.exports = (db, ws, message)->
     err <- db.put \parity_enode_ip , model
     return cb err if err?
     cb null
+    

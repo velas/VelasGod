@@ -17,3 +17,9 @@ module.exports =
     * require \./handlers/parity_enode_ip.ls
     * require \./handlers/parity_mode.ls
     * require \./handlers/parity_nodeKind.ls
+    * require \./handlers/parity_minGasPrice.ls
+    * require \./handlers/parity_chainStatus.ls
+    * require \./handlers/parity_chain.ls
+    * require \./handlers/parity_pendingTransactions.ls
+    * require \./handlers/parity_pendingTransactionsStats.ls
+    * require \./handlers/parity_transactionsLimit.ls

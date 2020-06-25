@@ -9,3 +9,5 @@ module.exports = (db, ws, message)->
     err <- db.put \platform , model
     return cb err if err?
     cb null
+    
+module.exports.poll = \platform

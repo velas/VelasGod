@@ -12,10 +12,41 @@ module.exports =
             "🕑 Last Activity": "goto:node-last-activity"
             "🔀 Reorgs": "goto:reorgs"
             "📡 Networking": "goto:networking"
-            "📶 Performance" : "goto:resources"
+            "📶 Hardware" : "goto:resources"
+            "📩 Pending" : "goto:pending"
+            "📝 Software" : "goto:soft"
+            "📝 Configuration" : "goto:configuration"
+    "configuration:bot-step" : 
+        text: "Get Information about configuration"
+        buttons:
+            "🩸 Min Gas Price" : "goto:parity_minGasPrice"
+            "📛 Transaction Limit" : "goto:parity_transactionsLimit"
+            "🔗 Chain" : "goto:parity_chain"
+            "🔘 Chain Status" : "goto:parity_chainStatus"
+    "parity_minGasPrice:bot-step" :
+        on-enter: "({ $app, $user }, cb)-> $app.update('parity_minGasPrice', $user, cb)"
+        text: "{{{$user.parity_minGasPrice}}}"
+    "parity_chain:bot-step" :
+        on-enter: "({ $app, $user }, cb)-> $app.update('parity_chain', $user, cb)"
+        text: "{{{$user.parity_chain}}}"
+    "parity_chainStatus:bot-step" : 
+        on-enter: "({ $app, $user }, cb)-> $app.update('parity_chainStatus', $user, cb)"
+        text: "{{{$user.parity_chainStatus}}}"
+    "parity_transactionsLimit:bot-step" :
+        on-enter: "({ $app, $user }, cb)-> $app.update('parity_transactionsLimit', $user, cb)"
+        text: "{{{$user.parity_transactionsLimit}}}"
+    "pending:bot-step" : 
+        text: "Get Information about pending transactions"
+        buttons:
+            "🗄 Pending list (max 100)" : "goto:pending-txs"
+            "📨 Pending stats" : "goto:pending-stats"
             "📩 Unsigned txs" : "goto:unsigned-txs"
-            "📝 Soft" : "goto:soft"
-    
+    "pending-txs:bot-step" :
+        on-enter: "({ $app, $user }, cb)-> $app.update('parity_pendingTransactions', $user, cb)"
+        text: "{{{$user.parity_pendingTransactions}}}"
+    "pending-stats:bot-step" :
+        on-enter: "({ $app, $user }, cb)-> $app.update('parity_pendingTransactionsStats', $user, cb)"
+        text: "{{{$user.parity_pendingTransactionsStats}}}"
     "unsigned-txs:bot-step" :
         on-enter: "({ $app, $user }, cb)-> $app.update('parity_unsignedTransactionsCount', $user, cb)"
         text: "{{{$user.parity_unsignedTransactionsCount}}}"
@@ -29,9 +60,9 @@ module.exports =
         text: "Get Information about <b>node hardware</b>"
         buttons:
             "💻 PLATFORM": "goto:platform"
-            "🆒 CPU": "goto:cpu"
+            "🆒 USED CPU": "goto:cpu"
             "🆓 FREEMEM": "goto:freemem"
-            "⤵️ DISK": "goto:disk"
+            "⤵️ AVAILABLE DISK": "goto:disk"
             "🆙 UPTIME": "goto:uptime"
     "soft:bot-step" : 
         text: "Get Information about <b>soft</b>"

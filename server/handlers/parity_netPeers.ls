@@ -8,5 +8,6 @@ module.exports = (db, ws, message)->
     model[name] = message.message
     err <- db.put \parity_netPeers , model
     return cb err if err?
-    
     cb null
+    
+module.exports.poll = JSON.stringify { method: \parity_netPeers }

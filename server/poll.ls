@@ -1,18 +1,13 @@
 require! {
-    \prelude-ls : { each }
+    \prelude-ls : { each, obj-to-pairs, map, filter }
+    \./handlers.ls
 }
 
 polls =
-    * \cpu_usage
-    * \freemem
-    * \uptime 
-    * \platform
-    * \diskusage
-    * JSON.stringify { method: \parity_netPeers }
-    * JSON.stringify { method: \parity_unsignedTransactionsCount }
-    * JSON.stringify { method: \parity_enode }
-    * JSON.stringify { method: \parity_mode }
-    * JSON.stringify { method: \parity_nodeKind }
+    handlers 
+        |> obj-to-pairs 
+        |> map (.1.poll) 
+        |> filter (?)
 
 make-poll = (connections, current)->
     connections |> each (-> it.send current)

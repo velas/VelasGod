@@ -5,7 +5,12 @@ module.exports = (db, ws, message)->
     return cb err if err?
     err, data <- db.get \cpu
     model = if err? then {} else data
-    model[name] = message.message
+    try 
+        model[name] = (Math.round(+message.message * 100) / 100) + "% used"
+    catch
+        model[name] = message.message
     err <- db.put \cpu , model
     return cb err if err?
     cb null
+    
+module.exports.poll = \cpu_usage
