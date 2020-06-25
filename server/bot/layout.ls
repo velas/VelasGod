@@ -11,13 +11,20 @@ module.exports =
             "⏫ Heights": "goto:node-height"
             "🕑 Last Activity": "goto:node-last-activity"
             "🔀 Reorgs": "goto:reorgs"
-            "📡 Peers": "goto:peers"
+            "📡 Networking": "goto:networking"
             "📶 Performance" : "goto:resources"
             "📩 Unsigned txs" : "goto:unsigned-txs"
             "📝 Soft" : "goto:soft"
+    
     "unsigned-txs:bot-step" :
         on-enter: "({ $app, $user }, cb)-> $app.update('parity_unsignedTransactionsCount', $user, cb)"
         text: "{{{$user.parity_unsignedTransactionsCount}}}"
+    "networking:bot-step" : 
+        text: "Get Information networking <b>node hardware</b>"
+        buttons:
+            "📡 Peers": "goto:peers"
+            "🏳 Enodes" : "goto:enodes"
+            "🏳 Enode IPs" : "goto:enode_ips"
     "resources:bot-step" : 
         text: "Get Information about <b>node hardware</b>"
         buttons:
@@ -29,7 +36,6 @@ module.exports =
     "soft:bot-step" : 
         text: "Get Information about <b>soft</b>"
         buttons:
-            "🏳 Enode urls" : "goto:enodes"
             "🏳 Node modes" : "goto:modes"
             "🃏 Node kinds" : "goto:kinds"
             "👁 Monitor Version": "goto:monitor-version"
@@ -40,6 +46,9 @@ module.exports =
     "enodes:bot-step":
         on-enter: "({ $app, $user }, cb)-> $app.update('parity_enode', $user, cb)"
         text: "{{{$user.parity_enode}}}"
+    "enode_ips:bot-step":
+        on-enter: "({ $app, $user }, cb)-> $app.update('parity_enode_ip', $user, cb)"
+        text: "{{{$user.parity_enode_ip}}}"
     "modes:bot-step":
         on-enter: "({ $app, $user }, cb)-> $app.update('parity_mode', $user, cb)"
         text: "{{{$user.parity_mode}}}"

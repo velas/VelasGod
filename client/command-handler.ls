@@ -43,7 +43,7 @@ diskusage = (cb)->
     path = if os2.platform! is 'win32' then 'c:' else '/'
     err, info <- disk.check path
     return cb err if err?
-    cb null, ["DISK","#{info.available} / #{info.free} / #{info.total}"]
+    cb null, ["DISK","#{info.available / 1024  / 1024 / 1024 }"]
 
 module.exports = (ws, node)->
     make-log = (type, message)->

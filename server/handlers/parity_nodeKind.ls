@@ -9,5 +9,4 @@ module.exports = (db, ws, message)->
     model[name] = "#{kind.availability} / #{kind.capability}"
     err <- db.put \parity_nodeKind , model
     return cb err if err?
-    
     cb null
