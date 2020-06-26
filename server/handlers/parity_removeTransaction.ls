@@ -1,16 +1,16 @@
-name = \parity_removeTransaction
+method = \parity_removeTransaction
 
 module.exports = (db, ws, message)->
     cb = ->
-    return cb null if message.type isnt name
+    return cb null if message.type isnt method
     err, name <- db.get "ws/#{ws.id}"
     return cb err if err?
-    err, data <- db.get name
+    err, data <- db.get method
     model = if err? then {} else data
     model[name] = JSON.parse(message.message)
-    err <- db.put name , model
+    err <- db.put method , model
     return cb err if err?
     
     cb null
     
-module.exports.poll = JSON.stringify { method: name, { params: ["0x..."] }
+module.exports.poll = JSON.stringify { method, { params: ["0x..."] }

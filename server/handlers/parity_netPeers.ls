@@ -1,13 +1,15 @@
+method = \parity_netPeers
+
 module.exports = (db, ws, message)->
     cb = ->
-    return cb null if message.type isnt \parity_netPeers
+    return cb null if message.type isnt method
     err, name <- db.get "ws/#{ws.id}"
     return cb err if err?
-    err, data <- db.get \parity_netPeers
+    err, data <- db.get method
     model = if err? then {} else data
     model[name] = message.message
-    err <- db.put \parity_netPeers , model
+    err <- db.put method , model
     return cb err if err?
     cb null
     
-module.exports.poll = JSON.stringify { method: \parity_netPeers }
+module.exports.poll = JSON.stringify { method }
