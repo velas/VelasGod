@@ -1,3 +1,7 @@
+require! {
+    \moment
+}
+
 method = \parity_wsUrl
 
 module.exports = (db, ws, message)->

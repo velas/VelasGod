@@ -4,6 +4,7 @@ require! {
     \as-table
     \./extract-chat_ids.ls
     \./send-all-users.ls
+    \moment
 }
 
 min = (text, num)->
@@ -17,17 +18,23 @@ cut = (text)->
     min res, COL_WIDTH
 
 render-status = (db, $user, name, cb)->
+    err, time <- db.get "#{name}/last-update"
+    last-update =
+        | err? => ""
+        | _ => "Last update was #{moment.utc(time).from-now!}\n"
     err, data <- db.get name
     $user[name] = "no any info" if err?
     return cb null if err?
+    ago =
+        moment.utc(time).from-now!
     result =
-            data 
+            data
                 |> obj-to-pairs
                 |> map -> [it.0, it.1]
                 |> as-table.configure { maxTotalWidth: COL_WIDTH, delimiter: ' | ' }
     $user[name] = "no any info" if result.length is 0
     return cb null if result.length is 0
-    $user[name] = "<pre>#{result}</pre>"
+    $user[name] = "#{last-update}<pre>#{result}</pre>"
     cb null
     
     

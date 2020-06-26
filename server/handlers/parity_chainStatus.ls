@@ -7,7 +7,7 @@ module.exports = (db, ws, message)->
     return cb err if err?
     err, data <- db.get method
     model = if err? then {} else data
-    model[name] = JSON.parse(message.message)
+    model[name] = JSON.parse(message.message).blockGap
     err <- db.put method , model
     return cb err if err?
     
