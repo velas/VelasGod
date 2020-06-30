@@ -10,12 +10,16 @@ module.exports =
         buttons:
             "⏫ Heights": "goto:node-height"
             "🕑 Last Activity": "goto:node-last-activity"
+            "🚦 Is Syncing" : "goto:eth_syncing"
             "🔀 Reorgs": "goto:reorgs"
             "📡 Networking": "goto:networking"
             "📶 Hardware" : "goto:resources"
             "📩 Pending" : "goto:pending"
             "📝 Software" : "goto:soft"
             "📝 Configuration" : "goto:configuration"
+    "eth_syncing:bot-step" :
+        on-enter: "({ $app, $user }, cb)-> $app.update('eth_syncing', $user, cb)"
+        text: "{{{$user.eth_syncing}}}"        
     "configuration:bot-step" : 
         text: "Get Information about configuration"
         buttons:
