@@ -67,13 +67,13 @@ module.exports =
         text: "Your action is performed"
     "pending-txs:bot-step" :
         on-enter: "({ $app, $user }, cb)-> $app.update('parity_pendingTransactions', $user, cb)"
-        text: "{{{$user.parity_pendingTransactions}}}"
+        text: "This indicator never returned the valuable result. But lets keep it for learning\n{{{$user.parity_pendingTransactions}}}"
     "pending-stats:bot-step" :
         on-enter: "({ $app, $user }, cb)-> $app.update('parity_pendingTransactionsStats', $user, cb)"
-        text: "{{{$user.parity_pendingTransactionsStats}}}"
+        text: "This indicator never returned the valuable result. But lets keep it for learning\n{{{$user.parity_pendingTransactionsStats}}}"
     "unsigned-txs:bot-step" :
         on-enter: "({ $app, $user }, cb)-> $app.update('parity_unsignedTransactionsCount', $user, cb)"
-        text: "{{{$user.parity_unsignedTransactionsCount}}}"
+        text: "This indicator never returned the valuable result. But lets keep it for learning\n{{{$user.parity_unsignedTransactionsCount}}}"
     "networking:bot-step" : 
         text: "Get Information networking <b>node hardware</b>"
         buttons:
@@ -118,10 +118,10 @@ module.exports =
         text: "{{{$user.platform}}}"
     "cpu:bot-step":
         on-enter: "({ $app, $user }, cb)-> $app.update('cpu', $user, cb)"
-        text: "{{{$user.cpu}}}"
+        text: "Not sure about correctness of this indicator\n{{{$user.cpu}}}"
     "freemem:bot-step":
         on-enter: "({ $app, $user }, cb)-> $app.update('freemem', $user, cb)"
-        text: "{{{$user.freemem}}}"
+        text: "Not sure about correctness of this indicator\n{{{$user.freemem}}}"
     "disk:bot-step":
         on-enter: "({ $app, $user }, cb)-> $app.update('disk', $user, cb)"
         text: "{{{$user.disk}}}"
