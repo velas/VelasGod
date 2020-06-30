@@ -7,19 +7,22 @@ require! {
     \./bot/layout.ls
     \./bot/build-app.ls
     \./checkers.ls
+    \./handlers.ls
 }
+
+connections = []
 
 wss = new WebSocket.Server config.ws
 
 
-app = build-app { wss, config: config.bot }
+app = build-app { connections, handlers, wss, config: config.bot }
 
 err, bot <- tanos { layout, app, ...config.bot }
 
 # uncomment it to remove info about reorg
 bot.db.put \reorg, {}, ->
 
-connections = []
+
 
 poll connections
 checkers config.bot, bot

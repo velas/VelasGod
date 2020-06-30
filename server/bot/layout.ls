@@ -38,9 +38,27 @@ module.exports =
     "pending:bot-step" : 
         text: "Get Information about pending transactions"
         buttons:
+            "📛 Rejected (TOP 50)" : "goto:txqueue"
+            "📛 Rejected Length" : "goto:txqueue_length"
             "🗄 Pending list (max 100)" : "goto:pending-txs"
             "📨 Pending stats" : "goto:pending-stats"
             "📩 Unsigned txs" : "goto:unsigned-txs"
+    "txqueue:bot-step" :
+        on-enter: "({ $app, $user }, cb)-> $app.update('txqueue', $user, cb)"
+        text: "{{{$user.txqueue}}}"
+        buttons: 
+            "Clear All": 
+                goto: "action-performed"
+                store: "({ $app, $user }, cb)-> $app.clear_txqueue($user, cb)"
+    "txqueue_length:bot-step" :
+        on-enter: "({ $app, $user }, cb)-> $app.updateLength('txqueue', $user, cb)"
+        text: "{{{$user.txqueue_length}}}"
+        buttons:
+            "Clear All": 
+                goto: "action-performed"
+                store: "({ $app, $user }, cb)-> $app.clear_txqueue($user, cb)"
+    "action-performed:bot-step" :
+        text: "Your action is performed"
     "pending-txs:bot-step" :
         on-enter: "({ $app, $user }, cb)-> $app.update('parity_pendingTransactions', $user, cb)"
         text: "{{{$user.parity_pendingTransactions}}}"

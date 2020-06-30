@@ -23,3 +23,4 @@ module.exports =
     * require \./handlers/parity_pendingTransactions.ls
     * require \./handlers/parity_pendingTransactionsStats.ls
     * require \./handlers/parity_transactionsLimit.ls
+    * require \./handlers/txqueue.ls
