@@ -1,0 +1,1 @@
+lsc server/server.ls

@@ -1,3 +1,7 @@
+require! {
+    \prelude-ls : { obj-to-pairs, map, join, filter }
+}
+
 module.exports = (db, ws, message)->
     cb = ->
     return cb null if message.type isnt \DISK
@@ -12,5 +16,23 @@ module.exports = (db, ws, message)->
     err <- db.put \disk , model
     return cb err if err?
     cb null
-    
+
+check-space = ([name, space])->
+    res = space.match('([0-9\.]+) GB')
+    return yes if not res?
+    [_, num] = res
+    return yes if +num > 1
+    no
+module.exports.check = (db, cb)->
+    err, data <- db.get \disk
+    return cb null if err?
+    items =
+        data 
+            |> obj-to-pairs
+            |> filter check-space
+            |> map (.0)
+            |> join ","
+    return cb null if items.length is 0
+    cb "Available disk is low on #{items}"
+
 module.exports.poll = \diskusage

@@ -24,3 +24,6 @@ module.exports.check = (db, cb)->
             |> join ","
     return cb null if items.length is 0
     cb "REORG IS ON #{items}"
+    #cleanup
+    db.put \reorg , {}, ->
+    
