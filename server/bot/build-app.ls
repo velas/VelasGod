@@ -6,6 +6,7 @@ require! {
     \./send-all-users.ls
     \moment
     \../handlers/txqueue.ls
+    \../handlers/reorg.ls
 }
 
 min = (text, num)->
@@ -63,6 +64,16 @@ render-status-length = (db, handlers, $user, name, cb)->
     
 module.exports = ({ ws, config, handlers, connections } )->  (tanos)->
     { db } = tanos
+    export forget_reorg = ($user, cb)->
+        err, chat_ids <- extract-chat_ids db, config.admins
+        return cb err if err?
+        return cb "not allowed" if $user.chat_id not in chat_ids
+        reorg.forget db, connections, cb  
+    export forget_txqueue = ($user, cb)->
+        err, chat_ids <- extract-chat_ids db, config.admins
+        return cb err if err?
+        return cb "not allowed" if $user.chat_id not in chat_ids
+        txqueue.forget db, connections, cb        
     export clear_txqueue = ($user, cb)->
         err, chat_ids <- extract-chat_ids db, config.admins
         return cb err if err?

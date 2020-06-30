@@ -26,4 +26,9 @@ module.exports.check = (db, cb)->
     cb "REORG IS ON #{items}"
     #cleanup
     db.put \reorg , {}, ->
+
+module.exports.forget = (db, connections, cb)->
+    err <- db.put \reorg , {}
+    return cb err if err?
+    cb null
     

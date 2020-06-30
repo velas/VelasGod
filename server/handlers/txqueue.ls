@@ -26,6 +26,11 @@ remove-transaction = (data, connections, hash)-->
     connections |> each (-> it.send current)
     delete data[hash]
 
+module.exports.forget = (db, connections, cb)->
+    err <- db.put \txqueue , {}
+    return cb err if err?
+    cb null
+
 module.exports.clear-all = (db, connections, cb)->
     return cb "no any peers" if connections.length is 0
     err, data <- db.get \txqueue

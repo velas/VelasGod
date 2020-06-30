@@ -20,7 +20,7 @@ app = build-app { connections, handlers, wss, config: config.bot }
 err, bot <- tanos { layout, app, ...config.bot }
 
 # uncomment it to remove info about reorg
-bot.db.put \reorg, {}, ->
+#bot.db.put \reorg, {}, ->
 
 
 

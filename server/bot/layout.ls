@@ -46,15 +46,21 @@ module.exports =
     "txqueue:bot-step" :
         on-enter: "({ $app, $user }, cb)-> $app.update('txqueue', $user, cb)"
         text: "{{{$user.txqueue}}}"
-        buttons: 
-            "Clear All": 
+        buttons:
+            "Forget All": 
+                goto: "action-performed"
+                store: "({ $app, $user }, cb)-> $app.forget_txqueue($user, cb)"
+            "Delete All": 
                 goto: "action-performed"
                 store: "({ $app, $user }, cb)-> $app.clear_txqueue($user, cb)"
     "txqueue_length:bot-step" :
         on-enter: "({ $app, $user }, cb)-> $app.updateLength('txqueue', $user, cb)"
         text: "{{{$user.txqueue_length}}}"
         buttons:
-            "Clear All": 
+            "Forget All": 
+                goto: "action-performed"
+                store: "({ $app, $user }, cb)-> $app.forget_txqueue($user, cb)"
+            "Delete All": 
                 goto: "action-performed"
                 store: "({ $app, $user }, cb)-> $app.clear_txqueue($user, cb)"
     "action-performed:bot-step" :
@@ -131,6 +137,10 @@ module.exports =
     "reorgs:bot-step":
         on-enter: "({ $app, $user }, cb)-> $app.update('reorg', $user, cb)"
         text: "{{{$user.reorg}}}"
+        buttons:
+            "Forget All": 
+                goto: "action-performed"
+                store: "({ $app, $user }, cb)-> $app.forget_reorg($user, cb)"
     "peers:bot-step":
         on-enter: "({ $app, $user }, cb)-> $app.update('peers', $user, cb)"
         text: "{{{$user.peers}}}"
