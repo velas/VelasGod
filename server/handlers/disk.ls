@@ -19,9 +19,10 @@ module.exports = (db, ws, message)->
 
 check-space = ([name, space])->
     res = space.match('([0-9\.]+) GB')
+    console.log res
     return yes if not res?
     [_, num] = res
-    return yes if +num > 1
+    return yes if +num < 2
     no
 module.exports.check = (db, cb)->
     err, data <- db.get \disk
