@@ -30,7 +30,7 @@ get-result = (data, cb)->
         return cb null, "" if result.length is 0
         values =
             result
-                |> map -> it.1
+                |> map -> "#{it.1}"
         keys =
             result
                 |> map -> it.0
