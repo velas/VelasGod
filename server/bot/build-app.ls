@@ -119,7 +119,7 @@ module.exports = ({ ws, config, handlers, connections } )->  (tanos)->
         request = get-call contract, method, params
         return cb "method not found" if not request?
         #here
-        err < - db.put \eth_call, {}
+        err < - db.put \eth_call , {}
         return cb err if err?
         connections |> each (-> it.send request)
         cb null
