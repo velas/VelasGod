@@ -15,4 +15,5 @@ module.exports = (store)->
         BlockReward  : web3.eth.contract(abis.BlockReward).at(addresses.BlockReward)
         Upgrade      : web3.eth.contract(abis.Upgrade).at(addresses.Upgrade)
         web3         : web3.eth
+        abis: abis
     api

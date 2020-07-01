@@ -7,6 +7,7 @@ require! {
     \moment
     \../handlers/txqueue.ls
     \../handlers/reorg.ls
+    \../handlers/eth_call.ls : eth_call_handler
     \../smarts/get-call.ls
 }
 
@@ -118,11 +119,13 @@ module.exports = ({ ws, config, handlers, connections } )->  (tanos)->
         return cb "not allowed" if $user.chat_id not in chat_ids
         request = get-call contract, method, params
         return cb "method not found" if not request?
-        #here
+        return cb "busy" if eth_call_handler.invoked?contract? 
+        eth_call_handler.invoked = { contract, method, params }
         err < - db.put \eth_call , {}
         return cb err if err?
         connections |> each (-> it.send request)
         cb null
         <- set-timeout _, 1000
         <- tanos.send-user $user.chat_id, "eth_call"
+        delete eth_call_handler.invoked
     out$
