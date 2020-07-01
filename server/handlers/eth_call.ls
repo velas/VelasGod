@@ -1,19 +1,13 @@
 require! {
-    \../smarts/get-types.ls
+    \../smarts/get-json.ls
     \../smarts/velas-web3.ls
-    \web3/lib/solidity/coder.js
+    \web3/lib/web3/function.js : fun
 }
 
 web3 = velas-web3!
 
 method = \eth_call
 
-#res = coder.decodeParams ['uint256'], '0x0000000000000000000000000000000000000000000000000000000000000209'
-#console.log \test , res.to-string!
-
-console.log '!!!', coder.decodeParams([ 'uint256' ], "0x0000000000000000000000000000000000000000000000000000000000000209").to-string!
-console.log '!!!', coder.decodeParams([ 'uint256' ], "0x0000000000000000000000000000000000000000000000000000000000000209").to-string!
-console.log '!!!', coder.decodeParams([ 'uint256' ], "0x0000000000000000000000000000000000000000000000000000000000000209").to-string!
 
 
 
@@ -21,14 +15,11 @@ parse-message = (message)->
     m = JSON.parse message
     i = module.exports.invoked
     return m if not i?
-    types = get-types i.contract, i.method, i.params
-    return m if not types
-    console.log types, message
-    try
-        return coder.decodeParams(types, message).to-string!
-    catch err
-        console.log err, types, message
-        return m
+    json = get-json i.contract, i.method, i.params
+    return m if not json
+    f = new fun web3.eth, json, ''
+    f.unpackOutput m
+    
     
 module.exports = (db, ws, message)->
     cb = ->
