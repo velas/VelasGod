@@ -1,5 +1,5 @@
 require! {
-    \prelude-ls : { obj-to-pairs, map, join, take }
+    \prelude-ls : { obj-to-pairs, map, join, take, unique }
     \cli-truncate
     \as-table
     \./extract-chat_ids.ls
@@ -19,6 +19,26 @@ cut = (text)->
     res = cli-truncate "#{text}", COL_WIDTH, {position: 'middle', preferTruncationOnSpace: true}
     min res, COL_WIDTH
 
+get-result = (data, cb)->
+        result =
+            data
+                |> obj-to-pairs
+                |> map -> [it.0, it.1]
+        return cb null, "" if result.length is 0
+        values =
+            result
+                |> map -> it.1
+        keys =
+            result
+                |> map -> it.0
+                |> join "\n"
+        return cb null, "The same value:\n\n<b>#{values.0}</b>\n\nfor\n#{keys}" if unique(values).length is 1 
+        items = 
+            result
+                |> take 50
+                |> as-table.configure { maxTotalWidth: COL_WIDTH, delimiter: ' | ' }
+                |> -> "<pre>#{it}</pre>"
+        cb null, items
 render-status = (db, handlers, $user, name, cb)->
     err, time <- db.get "#{name}/last-update"
     last-update =
@@ -29,15 +49,11 @@ render-status = (db, handlers, $user, name, cb)->
     return cb null if err?
     ago =
         moment.utc(time).from-now!
-    result =
-            data
-                |> obj-to-pairs
-                |> map -> [it.0, it.1]
-                |> take 50
-                |> as-table.configure { maxTotalWidth: COL_WIDTH, delimiter: ' | ' }
+    err, result <- get-result data
+    return cb err if err?
     $user[name] = "no any info" if result.length is 0
     return cb null if result.length is 0
-    $user[name] = "#{last-update}<pre>#{result}</pre>"
+    $user[name] = "#{last-update}#{result}"
     cb null
     
 render-status-length = (db, handlers, $user, name, cb)->

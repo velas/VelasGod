@@ -2,15 +2,21 @@ require! {
     \prelude-ls : { obj-to-pairs, map, unique, maximum, minimum, find }
 }
 #net_Peers
+
+extract-block = (message, cb)->
+    return cb null, message.message.match('(#)([0-9]+)')?2 if message.message.index-of('Imported #') > -1
+    return cb null, message.message.match('(#)([0-9]+)')?2 if message.type is \DEBUG and message.message.index-of('we are step proposer for step=') > -1
+    cb "pass"
+
 module.exports = (db, ws, message)->
     cb = ->
-    #consider also 2020-06-24 14:38:40 UTC http.worker140 DEBUG txqueue  Re-computing pending set for block: 1433734
-    return cb null if message.message.index-of('Imported #') is -1
+    err, block <- extract-block message
+    return cb null if err?
     err, name <- db.get "ws/#{ws.id}"
     return cb err if err?
     err, data <- db.get \height
     model = if err? then {} else data
-    model[name] = +message.message.match('(#)([0-9]+)')?2
+    model[name] = +block
     err <- db.put \height , model
     return cb err if err?
     cb null

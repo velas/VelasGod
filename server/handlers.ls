@@ -25,3 +25,5 @@ module.exports =
     * require \./handlers/parity_transactionsLimit.ls
     * require \./handlers/txqueue.ls
     * require \./handlers/eth_syncing.ls
+    * require \./handlers/mining_address.ls
+    * require \./handlers/validators.ls

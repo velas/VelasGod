@@ -8,15 +8,27 @@ module.exports =
     "general-info:bot-step" : 
         text: "Get Information about <b>nodes</b>"
         buttons:
-            "⏫ Heights": "goto:node-height"
+            "⏫ Consensus" : "goto:consensus"
             "🕑 Last Activity": "goto:node-last-activity"
             "🚦 Is Syncing" : "goto:eth_syncing"
-            "🔀 Reorgs": "goto:reorgs"
             "📡 Networking": "goto:networking"
             "📶 Hardware" : "goto:resources"
             "📩 Pending" : "goto:pending"
             "📝 Software" : "goto:soft"
             "📝 Configuration" : "goto:configuration"
+    "consensus:bot-step" :
+        text: "Consensus information"
+        buttons:
+            "📶 Heights": "goto:node-height"
+            "🏪 Current Validators": "goto:validators"
+            "🔀 Reorgs": "goto:reorgs"
+            "📝 Mining addresses" : "goto:mining_address"
+    "validators:bot-step" : 
+        on-enter: "({ $app, $user }, cb)-> $app.update('validators', $user, cb)"
+        text: "{{{$user.validators}}}" 
+    "mining_address:bot-step" : 
+        on-enter: "({ $app, $user }, cb)-> $app.update('mining_address', $user, cb)"
+        text: "{{{$user.mining_address}}}" 
     "eth_syncing:bot-step" :
         on-enter: "({ $app, $user }, cb)-> $app.update('eth_syncing', $user, cb)"
         text: "{{{$user.eth_syncing}}}"        
@@ -110,7 +122,7 @@ module.exports =
         text: "{{{$user.parity_enode_ip}}}"
     "modes:bot-step":
         on-enter: "({ $app, $user }, cb)-> $app.update('parity_mode', $user, cb)"
-        text: "{{{$user.parity_mode}}}"
+        text: "This indicator always returns active. But lets keep it for learning\n{{{$user.parity_mode}}}"
     "monitor-version:bot-step":
         on-enter: "({ $app, $user }, cb)-> $app.update('version', $user, cb)"
         text: "{{{$user.version}}}"
