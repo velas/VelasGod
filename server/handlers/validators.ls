@@ -17,8 +17,8 @@ parse-list1 = (message, cb)->
         cb err
 
 extract-block = (message, cb)->
-    return cb null, parse-list1(message.message) if message.type is \INFO and message.message.index-of('New validator list') > -1
-    return cb null, parse-list1(message.message) if message.type is \TRACE and message.message.index-of('Current validator set: SimpleList') > -1
+    return parse-list1(message.message, cb) if message.type is \INFO and message.message.index-of('New validator list') > -1
+    return parse-list1(message.message, cb) if message.type is \TRACE and message.message.index-of('Current validator set: SimpleList') > -1
     cb "pass"
 
 module.exports = (db, ws, message)->

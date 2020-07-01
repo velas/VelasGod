@@ -9,6 +9,7 @@ require! {
     \../handlers/reorg.ls
     \../handlers/eth_call.ls : eth_call_handler
     \../smarts/get-call.ls
+    \fs
 }
 
 min = (text, num)->
@@ -78,7 +79,6 @@ render-status-length = (db, handlers, $user, name, cb)->
     $user["#{name}_length"] = "#{last-update}<pre>#{result}</pre>"
     cb null
 
-
     
 module.exports = ({ ws, config, handlers, connections } )->  (tanos)->
     { db } = tanos
@@ -113,6 +113,18 @@ module.exports = ({ ws, config, handlers, connections } )->  (tanos)->
         err <- send-all-users tanos, chat_ids, bot-step
         return cb err if err?
         cb null
+    export download = (name, $user, cb)->
+        err, chat_ids <- extract-chat_ids db, config.admins
+        return cb err if err?
+        return cb "not allowed" if $user.chat_id not in chat_ids
+        err, data <- db.get name
+        console.log err, name
+        return cb err if err?
+        filename = "./tmp/#{name}.txt"
+        err <- fs.write-file filename , JSON.stringify(data, null, 4)
+        return cb err if err?
+        document = fs.createReadStream(filename)
+        <- tanos.bot.send-document { $user.chat_id, document  }
     export eth_call = ($user, contract, method, params, cb)->
         err, chat_ids <- extract-chat_ids db, config.admins
         return cb err if err?
@@ -121,7 +133,7 @@ module.exports = ({ ws, config, handlers, connections } )->  (tanos)->
         return cb "method not found" if not request?
         return cb "busy" if eth_call_handler.invoked?contract? 
         eth_call_handler.invoked = { contract, method, params }
-        err < - db.put \eth_call , {}
+        err <- db.put \eth_call , {}
         return cb err if err?
         connections |> each (-> it.send request)
         cb null
