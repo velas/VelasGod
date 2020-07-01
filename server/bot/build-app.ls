@@ -118,7 +118,10 @@ module.exports = ({ ws, config, handlers, connections } )->  (tanos)->
         return cb "not allowed" if $user.chat_id not in chat_ids
         request = get-call contract, method, params
         return cb "method not found" if not request?
+        err < - db.put \eth_call, {}
+        return cb err if err?
         connections |> each (-> it.send request)
         cb null
+        <- set-timeout _, 1000
         <- tanos.send-user $user.chat_id, "eth_call"
     out$
