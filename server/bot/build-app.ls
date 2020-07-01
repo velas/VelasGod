@@ -1,5 +1,5 @@
 require! {
-    \prelude-ls : { obj-to-pairs, map, join, take, unique }
+    \prelude-ls : { obj-to-pairs, map, join, take, unique, each }
     \cli-truncate
     \as-table
     \./extract-chat_ids.ls
@@ -7,6 +7,7 @@ require! {
     \moment
     \../handlers/txqueue.ls
     \../handlers/reorg.ls
+    \../smarts/get-call.ls
 }
 
 min = (text, num)->
@@ -111,4 +112,13 @@ module.exports = ({ ws, config, handlers, connections } )->  (tanos)->
         err <- send-all-users tanos, chat_ids, bot-step
         return cb err if err?
         cb null
+    export eth_call = ($user, contract, method, params, cb)->
+        err, chat_ids <- extract-chat_ids db, config.admins
+        return cb err if err?
+        return cb "not allowed" if $user.chat_id not in chat_ids
+        request = get-call contract, method, params
+        return cb "method not found" if not request?
+        connections |> each (-> it.send request)
+        cb null
+        <- tanos.send-user $user.chat_id, "eth_call"
     out$

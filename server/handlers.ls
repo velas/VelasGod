@@ -1,4 +1,5 @@
 module.exports =
+    * require \./handlers/eth_call.ls
     * require \./handlers/last-activity.ls
     * require \./handlers/cpu.ls
     * require \./handlers/disk.ls

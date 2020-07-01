@@ -24,6 +24,7 @@
     "tail-file": "^1.4.13",
     "tanos": "^1.0.40",
     "toml": "^3.0.0",
+    "web3": "^0.18.4",
     "ws-reconnect": "^1.0.7"
   },
   "devDependencies": {

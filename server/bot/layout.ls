@@ -8,6 +8,7 @@ module.exports =
     "general-info:bot-step" : 
         text: "Get Information about <b>nodes</b>"
         buttons:
+            "📟 Make Request" : "goto:request"
             "⏫ Consensus" : "goto:consensus"
             "🕑 Last Activity": "goto:node-last-activity"
             "🚦 Is Syncing" : "goto:eth_syncing"
@@ -16,6 +17,15 @@ module.exports =
             "📩 Pending" : "goto:pending"
             "📝 Software" : "goto:soft"
             "📝 Configuration" : "goto:configuration"
+    "request:bot-step" : 
+        text: "📟 Make request to all nodes via RPC. Please wait for result. Nodes should return it later"
+        buttons: 
+            "Epoch" :
+                goto: "action-performed"
+                store: "({ $app, $user }, cb)-> $app.eth_call($user, 'Staking', 'stakingEpoch',[], cb)"
+    "eth_call:bot-step" :
+        on-enter: "({ $app, $user }, cb)-> $app.update('eth_call', $user, cb)"
+        text: "Information can be innacurate because few users can make the call at the same time\n{{{$user.eth_call}}}"            
     "consensus:bot-step" :
         text: "Consensus information"
         buttons:
@@ -23,6 +33,9 @@ module.exports =
             "🏪 Current Validators": "goto:validators"
             "🔀 Reorgs": "goto:reorgs"
             "📝 Mining addresses" : "goto:mining_address"
+    "posdao_Staking_stakingEpoch:bot-step" : 
+        on-enter: "({ $app, $user }, cb)-> $app.update('posdao_Staking_stakingEpoch', $user, cb)"
+        text: "{{{$user.posdao_Staking_stakingEpoch}}}"         
     "validators:bot-step" : 
         on-enter: "({ $app, $user }, cb)-> $app.update('validators', $user, cb)"
         text: "{{{$user.validators}}}" 
