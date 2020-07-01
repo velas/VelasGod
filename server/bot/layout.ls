@@ -48,7 +48,8 @@ module.exports =
         on-enter: "({ $app, $user }, cb)-> $app.update('eth_call', $user, cb)"
         text: "Information can be innacurate because few users can make the call at the same time\n{{{$user.eth_call}}}"    
         buttons:
-            "Download": "({ $app, $user }, cb)-> $app.download('eth_call', $user, cb)"
+            "Download": 
+                store: "({ $app, $user }, cb)-> $app.download('eth_call', $user, cb)"
     "consensus:bot-step" :
         text: "Consensus information"
         buttons:
@@ -63,12 +64,14 @@ module.exports =
         on-enter: "({ $app, $user }, cb)-> $app.update('validators', $user, cb)"
         text: "{{{$user.validators}}}" 
         buttons:
-            "Download": "({ $app, $user }, cb)-> $app.download('validators', $user, cb)"
+            "Download": 
+                store: "({ $app, $user }, cb)-> $app.download('validators', $user, cb)"
     "mining_address:bot-step" : 
         on-enter: "({ $app, $user }, cb)-> $app.update('mining_address', $user, cb)"
         text: "{{{$user.mining_address}}}" 
         buttons:
-            "Download": "({ $app, $user }, cb)-> $app.download('mining_address', $user, cb)"
+            "Download": 
+                store: "({ $app, $user }, cb)-> $app.download('mining_address', $user, cb)"
     "eth_syncing:bot-step" :
         on-enter: "({ $app, $user }, cb)-> $app.update('eth_syncing', $user, cb)"
         text: "{{{$user.eth_syncing}}}"
@@ -103,7 +106,8 @@ module.exports =
         on-enter: "({ $app, $user }, cb)-> $app.update('txqueue', $user, cb)"
         text: "{{{$user.txqueue}}}"
         buttons:
-            "Download": "({ $app, $user }, cb)-> $app.download('txqueue', $user, cb)"
+            "Download": 
+                store: "({ $app, $user }, cb)-> $app.download('txqueue', $user, cb)"
             "Forget All": 
                 goto: "action-performed"
                 store: "({ $app, $user }, cb)-> $app.forget_txqueue($user, cb)"
@@ -159,7 +163,8 @@ module.exports =
         on-enter: "({ $app, $user }, cb)-> $app.update('parity_enode', $user, cb)"
         text: "{{{$user.parity_enode}}}"
         buttons:
-            "Download": "({ $app, $user }, cb)-> $app.download('parity_enode', $user, cb)"
+            "Download": 
+                store: "({ $app, $user }, cb)-> $app.download('parity_enode', $user, cb)"
     "enode_ips:bot-step":
         on-enter: "({ $app, $user }, cb)-> $app.update('parity_enode_ip', $user, cb)"
         text: "{{{$user.parity_enode_ip}}}"
@@ -204,4 +209,5 @@ module.exports =
         on-enter: "({ $app, $user }, cb)-> $app.update('peers', $user, cb)"
         text: "{{{$user.peers}}}"
         buttons:
-            "Download": "({ $app, $user }, cb)-> $app.download('peers', $user, cb)"
+            "Download": 
+                store: "({ $app, $user }, cb)-> $app.download('peers', $user, cb)"

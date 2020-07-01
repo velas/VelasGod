@@ -114,11 +114,13 @@ module.exports = ({ ws, config, handlers, connections } )->  (tanos)->
         return cb err if err?
         cb null
     export download = (name, $user, cb)->
+        console.log \download, name, $user
         err, chat_ids <- extract-chat_ids db, config.admins
         return cb err if err?
         return cb "not allowed" if $user.chat_id not in chat_ids
+        console.log \2
         err, data <- db.get name
-        console.log err, name
+        console.log 3
         return cb err if err?
         filename = "./tmp/#{name}.txt"
         err <- fs.write-file filename , JSON.stringify(data, null, 4)
