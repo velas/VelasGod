@@ -12,8 +12,9 @@ method = \eth_call
 
 
 parse-message = (message)->
-    m = JSON.parse message
-    i = module.exports.invoked
+    m = JSON.parse message.message
+    #console.log module.exports.invoked, message.role
+    i = module.exports.invoked[message.role]
     return m if not i?
     json = get-json i.contract, i.method, i.params
     return m if not json
@@ -23,16 +24,17 @@ parse-message = (message)->
     
 module.exports = (db, ws, message)->
     cb = ->
-    return cb null if message.type isnt \eth_call
-    console.log \eth_call, message
+    return cb null if message.role.index-of('Monitor') is -1 or message.type isnt \eth_call
+    #console.log \eth_call, message
     err, name <- db.get "ws/#{ws.id}"
     return cb err if err?
     err, data <- db.get method
     model = if err? then {} else data
-    model[name] = parse-message(message.message)
+    model[name] = parse-message(message)
     err <- db.put method , model
     return cb err if err?
     cb null
 
+module.exports.invoked = {}
 
 #module.exports.poll = get-call "Staking", "stakingEpoch"

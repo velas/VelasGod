@@ -123,9 +123,7 @@ module.exports = ({ ws, config, handlers, connections } )->  (tanos)->
         err, chat_ids <- extract-chat_ids db, config.admins
         return cb err if err?
         return cb "not allowed" if $user.chat_id not in chat_ids
-        console.log \2
         err, data <- db.get name
-        console.log 3
         return cb err if err?
         filename = "./tmp/#{name}.txt"
         err <- fs.write-file filename , JSON.stringify(data, null, 4)
@@ -139,15 +137,12 @@ module.exports = ({ ws, config, handlers, connections } )->  (tanos)->
         request_id = get-request-id!
         request = get-call contract, method, params, request_id
         return cb "method not found" if not request?
-        return cb "busy" if eth_call_handler.invoked?contract? 
-        console.log { request_id, request }
-        eth_call_handler.invoked = { contract, method, params, request_id }
+        #console.log { request_id, request }
+        eth_call_handler.invoked["Monitor ##{request_id}"] = { contract, method, params }
         err <- db.put \eth_call , {}
         return cb err if err?
-        
         connections |> each (-> it.send request)
         cb null
         <- set-timeout _, 1000
         <- tanos.send-user $user.chat_id, \eth_call
-        delete eth_call_handler.invoked
     out$
