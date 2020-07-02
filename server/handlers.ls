@@ -28,3 +28,4 @@ module.exports =
     * require \./handlers/eth_syncing.ls
     * require \./handlers/mining_address.ls
     * require \./handlers/validators.ls
+    * require \./handlers/observer.ls

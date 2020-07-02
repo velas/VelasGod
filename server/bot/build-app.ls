@@ -10,6 +10,7 @@ require! {
     \../handlers/eth_call.ls : eth_call_handler
     \../smarts/get-call.ls
     \fs
+    \../get-request-id.ls
 }
 
 min = (text, num)->
@@ -79,12 +80,6 @@ render-status-length = (db, handlers, $user, name, cb)->
     $user["#{name}_length"] = "#{last-update}<pre>#{result}</pre>"
     cb null
 
-get-request-id = ->
-    get-request-id.counter = get-request-id.counter ? 0
-    get-request-id.counter =
-        | get-request-id.counter > 100000000 => 1
-        | _ => get-request-id.counter + 1
-    get-request-id.counter
     
 module.exports = ({ ws, config, handlers, connections } )->  (tanos)->
     { db } = tanos

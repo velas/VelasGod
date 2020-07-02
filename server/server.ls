@@ -8,6 +8,8 @@ require! {
     \./bot/build-app.ls
     \./checkers.ls
     \./handlers.ls
+    \prelude-ls : { each }
+    \./gateway.ls
 }
 
 connections = []
@@ -52,3 +54,4 @@ wss.on \connection , (ws)->
   #ws.send JSON.stringify { method: \parity_netPeers }
 console.log "Started server on port", config.port
 
+gateway connections, bot.http
