@@ -140,9 +140,11 @@ module.exports = ({ ws, config, handlers, connections } )->  (tanos)->
         request = get-call contract, method, params, request_id
         return cb "method not found" if not request?
         return cb "busy" if eth_call_handler.invoked?contract? 
+        console.log { request_id, request }
         eth_call_handler.invoked = { contract, method, params, request_id }
         err <- db.put \eth_call , {}
         return cb err if err?
+        
         connections |> each (-> it.send request)
         cb null
         <- set-timeout _, 1000

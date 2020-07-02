@@ -9,7 +9,7 @@ regexp = /([0-9]{4}-[0-9]{2}-[0-9]{2}) ([0-9]{2}:[0-9]{2}:[0-9]{2}) UTC ([a-zA-Z
 module.exports = (ws, db)-> (line)->
     result = line.match regexp
     cb = ->
-    console.log \cannot-process, line if not result?
+    #console.log \cannot-process, line if not result?
     return cb \cannot-process, line if not result?
     [ _, date, time, role, type, message ] = result
     message = { date, time, role, type, message }

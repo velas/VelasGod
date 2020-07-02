@@ -24,7 +24,7 @@ parse-message = (message)->
 module.exports = (db, ws, message)->
     cb = ->
     return cb null if message.type isnt \eth_call
-    console.log \eth_call, message.message
+    console.log \eth_call, message
     err, name <- db.get "ws/#{ws.id}"
     return cb err if err?
     err, data <- db.get method
