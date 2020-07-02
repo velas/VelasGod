@@ -46,9 +46,9 @@ diskusage = (cb)->
     cb null, ["DISK","#{info.available / 1024  / 1024 / 1024 }"]
 
 module.exports = (ws, node)->
-    make-log = (type, message)->
+    make-log = (type, message, id)->
         time = moment.utc!.format('YYYY-MM-DD HH:mm:ss') + ' UTC'
-        "#{time} Monitor #0 #{type} #{message}"
+        "#{time} Monitor ###{id ? 0} #{type} #{message}"
     
     config = (cb)-> 
         err, config <- get-config node
@@ -72,7 +72,7 @@ module.exports = (ws, node)->
         err, data <- get-info
         message =
             | err? => make-log \ERROR , "for request #{data} #{err}"
-            | _ => make-log(data.0, data.1)
+            | _ => make-log(data.0, data.1, data.2)
         err <- send ws, message
         console.log "server is offline" if err?
 

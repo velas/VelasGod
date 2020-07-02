@@ -79,6 +79,12 @@ render-status-length = (db, handlers, $user, name, cb)->
     $user["#{name}_length"] = "#{last-update}<pre>#{result}</pre>"
     cb null
 
+get-request-id = ->
+    get-request-id.counter = get-request-id.counter ? 0
+    get-request-id.counter =
+        | get-request-id.counter > 100000000 => 1
+        | _ => get-request-id.counter + 1
+    get-request-id.counter
     
 module.exports = ({ ws, config, handlers, connections } )->  (tanos)->
     { db } = tanos
@@ -114,7 +120,6 @@ module.exports = ({ ws, config, handlers, connections } )->  (tanos)->
         return cb err if err?
         cb null
     export download = (name, $user, cb)->
-        console.log \download, name, $user
         err, chat_ids <- extract-chat_ids db, config.admins
         return cb err if err?
         return cb "not allowed" if $user.chat_id not in chat_ids
@@ -131,15 +136,16 @@ module.exports = ({ ws, config, handlers, connections } )->  (tanos)->
         err, chat_ids <- extract-chat_ids db, config.admins
         return cb err if err?
         return cb "not allowed" if $user.chat_id not in chat_ids
-        request = get-call contract, method, params
+        request_id = get-request-id!
+        request = get-call contract, method, params, request_id
         return cb "method not found" if not request?
         return cb "busy" if eth_call_handler.invoked?contract? 
-        eth_call_handler.invoked = { contract, method, params }
+        eth_call_handler.invoked = { contract, method, params, request_id }
         err <- db.put \eth_call , {}
         return cb err if err?
         connections |> each (-> it.send request)
         cb null
         <- set-timeout _, 1000
-        <- tanos.send-user $user.chat_id, "eth_call"
+        <- tanos.send-user $user.chat_id, \eth_call
         delete eth_call_handler.invoked
     out$
