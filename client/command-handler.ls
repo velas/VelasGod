@@ -48,7 +48,7 @@ diskusage = (cb)->
 module.exports = (ws, node)->
     make-log = (type, message, id)->
         time = moment.utc!.format('YYYY-MM-DD HH:mm:ss') + ' UTC'
-        "#{time} Monitor ###{id ? 0} #{type} #{message}"
+        "#{time} Monitor ##{id ? 0} #{type} #{message}"
     
     config = (cb)-> 
         err, config <- get-config node
