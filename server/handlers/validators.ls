@@ -13,7 +13,7 @@ parse-list1 = (message, cb)->
     try 
         cb null, JSON.parse(message.match(/\[[^\[]+\]/))
     catch err
-        console.log \parse-error, err
+        console.log \parse-error, err, message
         cb err
 
 extract-block = (message, cb)->

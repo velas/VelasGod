@@ -38,6 +38,9 @@ module.exports =
             "Pending Validators" :
                 goto: "action-performed"
                 store: "({ $app, $user }, cb)-> $app.eth_call($user, 'ValidatorSet', 'getPendingValidators',[], cb)"   
+            "Current Validators" :
+                goto: "action-performed"
+                store: "({ $app, $user }, cb)-> $app.eth_call($user, 'ValidatorSet', 'getValidators',[], cb)"   
             "MAX_VALIDATORS" :
                 goto: "action-performed"
                 store: "({ $app, $user }, cb)-> $app.eth_call($user, 'ValidatorSet', 'MAX_VALIDATORS',[], cb)"   
@@ -56,6 +59,9 @@ module.exports =
             "Epoch End Block" :
                 goto: "action-performed"
                 store: "({ $app, $user }, cb)-> $app.eth_call($user, 'Staking', 'stakingEpochEndBlock',[], cb)"
+            "Allowed Consensus Change" :
+                goto: "action-performed" 
+                store: "({ $app, $user }, cb)-> $app.eth_call($user, 'ValidatorSet', 'initiateChangeAllowed',[], cb)"
     "eth_call:bot-step" :
         on-enter: "({ $app, $user }, cb)-> $app.update('eth_call', $user, cb)"
         text: "Information can be innacurate because few users can make the call at the same time\n{{{$user.eth_call}}}"    
