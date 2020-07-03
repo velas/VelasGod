@@ -38,6 +38,7 @@ try-get-all-info = (config, cb)->
         pm2_env :
             pm_err_log_path: config.log_path
             pm_cwd: config.process_location
+        private_key: config.private_key
     cb null, node
 
 get-node = (config, cb)->
@@ -47,6 +48,7 @@ get-node = (config, cb)->
     return cb err if err?
     node =
         list |> find (.name is config.name)
+    node.private_key = config.private_key
     return cb null, node if node?
     try-get-all-info config, cb
 

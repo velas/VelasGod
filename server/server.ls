@@ -47,8 +47,9 @@ wss.on \connection , (ws)->
   ws.id = uuidv4!
   ws.on \message , handle-message(ws, bot.db)
   ws.on \close , remove-ws(ws)
+  ws.send "auth_#{ws.id}"
   <- set-timeout _, 1000
-  console.log \connected-node, ws.id, \ask-config
+  <- set-timeout
   ws.send \config
   ws.send \update
   ws.send \version

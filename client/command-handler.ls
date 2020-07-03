@@ -63,12 +63,20 @@ module.exports = (ws, node)->
         err, data <- get-version
         return cb err if err?
         cb null, ["VERSION", JSON.stringify(data)]
-    requests = { cpu_usage, freemem, uptime, platform, diskusage, config, external_ip, update, version }
+    
+    requests = { cpu_usage, freemem, uptime, platform, diskusage, config, external_ip, update, version, auth }
+    
+    auth = ([name, value])->
+        #TODO: sign
+        #node.private_key
+        cb null, ["AUTH", value]
     
     ws.on \message , (data)->
         rpc = (cb)->
             query-handler ws, node, data, cb
-        get-info = requests[data] ? rpc
+        get-info = 
+            | data.index-of('auth') > -1 => auth data.split('_')
+            | _ => requests[data] ? rpc
         err, data <- get-info
         message =
             | err? => make-log \ERROR , "for request #{data} #{err}"
