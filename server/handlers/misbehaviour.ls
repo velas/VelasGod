@@ -12,13 +12,14 @@ method = \misbehaviour
 
 module.exports = (db, ws, message)->
     cb = ->
-    return cb null if message.type isnt \TRACE and message.message.index-of('validator set recording benign misbehaviour at block') is -1
+    return cb null if message.type isnt \TRACE or message.message.index-of('validator set recording benign misbehaviour at block') is -1
     err, name <- db.get "ws/#{ws.id}"
     return cb err if err?
     err, data <- db.get method
     model = if err? then {} else data
+    #console.log \misbehaviour , message.message, message.message.match('by (0x.+)')
     address = message.message.match('by (0x.+)')?1
-    model[address] = [address] ? 0
+    model[address] = model[address] ? 0
     model[address] += 1
     err <- db.put method , model
     return cb err if err?
