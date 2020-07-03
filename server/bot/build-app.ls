@@ -83,6 +83,13 @@ render-status-length = (db, handlers, $user, name, cb)->
     
 module.exports = ({ ws, config, handlers, connections } )->  (tanos)->
     { db } = tanos
+    export forget = ($user, what, cb)->
+        err, chat_ids <- extract-chat_ids db, config.admins
+        return cb err if err?
+        return cb "not allowed" if $user.chat_id not in chat_ids
+        err <- db.put what, {}
+        return cb err if err?
+        cb null
     export forget_reorg = ($user, cb)->
         err, chat_ids <- extract-chat_ids db, config.admins
         return cb err if err?

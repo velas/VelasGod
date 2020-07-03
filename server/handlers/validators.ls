@@ -13,8 +13,8 @@ parse-list1 = (message, cb)->
     try 
         r = message.match(/\[.+\]/gm)
         return cb \cannot-parse if not r?
-        console.log message, r
-        cb null, r.0.split(',').map(-> it.trim!)
+        console.log { r }
+        cb null, r.split(',').map(-> it.trim!)
     catch err
         console.log \parse-error, err, message
         cb err

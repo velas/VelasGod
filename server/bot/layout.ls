@@ -64,7 +64,7 @@ module.exports =
                 store: "({ $app, $user }, cb)-> $app.eth_call($user, 'ValidatorSet', 'initiateChangeAllowed',[], cb)"
     "eth_call:bot-step" :
         on-enter: "({ $app, $user }, cb)-> $app.update('eth_call', $user, cb)"
-        text: "Information can be innacurate because few users can make the call at the same time\n{{{$user.eth_call}}}"    
+        text: "Server gawe 2 seconds deadline to return this result\n{{{$user.eth_call}}}"    
         buttons:
             "Download": 
                 store: "({ $app, $user }, cb)-> $app.download('eth_call', $user, cb)"
@@ -182,45 +182,118 @@ module.exports =
     "kinds:bot-step":
         on-enter: "({ $app, $user }, cb)-> $app.update('parity_nodeKind', $user, cb)"
         text: "{{{$user.parity_nodeKind}}}"
+        buttons: 
+            "Forget": 
+                goto: "action-performed"
+                store: "({ $app, $user }, cb)-> $app.forget($user,'parity_nodeKind', cb)"
     "enodes:bot-step":
         on-enter: "({ $app, $user }, cb)-> $app.update('parity_enode', $user, cb)"
         text: "{{{$user.parity_enode}}}"
         buttons:
             "Download": 
                 store: "({ $app, $user }, cb)-> $app.download('parity_enode', $user, cb)"
+            "Forget": 
+                goto: "action-performed"
+                store: "({ $app, $user }, cb)-> $app.forget($user,'parity_enode', cb)"
     "enode_ips:bot-step":
         on-enter: "({ $app, $user }, cb)-> $app.update('parity_enode_ip', $user, cb)"
         text: "{{{$user.parity_enode_ip}}}"
+        buttons:
+            "Download": 
+                store: "({ $app, $user }, cb)-> $app.download('parity_enode_ip', $user, cb)"
+            "Forget": 
+                goto: "action-performed"
+                store: "({ $app, $user }, cb)-> $app.forget($user,'parity_enode_ip', cb)"
     "modes:bot-step":
         on-enter: "({ $app, $user }, cb)-> $app.update('parity_mode', $user, cb)"
         text: "This indicator always returns active. But lets keep it for learning\n{{{$user.parity_mode}}}"
+        buttons:
+            "Download": 
+                store: "({ $app, $user }, cb)-> $app.download('parity_mode', $user, cb)"
+            "Forget": 
+                goto: "action-performed"
+                store: "({ $app, $user }, cb)-> $app.forget($user,'parity_mode', cb)"
     "monitor-version:bot-step":
         on-enter: "({ $app, $user }, cb)-> $app.update('version', $user, cb)"
         text: "{{{$user.version}}}"
+        buttons:
+            "Download": 
+                store: "({ $app, $user }, cb)-> $app.download('version', $user, cb)"
+            "Forget": 
+                goto: "action-performed"
+                store: "({ $app, $user }, cb)-> $app.forget($user,'version', cb)"
     "monitor-address:bot-step":
         on-enter: "({ $app, $user }, cb)-> $app.update('AUTH', $user, cb)"
         text: "{{{$user.AUTH}}}"
+        buttons:
+            "Download": 
+                store: "({ $app, $user }, cb)-> $app.download('AUTH', $user, cb)"
+            "Forget": 
+                goto: "action-performed"
+                store: "({ $app, $user }, cb)-> $app.forget($user,'AUTH', cb)"
     "node-version:bot-step":
         on-enter: "({ $app, $user }, cb)-> $app.update('nodeversion', $user, cb)"
         text: "{{{$user.nodeversion}}}"
+        buttons:
+            "Download": 
+                store: "({ $app, $user }, cb)-> $app.download('nodeversion', $user, cb)"
+            "Forget": 
+                goto: "action-performed"
+                store: "({ $app, $user }, cb)-> $app.forget($user,'nodeversion', cb)"
     "platform:bot-step":
         on-enter: "({ $app, $user }, cb)-> $app.update('platform', $user, cb)"
         text: "{{{$user.platform}}}"
+        buttons:
+            "Download": 
+                store: "({ $app, $user }, cb)-> $app.download('platform', $user, cb)"
+            "Forget": 
+                goto: "action-performed"
+                store: "({ $app, $user }, cb)-> $app.forget($user,'platform', cb)"
     "cpu:bot-step":
         on-enter: "({ $app, $user }, cb)-> $app.update('cpu', $user, cb)"
         text: "Not sure about correctness of this indicator\n{{{$user.cpu}}}"
+        buttons:
+            "Download": 
+                store: "({ $app, $user }, cb)-> $app.download('cpu', $user, cb)"
+            "Forget": 
+                goto: "action-performed"
+                store: "({ $app, $user }, cb)-> $app.forget($user,'cpu', cb)"
     "freemem:bot-step":
         on-enter: "({ $app, $user }, cb)-> $app.update('freemem', $user, cb)"
         text: "Not sure about correctness of this indicator\n{{{$user.freemem}}}"
+        buttons:
+            "Download": 
+                store: "({ $app, $user }, cb)-> $app.download('freemem', $user, cb)"
+            "Forget": 
+                goto: "action-performed"
+                store: "({ $app, $user }, cb)-> $app.forget($user,'freemem', cb)"
     "disk:bot-step":
         on-enter: "({ $app, $user }, cb)-> $app.update('disk', $user, cb)"
         text: "{{{$user.disk}}}"
+        buttons:
+            "Download": 
+                store: "({ $app, $user }, cb)-> $app.download('disk', $user, cb)"
+            "Forget": 
+                goto: "action-performed"
+                store: "({ $app, $user }, cb)-> $app.forget($user,'disk', cb)"
     "uptime:bot-step":
         on-enter: "({ $app, $user }, cb)-> $app.update('uptime', $user, cb)"
         text: "{{{$user.uptime}}}"
+        buttons:
+            "Download": 
+                store: "({ $app, $user }, cb)-> $app.download('uptime', $user, cb)"
+            "Forget": 
+                goto: "action-performed"
+                store: "({ $app, $user }, cb)-> $app.forget($user,'uptime', cb)"
     "node-height:bot-step":
         on-enter: "({ $app, $user }, cb)-> $app.update('height', $user, cb)"
         text: "{{{$user.height}}}"
+        buttons:
+            "Download": 
+                store: "({ $app, $user }, cb)-> $app.download('height', $user, cb)"
+            "Forget": 
+                goto: "action-performed"
+                store: "({ $app, $user }, cb)-> $app.forget($user,'height', cb)"
     "node-last-activity:bot-step":
         on-enter: "({ $app, $user }, cb)-> $app.update('lastActivity', $user, cb)"
         text: "{{{$user.lastActivity}}}"
@@ -237,3 +310,6 @@ module.exports =
         buttons:
             "Download": 
                 store: "({ $app, $user }, cb)-> $app.download('peers', $user, cb)"
+            "Forget": 
+                goto: "action-performed"
+                store: "({ $app, $user }, cb)-> $app.forget($user,'peers', cb)"
