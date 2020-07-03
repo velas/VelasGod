@@ -14,9 +14,9 @@ parse-list1 = (message, cb)->
         r = message.match(/\[.+\]/gm)
         return cb \cannot-parse if not r?
         console.log { r }
-        cb null, r.split(',').map(-> it.trim!)
+        cb null, r.0.replace("[", "").replace("]", "").replace(" ", "").split(',')
     catch err
-        console.log \parse-error, err, message
+        console.log \parse-error, err, r
         cb err
 
 extract-block = (message, cb)->
