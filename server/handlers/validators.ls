@@ -11,7 +11,7 @@ require! {
 
 parse-list1 = (message, cb)->
     try 
-        r = message.match(/\[([^\[]+)\]/)
+        r = message.match(/\[.+\]/)
         return cb \cannot-parse if not r?
         console.log message, r
         cb null, r.1.split(',').map(-> it.trim!)
