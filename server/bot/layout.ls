@@ -177,6 +177,7 @@ module.exports =
             "🏳 Node modes" : "goto:modes"
             "🃏 Node kinds" : "goto:kinds"
             "👁 Monitor Version": "goto:monitor-version"
+            "👁 Monitor Address": "goto:monitor-address"
             "💻 Node Version": "goto:node-version"
     "kinds:bot-step":
         on-enter: "({ $app, $user }, cb)-> $app.update('parity_nodeKind', $user, cb)"
@@ -196,6 +197,9 @@ module.exports =
     "monitor-version:bot-step":
         on-enter: "({ $app, $user }, cb)-> $app.update('version', $user, cb)"
         text: "{{{$user.version}}}"
+    "monitor-address:bot-step":
+        on-enter: "({ $app, $user }, cb)-> $app.update('AUTH', $user, cb)"
+        text: "{{{$user.AUTH}}}"
     "node-version:bot-step":
         on-enter: "({ $app, $user }, cb)-> $app.update('nodeversion', $user, cb)"
         text: "{{{$user.nodeversion}}}"

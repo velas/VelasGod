@@ -47,10 +47,10 @@ wss.on \connection , (ws)->
   ws.id = uuidv4!
   ws.on \message , handle-message(ws, bot.db)
   ws.on \close , remove-ws(ws)
+  ws.send \config
+  <- set-timeout _, 1000
   ws.send "auth_#{ws.id}"
   <- set-timeout _, 1000
-  <- set-timeout
-  ws.send \config
   #ws.send \update
   ws.send \version
   #ws.send JSON.stringify { method: \parity_netPeers }
