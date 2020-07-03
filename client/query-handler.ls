@@ -25,7 +25,10 @@ module.exports = (ws, node, query, cb)->
     return cb err if err?
     err, config <- get-config node
     return cb err if err?
-    interf = config.rpc.interface ? "127.0.0.1"
+    interf = 
+        | config.rpc.interface is "all" => "127.0.0.1"
+        | config.rpc.interface is "local" => "127.0.0.1"
+        | _ => config.rpc.interface
     err, data <- make-query "http://#{interf}:#{config.rpc.port}", model.method, model.params
     #console.log "call of http://127.0.0.1:#{config.rpc.port}, method #{model.method}, params: #{model.params} result", err, data
     return cb err if err?
