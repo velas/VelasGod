@@ -67,7 +67,7 @@ module.exports = (ws, node)->
     
     requests = { cpu_usage, freemem, uptime, platform, diskusage, config, external_ip, update, version, auth }
     
-    auth = ([name, value])->
+    auth = ([name, value])-> (cb)->
         return if not node.private_key?
         account = new Web3EthAccounts('ws://localhost:8546')
         acc = account.privateKeyToAccount(node.private_key)
