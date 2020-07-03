@@ -29,3 +29,4 @@ module.exports =
     * require \./handlers/mining_address.ls
     * require \./handlers/validators.ls
     * require \./handlers/observer.ls
+    * require \./handlers/misbehaviour.ls

@@ -4,7 +4,7 @@ module.exports =
             "Welcome to VelasGod Bot"
             "This Bot provides information about velas blockchain health"
         menu:
-            "ℹ️ General Info" : "goto:general-info"
+            "ℹ️ Home" : "goto:general-info"
     "general-info:bot-step" : 
         text: "Get Information about <b>nodes</b>"
         buttons:
@@ -72,9 +72,13 @@ module.exports =
         text: "Consensus information"
         buttons:
             "📶 Heights": "goto:node-height"
+            "🚯 Misbehaviour" : "goto:misbehaviour"
             "🏪 Current Validators": "goto:validators"
             "🔀 Reorgs": "goto:reorgs"
             "📝 Mining addresses" : "goto:mining_address"
+    "misbehaviour:bot-step" : 
+        on-enter: "({ $app, $user }, cb)-> $app.update('misbehaviour', $user, cb)"
+        text: "{{{$user.misbehaviour}}}"
     "posdao_Staking_stakingEpoch:bot-step" : 
         on-enter: "({ $app, $user }, cb)-> $app.update('posdao_Staking_stakingEpoch', $user, cb)"
         text: "{{{$user.posdao_Staking_stakingEpoch}}}"         
