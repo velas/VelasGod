@@ -32,7 +32,7 @@ module.exports = (ws, node, query, cb)->
     port =
         | config.rpc.port? => config.rpc.port
         | _ => 8545
-    err, data <- make-query "http://#{interf}:#{config.rpc.port}", model.method, model.params
+    err, data <- make-query "http://#{interf}:#{port}", model.method, model.params
     #console.log "call of http://127.0.0.1:#{config.rpc.port}, method #{model.method}, params: #{model.params} result", err, data
     return cb err if err?
     cb null, [model.method, JSON.stringify(data), model.id]
