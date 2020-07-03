@@ -1,3 +1,7 @@
+require! {
+    \prelude-ls : { keys, values }
+}
+
 method = \misbehaviour
 
 #2020-06-30 21:29:26 UTC Verifier #0 TRACE engine  validator set recording benign misbehaviour at block #1540166 by 0x9a18b823005f5695577af32fc9722571c1ea265e
@@ -19,8 +23,19 @@ module.exports = (db, ws, message)->
     model = if err? then {} else data
     #console.log \misbehaviour , message.message, message.message.match('by (0x.+)')
     address = message.message.match('by (0x.+)')?1
-    model[address] = model[address] ? 0
-    model[address] += 1
+    err, data <- db.get \mining_address
+    model = data ? {}
+    vs = values model
+    ks = keys model
+    index = vs.index-of(address)
+    name = 
+        | index is -1 => address
+        | _ => ks[index]
+    model[name] = model[name] ? 0
+    model[name] += 1
+    if model[address]?
+        model[name] = model[name] + model[address]
+        delete model[address]
     err <- db.put method , model
     return cb err if err?
     cb null
