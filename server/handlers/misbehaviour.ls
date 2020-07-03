@@ -23,17 +23,17 @@ module.exports = (db, ws, message)->
     model = if err? then {} else data
     #console.log \misbehaviour , message.message, message.message.match('by (0x.+)')
     address = message.message.match('by (0x.+)')?1
-    err, data <- db.get \mining_address
-    model = data ? {}
-    vs = values model
-    ks = keys model
+    err, mining_address_guess <- db.get \mining_address
+    mining_address = mining_address_guess ? {}
+    vs = values mining_address
+    ks = keys mining_address
     index = vs.index-of(address)
     name = 
         | index is -1 => address
         | _ => ks[index]
     model[name] = model[name] ? 0
     model[name] += 1
-    if model[address]?
+    if model[name] and model[address]?
         model[name] = model[name] + model[address]
         delete model[address]
     err <- db.put method , model
