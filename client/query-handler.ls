@@ -25,7 +25,8 @@ module.exports = (ws, node, query, cb)->
     return cb err if err?
     err, config <- get-config node
     return cb err if err?
-    err, data <- make-query "http://127.0.0.1:#{config.rpc.port}", model.method, model.params
+    interf = config.rpc.interface ? "127.0.0.1"
+    err, data <- make-query "http://#{interf}:#{config.rpc.port}", model.method, model.params
     #console.log "call of http://127.0.0.1:#{config.rpc.port}, method #{model.method}, params: #{model.params} result", err, data
     return cb err if err?
     cb null, [model.method, JSON.stringify(data), model.id]
