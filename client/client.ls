@@ -40,7 +40,6 @@ try-get-all-info = (config, cb)->
             pm_err_log_path: config.log_path
             pm_cwd: config.process_location
         private_key: config.private_key
-    console.log 
     cb null, node
 
 get-node = (config, cb)->
@@ -50,8 +49,9 @@ get-node = (config, cb)->
     return cb err if err?
     node =
         list |> find (.name is config.name)
-    node.private_key = config.private_key
-    if node.private_key?
+    if node? 
+        node.private_key = config.private_key
+    if node?private_key?
         account = new Web3EthAccounts('ws://localhost:8546')
         acc = account.privateKeyToAccount(node.private_key)
         console.log \YOUR_ADDRESS, acc.address

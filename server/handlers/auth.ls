@@ -9,7 +9,6 @@ account = new Web3EthAccounts('ws://localhost:8546')
 module.exports = (db, ws, message)->
     cb = ->
     return cb null if message.type isnt method
-    console.log \auth, message
     err, name <- db.get "ws/#{ws.id}"
     err, data <- db.get method
     model = if err? then {} else data
