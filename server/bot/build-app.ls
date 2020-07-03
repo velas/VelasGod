@@ -138,6 +138,6 @@ module.exports = ({ ws, config, handlers, connections } )->  (tanos)->
         return cb err if err?
         connections |> each (-> it.send request)
         cb null
-        <- set-timeout _, 1000
+        <- set-timeout _, 2000
         <- tanos.send-user $user.chat_id, \eth_call
     out$
