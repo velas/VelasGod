@@ -51,7 +51,7 @@ wss.on \connection , (ws)->
   <- set-timeout _, 1000
   <- set-timeout
   ws.send \config
-  ws.send \update
+  #ws.send \update
   ws.send \version
   #ws.send JSON.stringify { method: \parity_netPeers }
 console.log "Started server on port", config.port

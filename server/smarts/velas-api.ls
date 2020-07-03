@@ -10,10 +10,10 @@ abis =
 module.exports = (store)->
     web3 = velas-web3 store
     api =
-        Staking      : web3.eth.contract(abis.Staking).at(addresses.Staking)
-        ValidatorSet : web3.eth.contract(abis.ValidatorSet).at(addresses.ValidatorSet)
-        BlockReward  : web3.eth.contract(abis.BlockReward).at(addresses.BlockReward)
-        Upgrade      : web3.eth.contract(abis.Upgrade).at(addresses.Upgrade)
+        Staking      : web3.eth.Contract(abis.Staking, addresses.Staking)
+        ValidatorSet : web3.eth.Contract(abis.ValidatorSet, addresses.ValidatorSet)
+        BlockReward  : web3.eth.Contract(abis.BlockReward, addresses.BlockReward)
+        Upgrade      : web3.eth.Contract(abis.Upgrade, addresses.Upgrade)
         web3         : web3.eth
         abis: abis
     api

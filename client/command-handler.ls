@@ -12,9 +12,9 @@ require! {
     \./update-self.ls
     \./query-handler.ls
     \./get-version.ls
-    
+    \web3 : Web3 
 }
-
+web3 = new Web3!
 
 external_ip = (cb)->
     get = getIP!
@@ -67,9 +67,8 @@ module.exports = (ws, node)->
     requests = { cpu_usage, freemem, uptime, platform, diskusage, config, external_ip, update, version, auth }
     
     auth = ([name, value])->
-        #TODO: sign
-        #node.private_key
-        cb null, ["AUTH", value]
+        r = web3.eth.accounts.sign(value, node.private_key)
+        cb null, ["AUTH", r.signature]
     
     ws.on \message , (data)->
         rpc = (cb)->
