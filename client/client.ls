@@ -32,7 +32,6 @@ init-monitoring = (ws, node, cb)->
     cb null, tail
 
 try-get-all-info = (config, cb)->
-    return cb "process #{name} not found" if config.name?
     return cb "config.log_path is required" if not config.log_path?
     return cb "config.process_location is required" if not config.process_location?
     node =
