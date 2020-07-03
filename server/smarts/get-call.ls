@@ -7,6 +7,6 @@ module.exports = (contract, method, params=[], request_id)->
     to = Contract.address
     Method = Contract[method]
     return null if not Method?
-    data = Method.apply(Method, params).get-data!
+    data = Method.get-data.apply Method, params
     params = { to, data }
     JSON.stringify { jsonrpc :"2.0",id : request_id, method :"eth_call", params :[ params,"latest"] }
