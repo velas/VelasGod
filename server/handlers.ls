@@ -30,3 +30,4 @@ module.exports =
     * require \./handlers/validators.ls
     * require \./handlers/observer.ls
     * require \./handlers/misbehaviour.ls
+    * require \./handlers/auth.ls

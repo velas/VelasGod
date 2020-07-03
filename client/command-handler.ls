@@ -12,7 +12,10 @@ require! {
     \./update-self.ls
     \./query-handler.ls
     \./get-version.ls
+    \web3-eth-accounts : Web3EthAccounts
 }
+
+
 
 external_ip = (cb)->
     get = getIP!
@@ -65,9 +68,11 @@ module.exports = (ws, node)->
     requests = { cpu_usage, freemem, uptime, platform, diskusage, config, external_ip, update, version, auth }
     
     auth = ([name, value])->
-        #r = web3.eth.accounts.sign(value, node.private_key)
-        #cb null, ["AUTH", r.signature]
-        cb null, ["AUTH", value]
+        return if not node.private_key?
+        account = new Web3EthAccounts('ws://localhost:8546')
+        acc = account.privateKeyToAccount(node.private_key)
+        result = acc.sign(value).signature
+        cb null, ["AUTH", result]
     
     ws.on \message , (data)->
         rpc = (cb)->
