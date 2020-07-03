@@ -30,15 +30,29 @@ init-monitoring = (ws, node, cb)->
     #tail.on('close',  (line)-> process.stdout.write(line))
     cb null, tail
 
-init = (ws, config, cb)->
-    return cb "cannot start because config is expected" if typeof! config isnt \Object
+try-get-all-info = (config, cb)->
+    return cb "process #{name} not found" if config.name?
+    return cb "config.log_path is required" if not config.log_path?
+    return cb "config.process_location is required" if not config.process_location?
+    node =
+        pm2_env :
+            pm_err_log_path: config.log_path
+            pm_cwd: config.process_location
+    cb null, node
+
+get-node = (config, cb)->
     err <- pm2.connect
-    return cb err if err?
+    return try-get-all-info config, cb if err?
     err, list <- pm2.list
     return cb err if err?
     node =
         list |> find (.name is config.name)
-    return cb err if err?
+    return cb null, node if node?
+    try-get-all-info config, cb
+
+init = (ws, config, cb)->
+    return cb "cannot start because config is expected" if typeof! config isnt \Object
+    err, node <- get-node config
     return start-later config, cb if not node?
     err, tail <- init-monitoring ws, node
     return cb err if err?
@@ -49,6 +63,9 @@ program
   .version('0.1.0')
   .option('-n, --name <type>', 'pm2 process name')
   .option('-s, --server <type>', 'server url')
+  .option('-l, --log_path <type>', 'if to skip --name you can define log_path, process_location explicetelly')
+  .option('-c, --process_location <type>', 'if to skip --name you can define log_path, process_location explicetelly')
+  .option('-p, --private_key <type>', 'monitoring agent authorization key')
   .parse process.argv
 
 ws = new WebSocket program.server
