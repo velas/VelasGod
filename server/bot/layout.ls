@@ -8,6 +8,7 @@ module.exports =
     "general-info:bot-step" : 
         text: "Get Information about <b>nodes</b>"
         buttons:
+            "⚠️ Issues" : "goto:issues"
             "📟 Make Request" : "goto:request"
             "⏫ Consensus" : "goto:consensus"
             "🕑 Last Activity": "goto:node-last-activity"
@@ -17,6 +18,15 @@ module.exports =
             "📩 Pending" : "goto:pending"
             "📝 Software" : "goto:soft"
             "📝 Configuration" : "goto:configuration"
+    "issues:bot-step" :
+        on-enter: "({ $app, $user }, cb)-> $app.update('problem', $user, cb)"
+        text: "{{{$user.problem}}}"
+        buttons:
+            "Download": 
+                store: "({ $app, $user }, cb)-> $app.download('problem', $user, cb)"
+            "Forget": 
+                goto: "issues"
+                store: "({ $app, $user }, cb)-> $app.forget($user,'problem', cb)"
     "request:bot-step" : 
         text: "📟 Make request to all nodes via RPC. Please wait for result. Nodes should return it later"
         buttons: 

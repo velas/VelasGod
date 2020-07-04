@@ -20,14 +20,29 @@ start-later = (config, cb)->
 process-line-builder = (ws, node)-> (line)->
     err <- send ws, line
     console.log err if err?
-    
+
+
+
+init-tail = (ws, node, path, cb)->
+    try 
+        tail = new Tail path, { persistent: yes }
+        process-line = process-line-builder ws, node
+        tail.on \line , process-line
+        tail.on \error , (error)->
+            #<- set-timeout _, 10000
+            #tail.close!
+            #init-tail ws, node, path
+            process.exit!
+        cb null, tail
+    catch err
+        cb err 
+
 init-monitoring = (ws, node, cb)->
     path = node.pm2_env.pm_err_log_path
     command-handler ws, node
     return cb "expected log path" if typeof! path isnt \String
-    tail = new Tail path, { persistent: yes }
-    process-line = process-line-builder ws, node
-    tail.on \line , process-line
+    err, tail <- init-tail ws, node, path
+    return cb err if err?
     #tail.on('close',  (line)-> process.stdout.write(line))
     cb null, tail
 

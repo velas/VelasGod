@@ -13,7 +13,6 @@ parse-list1 = (message, cb)->
     try 
         r = message.match(/\[.+\]/gm)
         return cb \cannot-parse if not r?
-        console.log { r }
         cb null, r.0.replace("[", "").replace("]", "").replace(" ", "").split(',')
     catch err
         console.log \parse-error, err, r

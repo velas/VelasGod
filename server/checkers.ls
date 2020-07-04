@@ -1,6 +1,6 @@
 require! {
     \./handlers.ls
-    \prelude-ls : { each, take, map, join }
+    \prelude-ls : { each, take, map, join, find }
     \sha256
     \simple-git
     \./bot/extract-chat_ids.ls
@@ -10,15 +10,46 @@ require! {
 create-button = (bot, config, bot-step, text)->
         store: "({ $app, $user }, cb)-> $app.updateStep(\"#{bot-step}\", \"#{text}\" , cb)"
 
-perform-notification = (config, bot, message, cb)->
+now = ->
+    new Date!.get-time!
+
+state =
+    last-notification: now!
+    skept : 0
+
+skip-notification = (config, bot, message, notify-anyway, cb)->
+    return cb null, yes if notify-anyway is yes
+    err, data <- bot.db.get \problem
+    model = 
+        | not err? => data 
+        | _ => []
+    model.splice(10, model.length) if model.length > 10
+    model.unshift message
+    err <- bot.db.put \problem, model
+    return cb err if err?
+    current = now!
+    diff = now! - state.last-notification
+    console.log diff, state.skept
+    should-skip = 
+        | diff < 10000 and state.skept < 50 => yes
+        | _ => no
+    state.skept = 0 if should-skip is no
+    state.skept += 1 if should-skip is yes
+    state.last-notification = current
+    cb null, should-skip
+
+perform-notification = (config, bot, message, notify-anyway, cb)->
+    err, skip <- skip-notification config, bot, message, notify-anyway
+    return cb err if err?
+    return cb null if skip is yes
     return cb "expected array of admins" if typeof! config.admins isnt \Array
     err, chat_ids <- extract-chat_ids bot.db, config.admins
     return cb err if err?
     hash = sha256 message
     bot-step = "notification-#{hash}"
-    buttons =
-        "⚠️ Important"     : create-button bot, config, bot-step, "⚠️ Important"
-        "✅ Not Important" : create-button bot, config, bot-step, "✅ Not Important"
+    buttons = {}
+    #    "⚠️ Important"     : create-button bot, config, bot-step, "⚠️ Important"
+    #    "✅ Not Important" : create-button bot, config, bot-step, "✅ Not Important"
     err <- bot.db.put "#{bot-step}:bot-step", { text: "❕ #{message}" , buttons}   
     return cb err if err?
     err <- send-all-users bot, chat_ids, bot-step
@@ -35,7 +66,7 @@ notify-all-users = (config, index, bot, err, cb)->
        checker[err] -= 1
        return cb null
     checker[err] = 20
-    perform-notification config, bot, err, cb
+    perform-notification config, bot, err, no, cb
 
 check = (config, bot, handlers)-> (func)->
     cb = ->
@@ -68,7 +99,7 @@ module.exports = (config, bot)->
             |> map -> it.message
             |> join "\n"
     version = log.latest.hash
-    <- perform-notification config, bot, "📟 <b>Server is started/restarted</b>\n\n<b>Version</b>\n #{version}.\n\n<b>Latest changes</b>\n#{last10}"
+    <- perform-notification config, bot, "📟 <b>Server is started/restarted</b>\n\n<b>Version</b>\n #{version}.\n\n<b>Latest changes</b>\n#{last10}", yes
     ms = wait-seconds * 1000
     <- set-timeout _, ms
     setup-checkers config, bot

@@ -23,7 +23,14 @@ cut = (text)->
     res = cli-truncate "#{text}", COL_WIDTH, {position: 'middle', preferTruncationOnSpace: true}
     min res, COL_WIDTH
 
+get-result-array = (data, cb)->
+    res =
+        data
+            |> join "\n...\n"
+            |> -> "<pre>#{it}</pre>"
+    cb null, res
 get-result = (data, cb)->
+        return get-result-array data, cb if typeof! data is \Array
         result =
             data
                 |> obj-to-pairs
@@ -145,6 +152,6 @@ module.exports = ({ ws, config, handlers, connections } )->  (tanos)->
         return cb err if err?
         connections |> each (-> it.send request)
         cb null
-        <- set-timeout _, 2000
+        <- set-timeout _, 5000
         <- tanos.send-user $user.chat_id, \eth_call
     out$
