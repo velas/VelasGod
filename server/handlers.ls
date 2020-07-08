@@ -1,5 +1,6 @@
 module.exports =
     * require \./handlers/eth_call.ls
+    * require \./handlers/eth_call_last_update.ls
     * require \./handlers/last-activity.ls
     * require \./handlers/cpu.ls
     * require \./handlers/disk.ls
@@ -13,9 +14,16 @@ module.exports =
     * require \./handlers/parity_netPeers.ls
     * require \./handlers/version.ls
     * require \./handlers/peers.ls
-    * require \./handlers/parity_unsignedTransactionsCount.ls
     * require \./handlers/parity_enode.ls
     * require \./handlers/parity_enode_ip.ls
+    * require \./handlers/txqueue.ls
+    * require \./handlers/eth_syncing.ls
+    * require \./handlers/mining_address.ls
+    * require \./handlers/validators.ls
+    * require \./handlers/observer.ls
+    * require \./handlers/misbehaviour.ls
+    * require \./handlers/auth.ls
+    * require \./handlers/parity_unsignedTransactionsCount.ls
     * require \./handlers/parity_mode.ls
     * require \./handlers/parity_nodeKind.ls
     * require \./handlers/parity_minGasPrice.ls
@@ -24,10 +32,4 @@ module.exports =
     * require \./handlers/parity_pendingTransactions.ls
     * require \./handlers/parity_pendingTransactionsStats.ls
     * require \./handlers/parity_transactionsLimit.ls
-    * require \./handlers/txqueue.ls
-    * require \./handlers/eth_syncing.ls
-    * require \./handlers/mining_address.ls
-    * require \./handlers/validators.ls
-    * require \./handlers/observer.ls
-    * require \./handlers/misbehaviour.ls
-    * require \./handlers/auth.ls
+    * require \./handlers/peer_difference.ls

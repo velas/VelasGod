@@ -7,6 +7,7 @@ method = \AUTH
 account = new Web3EthAccounts('ws://localhost:8546')
 
 module.exports = (db, ws, message)->
+    #console.log message
     cb = ->
     return cb null if message.type isnt method
     err, name <- db.get "ws/#{ws.id}"

@@ -1,5 +1,6 @@
 require! {
     \prelude-ls : { obj-to-pairs, map, join }
+    \moment
 }
 
 module.exports = (db, ws, message)->
@@ -11,6 +12,8 @@ module.exports = (db, ws, message)->
     model = if err? then {} else data
     model[name] = message.message
     err <- db.put \reorg , model
+    return cb err if err?
+    err <- db.put \reorg/last-update , moment.utc!
     return cb err if err?
     cb null
     

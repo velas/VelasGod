@@ -1,3 +1,7 @@
+require! {
+    \moment
+}
+
 module.exports = (db, ws, message)->
     cb = ->
     return cb null if message.type isnt \PLATFORM
@@ -7,6 +11,8 @@ module.exports = (db, ws, message)->
     model = if err? then {} else data
     model[name] = message.message
     err <- db.put \platform , model
+    return cb err if err?
+    err <- db.put \platform/last-update , moment.utc!
     return cb err if err?
     cb null
     

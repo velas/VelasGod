@@ -6,11 +6,11 @@ require! {
 polls =
     handlers 
         |> obj-to-pairs 
+        |> filter (.1.priority isnt \low)
         |> map (.1.poll) 
         |> filter (?)
 
 make-poll = (connections, db, current)->
-    console.log \make-poll, current
     connections |> each (-> it.send current)
 
 make-polls = (connections, db, all, [current, ...rest])->

@@ -1,5 +1,6 @@
 require! {
     \prelude-ls : { keys, values }
+    \moment
 }
 
 method = \misbehaviour
@@ -37,5 +38,7 @@ module.exports = (db, ws, message)->
         model[name] = model[name] + model[address]
         delete model[address]
     err <- db.put method , model
+    return cb err if err?
+    err <- db.put \misbehaviour/last-update , moment.utc!
     return cb err if err?
     cb null

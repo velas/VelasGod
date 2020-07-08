@@ -1,3 +1,7 @@
+require! {
+    \moment
+}
+
 module.exports = (db, ws, message)->
     cb = ->
     return cb null if message.type isnt \CPU
@@ -10,6 +14,8 @@ module.exports = (db, ws, message)->
     catch
         model[name] = message.message
     err <- db.put \cpu , model
+    return cb err if err?
+    err <- db.put \cpu/last-update , moment.utc!
     return cb err if err?
     cb null
     

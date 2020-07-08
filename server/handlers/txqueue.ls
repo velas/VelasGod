@@ -1,5 +1,6 @@
 require! {
     \prelude-ls : { obj-to-pairs, map, unique, maximum, minimum, find, each }
+    \moment
 }
 
 module.exports = (db, ws, message)->
@@ -15,6 +16,8 @@ module.exports = (db, ws, message)->
     model = if err? then {} else data
     model[txid] = reason
     err <- db.put \txqueue , model
+    return cb err if err?
+    err <- db.put \txqueue/last-update , moment.utc!
     return cb err if err?
     cb null
 

@@ -1,5 +1,6 @@
 require! {
     \prelude-ls : { obj-to-pairs, map, join, filter }
+    \moment
 }
 
 module.exports = (db, ws, message)->
@@ -14,6 +15,8 @@ module.exports = (db, ws, message)->
     catch 
         model[name] = message.message
     err <- db.put \disk , model
+    return cb err if err?
+    err <- db.put \disk/last-update , moment.utc!
     return cb err if err?
     cb null
 

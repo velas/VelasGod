@@ -1,5 +1,6 @@
 require! {
     \../utils/json-parse.ls
+    \moment
 } 
 
 module.exports = (db, ws, message)->
@@ -16,6 +17,8 @@ module.exports = (db, ws, message)->
         | _ => data
     model[name] = config.mining?engine_signer ? 'n/a'
     err <- db.put \mining_address , model
+    return cb err if err?
+    err <- db.put \mining_address/last-update , moment.utc!
     return cb err if err?
     err <- db.put "ws/#{ws.id}", name
     return cb err if err?

@@ -1,5 +1,6 @@
 require! {
     \prelude-ls : { obj-to-pairs, map, unique, maximum, minimum, find, each }
+    \moment
 }
 #check later
 #2020-06-30 21:27:47 UTC Verifier #2 WARN engine  Benign report for validator 0x20c0…cb07 at block 1540147
@@ -29,8 +30,10 @@ module.exports = (db, ws, message)->
     return cb null if err?
     err, data <- db.get \validators
     model = if err? then {} else data
-    validators |> each (-> model[it.0] = it.1)
+    #validators |> each (-> model[it.0] = it.1)
     err <- db.put \validators , model
+    return cb err if err?
+    err <- db.put \validators/last-update , moment.utc!
     return cb err if err?
     cb null
 

@@ -13,3 +13,4 @@ module.exports = (db, ws, message)->
     cb null
     
 module.exports.poll = JSON.stringify { method, params: { limit: 100 } }
+module.exports.priority = \low

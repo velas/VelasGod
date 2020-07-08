@@ -31,53 +31,57 @@ module.exports =
         text: "📟 Make request to all nodes via RPC. Please wait for result. Nodes should return it later"
         buttons: 
             "Epoch" :
-                goto: "action-performed"
+                goto: "eth_call-performed"
                 store: "({ $app, $user }, cb)-> $app.eth_call($user, 'Staking', 'stakingEpoch',[], cb)"
             "Get Pools" :
-                goto: "action-performed"
+                goto: "eth_call-performed"
                 store: "({ $app, $user }, cb)-> $app.eth_call($user, 'Staking', 'getPools',[], cb)"
             "Get Pools Inactive" :
-                goto: "action-performed"
+                goto: "eth_call-performed"
                 store: "({ $app, $user }, cb)-> $app.eth_call($user, 'Staking', 'getPoolsInactive',[], cb)"  
             "Get Pools To Be Elected" :
-                goto: "action-performed"
+                goto: "eth_call-performed"
                 store: "({ $app, $user }, cb)-> $app.eth_call($user, 'Staking', 'getPoolsToBeElected',[], cb)"                  
             "Ban Counter" :
-                goto: "action-performed"
+                goto: "eth_call-performed"
                 store: "({ $app, $user }, cb)-> $app.eth_call($user, 'ValidatorSet', 'banCounter',[], cb)" 
             "Pending Validators" :
-                goto: "action-performed"
+                goto: "eth_call-performed"
                 store: "({ $app, $user }, cb)-> $app.eth_call($user, 'ValidatorSet', 'getPendingValidators',[], cb)"   
             "Current Validators" :
-                goto: "action-performed"
+                goto: "eth_call-performed"
                 store: "({ $app, $user }, cb)-> $app.eth_call($user, 'ValidatorSet', 'getValidators',[], cb)"   
             "MAX_VALIDATORS" :
-                goto: "action-performed"
+                goto: "eth_call-performed"
                 store: "({ $app, $user }, cb)-> $app.eth_call($user, 'ValidatorSet', 'MAX_VALIDATORS',[], cb)"   
             "Previous Validators" :
-                goto: "action-performed"
+                goto: "eth_call-performed"
                 store: "({ $app, $user }, cb)-> $app.eth_call($user, 'ValidatorSet', 'getPreviousValidators',[], cb)"   
             "Pools To Be Removed" :
-                goto: "action-performed"
+                goto: "eth_call-performed"
                 store: "({ $app, $user }, cb)-> $app.eth_call($user, 'Staking', 'getPoolsToBeRemoved',[], cb)"   
             "MAX_CANDIDATES" :
-                goto: "action-performed"
+                goto: "eth_call-performed"
                 store: "({ $app, $user }, cb)-> $app.eth_call($user, 'Staking', 'MAX_CANDIDATES',[], cb)" 
             "Epoch Duration" :
-                goto: "action-performed"
+                goto: "eth_call-performed"
                 store: "({ $app, $user }, cb)-> $app.eth_call($user, 'Staking', 'stakingEpochDuration',[], cb)"  
             "Epoch End Block" :
-                goto: "action-performed"
+                goto: "eth_call-performed"
                 store: "({ $app, $user }, cb)-> $app.eth_call($user, 'Staking', 'stakingEpochEndBlock',[], cb)"
             "Allowed Consensus Change" :
-                goto: "action-performed" 
+                goto: "eth_call-performed" 
                 store: "({ $app, $user }, cb)-> $app.eth_call($user, 'ValidatorSet', 'initiateChangeAllowed',[], cb)"
+    "eth_call-performed:bot-step" : 
+        text: "Eth Call is performed. Sent RPC Request to {{$user.eth_call_length}} nodes. Nodes should send response back in {{$user.eth_call_wait}} seconds. After that deadline you will see the report"
     "eth_call:bot-step" :
         on-enter: "({ $app, $user }, cb)-> $app.update('eth_call', $user, cb)"
-        text: "Server gawe 2 seconds deadline to return this result\n{{{$user.eth_call}}}"    
+        text: "Eth Call Result\n{{{$user.eth_call}}}"    
         buttons:
             "Download": 
                 store: "({ $app, $user }, cb)-> $app.download('eth_call', $user, cb)"
+            "Last Response": 
+                store: "({ $app, $user }, cb)-> $app.download('eth_call_last_update', $user, cb)"
     "consensus:bot-step" :
         text: "Consensus information"
         buttons:
@@ -173,7 +177,8 @@ module.exports =
     "networking:bot-step" : 
         text: "Get Information networking <b>node hardware</b>"
         buttons:
-            "📡 Peers": "goto:peers"
+            "📡 Connected Peers": "goto:peers"
+            "📡 Last import from Peers": "goto:peers_log"
             "🏳 Enodes" : "goto:enodes"
             "🏳 Enode IPs" : "goto:enode_ips"
     "resources:bot-step" : 
@@ -326,3 +331,12 @@ module.exports =
             "Forget": 
                 goto: "action-performed"
                 store: "({ $app, $user }, cb)-> $app.forget($user,'peers', cb)"
+    "peers_log:bot-step":
+        on-enter: "({ $app, $user }, cb)-> $app.update('peer_log', $user, cb)"
+        text: "{{{$user.peer_log}}}"
+        buttons:
+            "Download": 
+                store: "({ $app, $user }, cb)-> $app.download('peer_log', $user, cb)"
+            "Forget": 
+                goto: "action-performed"
+                store: "({ $app, $user }, cb)-> $app.forget($user,'peer_log', cb)"

@@ -1,3 +1,7 @@
+require! {
+    \moment
+}
+
 module.exports = (db, ws, message)->
     cb = ->
     return cb null if message.type isnt \FREEMEM
@@ -8,6 +12,7 @@ module.exports = (db, ws, message)->
     model[name] = message.message
     err <- db.put \freemem , model
     return cb err if err?
+    err <- db.put \freemem/last-update , moment.utc!
     cb null
     
 module.exports.poll = \freemem

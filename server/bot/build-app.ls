@@ -53,7 +53,7 @@ get-result = (data, cb)->
 render-status = (db, handlers, $user, name, cb)->
     err, time <- db.get "#{name}/last-update"
     last-update =
-        | err? => "Last Update Time is undefined"
+        | err? => ""
         | _ => "Last update was #{moment.utc(time).from-now!}\nMax records: 50\n"
     err, data <- db.get name
     $user[name] = "no any info" if err?
@@ -135,9 +135,11 @@ module.exports = ({ ws, config, handlers, connections } )->  (tanos)->
         err, data <- db.get name
         return cb err if err?
         filename = "./tmp/#{name}.txt"
-        err <- fs.write-file filename , JSON.stringify(data, null, 4)
+        str = JSON.stringify(data, null, 4)
+        err <- fs.write-file filename , str
         return cb err if err?
-        document = fs.createReadStream(filename)
+        document = filename
+        #console.log \fun, tanos.bot.send-document
         <- tanos.bot.send-document { $user.chat_id, document  }
     export eth_call = ($user, contract, method, params, cb)->
         err, chat_ids <- extract-chat_ids db, config.admins
@@ -155,10 +157,15 @@ module.exports = ({ ws, config, handlers, connections } )->  (tanos)->
                 |> keys
                 |> map -> [it, "..."]
                 |> pairs-to-obj
+        err <- db.put \eth_call_last_update , expecting
+        return cb err if err?
         err <- db.put \eth_call , expecting
         return cb err if err?
         connections |> each (-> it.send request)
+        $user.eth_call_length = connections.length
+        $user.eth_call_wait = 3
         cb null
-        <- set-timeout _, 5000
+        seconds =  $user.eth_call_wait * 1000
+        <- set-timeout _, seconds
         <- tanos.send-user $user.chat_id, \eth_call
     out$

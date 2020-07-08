@@ -1,5 +1,6 @@
 require! {
     \../utils/json-parse.ls
+    \moment
 } 
 
 module.exports = (db, ws, message)->
@@ -16,6 +17,8 @@ module.exports = (db, ws, message)->
         | _ => data
     model[name] = config
     err <- db.put \config , model
+    return cb err if err?
+    err <- db.put \config/last-update , moment.utc!
     return cb err if err?
     err <- db.put "ws/#{ws.id}", name
     return cb err if err?

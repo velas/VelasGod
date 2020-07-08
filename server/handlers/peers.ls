@@ -15,4 +15,6 @@ module.exports = (db, ws, message)->
     model[name] = "#{peers.connected} / (#{peers.max})"  #+ " <i>#{moment.utc!.from-now!}</i>"
     err <- db.put \peers , model
     return cb err if err?
+    err <- db.put \peer/last-update , moment.utc!
+    return cb err if err?
     cb null

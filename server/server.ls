@@ -54,6 +54,6 @@ wss.on \connection , (ws)->
   #ws.send \update
   ws.send \version
   #ws.send JSON.stringify { method: \parity_netPeers }
-console.log "Started server on port", config.port
+console.log "Started server on port", config.ws.port
 
 gateway connections, bot.http
