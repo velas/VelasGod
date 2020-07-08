@@ -9,17 +9,18 @@ polls =
         |> map (.1.poll) 
         |> filter (?)
 
-make-poll = (connections, current)->
+make-poll = (connections, db, current)->
+    console.log \make-poll, current
     connections |> each (-> it.send current)
 
-make-polls = (connections, all, [current, ...rest])->
-    make-poll connections, current
+make-polls = (connections, db, all, [current, ...rest])->
+    make-poll connections, db, current
     <- set-timeout _ , 10000
     group =
         | rest.length is 0 => all
         | _ => rest
-    make-polls connections, all, group
+    make-polls connections, db, all, group
 
 
-module.exports = (connections)->
-    make-polls connections, polls, polls
+module.exports = (connections, db)->
+    make-polls connections, db, polls, polls

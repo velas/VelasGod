@@ -1,5 +1,6 @@
 require! {
     \../utils/json-parse.ls
+    \moment
 } 
 
 
@@ -11,7 +12,7 @@ module.exports = (db, ws, message)->
     err, data <- db.get \peers
     model = if err? then {} else data
     peers = JSON.parse(message.message)
-    model[name] = "#{peers.connected} / (#{peers.max})"
+    model[name] = "#{peers.connected} / (#{peers.max})"  #+ " <i>#{moment.utc!.from-now!}</i>"
     err <- db.put \peers , model
     return cb err if err?
     cb null

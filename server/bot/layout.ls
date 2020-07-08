@@ -8,7 +8,7 @@ module.exports =
     "general-info:bot-step" : 
         text: "Get Information about <b>nodes</b>"
         buttons:
-            "⚠️ Issues" : "goto:issues"
+            "⚠️ Notifications" : "goto:notifications"
             "📟 Make Request" : "goto:request"
             "⏫ Consensus" : "goto:consensus"
             "🕑 Last Activity": "goto:node-last-activity"
@@ -18,7 +18,7 @@ module.exports =
             "📩 Pending" : "goto:pending"
             "📝 Software" : "goto:soft"
             "📝 Configuration" : "goto:configuration"
-    "issues:bot-step" :
+    "notifications:bot-step" :
         on-enter: "({ $app, $user }, cb)-> $app.update('problem', $user, cb)"
         text: "{{{$user.problem}}}"
         buttons:
@@ -107,6 +107,9 @@ module.exports =
     "eth_syncing:bot-step" :
         on-enter: "({ $app, $user }, cb)-> $app.update('eth_syncing', $user, cb)"
         text: "{{{$user.eth_syncing}}}"
+        buttons:
+            "Download": 
+                store: "({ $app, $user }, cb)-> $app.download('eth_syncing', $user, cb)"
     "configuration:bot-step" : 
         text: "Get Information about configuration"
         buttons:

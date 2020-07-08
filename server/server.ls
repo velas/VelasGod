@@ -27,7 +27,7 @@ err, bot <- tanos { layout, app, ...config.bot }
 #bot.db.put \validators, {}, ->
 
 
-poll connections
+poll connections, bot.db
 checkers config.bot, bot
 
 remove-ws = (ws)-> ->

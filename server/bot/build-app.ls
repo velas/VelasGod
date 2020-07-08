@@ -1,5 +1,5 @@
 require! {
-    \prelude-ls : { obj-to-pairs, map, join, take, unique, each }
+    \prelude-ls : { obj-to-pairs, map, join, take, unique, each, keys, pairs-to-obj }
     \cli-truncate
     \as-table
     \./extract-chat_ids.ls
@@ -53,7 +53,7 @@ get-result = (data, cb)->
 render-status = (db, handlers, $user, name, cb)->
     err, time <- db.get "#{name}/last-update"
     last-update =
-        | err? => ""
+        | err? => "Last Update Time is undefined"
         | _ => "Last update was #{moment.utc(time).from-now!}\nMax records: 50\n"
     err, data <- db.get name
     $user[name] = "no any info" if err?
@@ -148,7 +148,14 @@ module.exports = ({ ws, config, handlers, connections } )->  (tanos)->
         return cb "method not found" if not request?
         #console.log { request_id, request }
         eth_call_handler.invoked["Monitor ##{request_id}"] = { contract, method, params }
-        err <- db.put \eth_call , {}
+        err, data <- db.get \lastActivity
+        return cb err if err?
+        expecting = 
+            data 
+                |> keys
+                |> map -> [it, "..."]
+                |> pairs-to-obj
+        err <- db.put \eth_call , expecting
         return cb err if err?
         connections |> each (-> it.send request)
         cb null

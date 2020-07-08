@@ -23,13 +23,12 @@ skip-notification = (config, bot, message, notify-anyway, cb)->
     model = 
         | not err? => data 
         | _ => []
-    model.splice(10, model.length) if model.length > 10
-    model.unshift message
+    model.splice(0, 1) if model.length > 10
+    model.push message
     err <- bot.db.put \problem, model
     return cb err if err?
     current = now!
     diff = now! - state.last-notification
-    console.log diff, state.skept
     should-skip = 
         | diff < 10000 and state.skept < 50 => yes
         | _ => no

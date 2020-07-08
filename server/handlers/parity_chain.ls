@@ -12,5 +12,5 @@ module.exports = (db, ws, message)->
     return cb err if err?
     
     cb null
-    
+
 module.exports.poll = JSON.stringify { method }
