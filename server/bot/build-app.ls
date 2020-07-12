@@ -58,13 +58,11 @@ render-status = (db, handlers, $user, name, cb)->
     err, data <- db.get name
     $user[name] = "no any info" if err?
     return cb null if err?
-    ago =
-        moment.utc(time).from-now!
     err, result <- get-result data
     return cb err if err?
     $user[name] = "no any info" if result.length is 0
     return cb null if result.length is 0
-    $user[name] = "#{last-update}#{result}"
+    $user[name] = "#{name}\n#{last-update}#{result}"
     cb null
     
 render-status-length = (db, handlers, $user, name, cb)->
@@ -75,8 +73,6 @@ render-status-length = (db, handlers, $user, name, cb)->
     err, data <- db.get name
     $user["#{name}_length"] = "no any info" if err?
     return cb null if err?
-    ago =
-        moment.utc(time).from-now!
     result =
             data
                 |> obj-to-pairs
@@ -84,12 +80,21 @@ render-status-length = (db, handlers, $user, name, cb)->
                 |> (.length)
     $user["#{name}_length"] = "no any info" if result.length is 0
     return cb null if result.length is 0
-    $user["#{name}_length"] = "#{last-update}<pre>#{result}</pre>"
+    $user["#{name}_length"] = "#{name}\n#{last-update}\n<pre>#{result}</pre>"
     cb null
 
     
 module.exports = ({ ws, config, handlers, connections } )->  (tanos)->
     { db } = tanos
+    export can-read = ($user, $check)->
+        cb = (err, result)->
+            $check.result = 
+                | err? => yes
+                | _ => result
+        err, chat_ids <- extract-chat_ids db, config.readers
+        return cb err if err?
+        result = $user.chat_id not in chat_ids
+        cb null, result
     export forget = ($user, what, cb)->
         err, chat_ids <- extract-chat_ids db, config.admins
         return cb err if err?

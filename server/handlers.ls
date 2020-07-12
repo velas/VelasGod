@@ -1,4 +1,6 @@
 module.exports =
+    * require \./handlers/parity_enode.ls
+    * require \./handlers/net_listening.ls
     * require \./handlers/eth_call.ls
     * require \./handlers/eth_call_last_update.ls
     * require \./handlers/last-activity.ls
@@ -14,7 +16,6 @@ module.exports =
     * require \./handlers/parity_netPeers.ls
     * require \./handlers/version.ls
     * require \./handlers/peers.ls
-    * require \./handlers/parity_enode.ls
     * require \./handlers/parity_enode_ip.ls
     * require \./handlers/txqueue.ls
     * require \./handlers/eth_syncing.ls
@@ -33,3 +34,4 @@ module.exports =
     * require \./handlers/parity_pendingTransactionsStats.ls
     * require \./handlers/parity_transactionsLimit.ls
     * require \./handlers/peer_difference.ls
+    * require \./handlers/step_proposer.ls

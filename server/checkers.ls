@@ -18,7 +18,7 @@ state =
     skept : 0
 
 skip-notification = (config, bot, message, notify-anyway, cb)->
-    return cb null, yes if notify-anyway is yes
+    return cb null, no if notify-anyway is yes
     err, data <- bot.db.get \problem
     model = 
         | not err? => data 
@@ -42,8 +42,9 @@ perform-notification = (config, bot, message, notify-anyway, cb)->
     return cb err if err?
     return cb null if skip is yes
     return cb "expected array of admins" if typeof! config.admins isnt \Array
-    err, chat_ids <- extract-chat_ids bot.db, config.admins
-    return cb err if err?
+    #err, chat_ids <- extract-chat_ids bot.db, config.admins
+    #return cb err if err?
+    chat_ids = [config.notificationGroupId]
     hash = sha256 message
     bot-step = "notification-#{hash}"
     buttons = {}
@@ -72,6 +73,7 @@ check = (config, bot, handlers)-> (func)->
     index = handlers.index-of func
     return cb null if typeof! func.check isnt \Function
     err <- func.check bot.db
+    #console.log err if err?
     return notify-all-users config, index, bot, err, cb if err?
     delete already-notified[index]
     cb null

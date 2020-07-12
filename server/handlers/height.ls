@@ -30,8 +30,8 @@ module.exports.check = (db, cb)->
     err, data <- db.get \height
     return cb null if err?
     items =
-        data 
-            |> obj-to-pairs 
+        | err? => []
+        | _ => obj-to-pairs data 
     heights =
        items
             |> map (.1)
@@ -43,6 +43,7 @@ module.exports.check = (db, cb)->
     min-item =
         items
             |> find (.1 is min)
+    #console.log \check-height, max-item, min-item
     return cb "The difference between <b>#{max-item.0}</b> and <b>#{min-item.0}</b> height is (#{max} - #{min}) <b>#{max - min}</b> blocks" if max > min + ALLOW_DIFFERENCE
     cb null
     
