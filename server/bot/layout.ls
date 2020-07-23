@@ -103,6 +103,9 @@ module.exports =
             "🏪 Committee": "goto:committee"
             "🔀 Reorgs": "goto:reorgs"
             "📝 Mining addresses" : "goto:mining_address"
+            "📝 Staking addresses" : "goto:staking_address"
+            "📝 Is Pool Active" : "goto:is_pool_active"
+            
     "misbehaviour:bot-step" : 
         redirect-condition: check-access
         on-enter: "({ $app, $user }, cb)-> $app.update('misbehaviour', $user, cb)"
@@ -120,6 +123,13 @@ module.exports =
                 goto: "committee"
             "Download": 
                 store: "({ $app, $user }, cb)-> $app.download('committee', $user, cb)"
+    "is_pool_active:bot-step" : 
+        redirect-condition: check-access
+        on-enter: "({ $app, $user }, cb)-> $app.update('is_pool_active', $user, cb)"
+        text: "{{{$user.is_pool_active}}}" 
+        buttons:
+            "Download": 
+                store: "({ $app, $user }, cb)-> $app.download('is_pool_active', $user, cb)"
     "mining_address:bot-step" : 
         redirect-condition: check-access
         on-enter: "({ $app, $user }, cb)-> $app.update('mining_address', $user, cb)"
@@ -127,6 +137,13 @@ module.exports =
         buttons:
             "Download": 
                 store: "({ $app, $user }, cb)-> $app.download('mining_address', $user, cb)"
+    "staking_address:bot-step" : 
+        redirect-condition: check-access
+        on-enter: "({ $app, $user }, cb)-> $app.update('staking_address', $user, cb)"
+        text: "{{{$user.staking_address}}}" 
+        buttons:
+            "Download": 
+                store: "({ $app, $user }, cb)-> $app.download('staking_address', $user, cb)"
     "eth_syncing:bot-step" :
         redirect-condition: check-access
         on-enter: "({ $app, $user }, cb)-> $app.update('eth_syncing', $user, cb)"

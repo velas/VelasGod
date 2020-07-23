@@ -1,7 +1,9 @@
 module.exports =
+    * require \./handlers/mining_address.ls
     * require \./handlers/parity_enode.ls
     * require \./handlers/net_listening.ls
     * require \./handlers/eth_call.ls
+    * require \./handlers/staking_address.ls
     * require \./handlers/eth_call_last_update.ls
     * require \./handlers/last-activity.ls
     * require \./handlers/cpu.ls
@@ -19,7 +21,6 @@ module.exports =
     * require \./handlers/parity_enode_ip.ls
     * require \./handlers/txqueue.ls
     * require \./handlers/eth_syncing.ls
-    * require \./handlers/mining_address.ls
     * require \./handlers/validators.ls
     * require \./handlers/observer.ls
     * require \./handlers/misbehaviour.ls
