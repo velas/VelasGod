@@ -10,11 +10,16 @@ polls =
         |> map (.1.poll) 
         |> filter (?)
 
-make-poll = (connections, db, current)->
+invoke-poll = (current, db, connections, cb)->
+    current { db, connections }, cb
+
+make-poll = (connections, db, current, cb)->
+    return invoke-poll current, db, connections, cb if typeof! current is \Function
     connections |> each (-> it.send current)
+    cb null
 
 make-polls = (connections, db, all, [current, ...rest])->
-    make-poll connections, db, current
+    <- make-poll connections, db, current
     <- set-timeout _ , 10000
     group =
         | rest.length is 0 => all

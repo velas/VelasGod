@@ -9,12 +9,13 @@ web3 = velas-web3!
 method = \eth_call
 
 
-
+get-invoked = (message)->
+    module.exports.invoked[message.role]
 
 parse-message = (message)->
     m = JSON.parse message.message
     #console.log module.exports.invoked, message.role
-    i = module.exports.invoked[message.role]
+    i = get-invoked(message)
     return m if not i?
     json = get-json i.contract, i.method, i.params
     return m if not json
@@ -25,13 +26,15 @@ parse-message = (message)->
 module.exports = (db, ws, message)->
     cb = ->
     return cb null if message.role.index-of('Monitor') is -1 or message.type isnt \eth_call
-    #console.log \eth_call, message
+    i = get-invoked(message)
+    _method = i?handler ? method
     err, name <- db.get "ws/#{ws.id}"
     return cb err if err?
-    err, data <- db.get method
+    _name = i?name ? name
+    err, data <- db.get _method
     model = if err? then {} else data
-    model[name] = parse-message(message)
-    err <- db.put method , model
+    model[_name] = parse-message(message)
+    err <- db.put _method , model
     return cb err if err?
     cb null
 

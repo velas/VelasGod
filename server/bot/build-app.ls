@@ -7,10 +7,9 @@ require! {
     \moment
     \../handlers/txqueue.ls
     \../handlers/reorg.ls
-    \../handlers/eth_call.ls : eth_call_handler
     \../smarts/get-call.ls
     \fs
-    \../get-request-id.ls
+    \../utils/make-call.ls
 }
 
 min = (text, num)->
@@ -20,7 +19,7 @@ min = (text, num)->
 COL_WIDTH = 50
 
 cut = (text)->
-    res = cli-truncate "#{text}", COL_WIDTH, {position: 'middle', preferTruncationOnSpace: true}
+    res = cli-truncate "#{text}", COL_WIDTH, {position: \middle , preferTruncationOnSpace: true}
     min res, COL_WIDTH
 
 get-result-array = (data, cb)->
@@ -150,11 +149,8 @@ module.exports = ({ ws, config, handlers, connections } )->  (tanos)->
         err, chat_ids <- extract-chat_ids db, config.admins
         return cb err if err?
         return cb "not allowed" if $user.chat_id not in chat_ids
-        request_id = get-request-id!
-        request = get-call contract, method, params, request_id
-        return cb "method not found" if not request?
-        #console.log { request_id, request }
-        eth_call_handler.invoked["Monitor ##{request_id}"] = { contract, method, params }
+        err, request <- make-call { contract, method, params }
+        return cb err if err?
         err, data <- db.get \lastActivity
         return cb err if err?
         expecting = 

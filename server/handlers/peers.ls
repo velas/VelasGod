@@ -36,6 +36,7 @@ module.exports.check = (db, cb)->
             |> map -> "#{it.0} has #{it.1} peers"
             |> join ","
             |> -> if it.length >0 then it
+    console.log model if err?
     return cb err if err?
     cb null
     
